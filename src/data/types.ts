@@ -17,6 +17,16 @@ export interface EAMetrics {
   params?: string | null
 }
 
+export interface Backtest {
+  /** Timeframe label, e.g. "H1", "M30", "M5". */
+  tf: string
+  note: string
+  /** Equity-curve screenshot. */
+  equity: string
+  /** Full MT5 report screenshot (opened on click). */
+  report: string
+}
+
 export interface EA {
   id: string
   name: string
@@ -32,9 +42,12 @@ export interface EA {
   metrics: EAMetrics
   /** When false, the UI must pair returns with Profit Factor + framingNote + Myfxbook (PRD §10/§11). */
   maxDrawdownKnown: boolean
+  /** Cenith leads with its drawdown (capital-preservation framing, PRD §8); others lead with return. */
+  leadWithDrawdown?: boolean
   riskContext: string
   framingNote: string | null
   walkthrough: string
+  backtests?: Backtest[]
 }
 
 export interface Bundle {

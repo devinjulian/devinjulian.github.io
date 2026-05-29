@@ -3,6 +3,7 @@ import { eas, type EA } from '../data'
 import { Container } from '../components/Container'
 import { SectionLabel } from '../components/SectionLabel'
 import { StatBlock } from '../components/StatBlock'
+import { BacktestGallery } from '../components/BacktestGallery'
 import { Button } from '../components/Button'
 import { ClaimButton } from '../components/ClaimButton'
 import { Reveal } from '../components/Reveal'
@@ -102,6 +103,10 @@ function EABlock({ ea }: { ea: EA }) {
           <StatBlock ea={ea} />
         </Reveal>
       </div>
+
+      <Reveal>
+        <BacktestGallery ea={ea} />
+      </Reveal>
     </section>
   )
 }

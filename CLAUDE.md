@@ -29,9 +29,9 @@ GitHub Pages via `.github/workflows/deploy.yml`. Set Vite `base` to match the do
 - Banned AI-tell phrases: "in today's fast-paced world", "in the realm of", "delve into", "navigate the complexities", "it's important to note", "leverage" (as a verb).
 - No fake testimonials or invented user names.
 
-## Pending data — do NOT fabricate
-- **Omnicor & Golden Max Drawdown** are not yet provided. Until Devin supplies them, pair those returns with Profit Factor + the honest-framing note + the Myfxbook link. Do not show a made-up drawdown.
-- Cenith Max DD (25.79%) is confirmed — use it.
+## Performance data — confirmed, never fabricate
+- **Max Drawdowns are now provided (MT5 backtests):** Cenith 25.79% (M5) · Omnicor 53.70% (H1, aggressive) & 18.67% (M30) · Golden 39.47% (M30) & 44.76% (M5). Show the relevant Max DD beside every return.
+- Still never invent or alter numbers — use only the approved figures in `@PRD.md` §8. If a figure isn't there, ask Devin.
 
 ## Where the truth lives
 - All approved performance numbers, pricing, links, and broker list: `@PRD.md` §8 (mirror them into `src/data/*.json`).

@@ -10,7 +10,7 @@ function headline(ea: EA): {
   context: string
 } {
   const m = ea.metrics
-  if (ea.maxDrawdownKnown && m.maxDrawdown) {
+  if (ea.leadWithDrawdown && m.maxDrawdown) {
     return {
       label: 'Max drawdown',
       value: m.maxDrawdown,

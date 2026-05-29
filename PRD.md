@@ -4,7 +4,7 @@
 **Owner**: Devin Julian
 **Doc status**: v1.1 — ready for build in Claude Code
 **Target host**: GitHub Pages (free, static)
-**Last updated**: 2026-05-29 (v1.1: added the **AI Trading Agent** to the roadmap — see §8 "AI Trading Agent" block + the roadmap mentions in §7.1 and §7.4. This is roadmap *content only*; the agent is a separate system that is NOT built in this repo. **v1.2** (2026-05-29): Partner bundle no longer includes "unlimited accounts"; removed HFM from recommended IB brokers; removed Substack from the site and from this doc's links/mentions.)
+**Last updated**: 2026-05-29 (v1.1: added the **AI Trading Agent** to the roadmap — see §8 "AI Trading Agent" block + the roadmap mentions in §7.1 and §7.4. This is roadmap *content only*; the agent is a separate system that is NOT built in this repo. **v1.2** (2026-05-29): Partner bundle no longer includes "unlimited accounts"; removed HFM from recommended IB brokers; removed Substack from the site and from this doc's links/mentions. **v1.3** (2026-05-29): MT5 backtest Max Drawdowns provided — Omnicor 53.70% (H1) / 18.67% (M30), Golden 39.47% (M30) / 44.76% (M5), Cenith PF 1.63; §11.1 resolved; per-timeframe backtest screenshots wired into the Products page.)
 
 > **How to use this doc**: Drop it in your repo root as `PRD.md`. Claude Code reads it as the source of truth. Build in phases (see §13). Never invent performance numbers — all approved figures are in §8 and the project `.md` files.
 
@@ -146,7 +146,7 @@ For each EA, a dedicated block (narrative subheadings, not "Product 1"):
 
 Close with "Why three" (portfolio effect — run together and the equity curve smooths) and a CTA to `/pricing`.
 
-Each EA block: embed/link the YouTube walkthrough (§8) and the Myfxbook link.
+Each EA block: embed/link the YouTube walkthrough (§8) and the Myfxbook link, plus its **MT5 backtest screenshots** — an equity-curve + full-report pair per timeframe (Omnicor H1 & M30, Golden M30 & M5, Cenith M5). Images live in `public/backtests/`, named `<ea>-<tf>-equity.png` / `<ea>-<tf>-report.png`; the per-EA gallery auto-hides any file that's missing, so it never renders broken.
 
 ### 7.3 Pricing (`/pricing`)
 
@@ -173,18 +173,20 @@ Devin's story + the lab positioning: the pivot from manual trading to building a
 > **Do not alter these. Do not invent additional metrics.** All performance must carry: backtest period (2021–2026), Monte Carlo method, the Myfxbook link, and — where profit is shown — its risk context.
 
 **Omnicor EA** — EURUSD · M30 & H1 · "The Wealth Compounder" · no set files (plug-and-play) · MT4/MT5 · Auto-Lot scaling
-- 5-yr backtest (2021–2026), Monte Carlo, **aggressive params**: $100k → $12.3M+ · ~12,000% total return · Profit Factor 3.65 · Win Rate ~78%
-- **Compliance**: the 12,000% figure must ALWAYS appear with: "5-year compounding, aggressive parameters, backtest conditions" + Myfxbook link. **Max DD is not in the files — see §11. Until provided, pair the return with Profit Factor 3.65 + the honest-framing note + Myfxbook, and do not present a fabricated drawdown.**
+- 5-yr backtest (2021–2026), Monte Carlo. **H1, aggressive params**: $100k → $12.3M+ · ~12,000% total return · Profit Factor 3.65 · Win Rate ~78% · **Max Drawdown 53.70%** · 5,798 trades
+- Second config — **M30**: start $10,000 · Net Profit $114,712.45 (~1,147%) · Profit Factor 1.86 · Max Drawdown 18.67% · 9,887 trades
+- **Compliance**: the 12,000% figure must ALWAYS appear with: "5-year compounding, aggressive parameters, backtest conditions" + its **53.70% Max DD** + Myfxbook link.
 - Walkthrough: https://youtu.be/yfcjlakkXHg
 
 **Cenith EA** — GBPUSD · M5 (strict default) · "The Conservative Shield" · no set files · MT4/MT5 · exhaustion-filter adaptive grid
-- 5-yr backtest (2021–2026), Monte Carlo: start $10,000 · Net Profit $91,194.45 (~900%) · **Max Drawdown 25.79%** · 5,857 trades
+- 5-yr backtest (2021–2026), Monte Carlo. **M5**: start $10,000 · Net Profit $91,194.45 (~900%) · **Max Drawdown 25.79%** · Profit Factor 1.63 · 5,857 trades
 - **Compliance**: lead with the 25.79% Max DD / 5,857 trades, then the ~900%.
 - Walkthrough: https://youtu.be/189AvDW_-nE
 
 **Golden EA** — XAUUSD · M5 & M30 · "The Beast Tamer" · **set files required (2, one per TF)** · MT4/MT5 · Independent Basket Trailing
-- 5-yr backtest (2021–2026), Monte Carlo: ~911% total return · Profit Factor 1.87 · ~2,000 high-volatility trades
-- **Compliance**: pair return with Profit Factor 1.87 + the context line (institutional Gold strategies sit ~1.3–1.5) + Myfxbook. **Max DD not in files — see §11.**
+- 5-yr backtest (2021–2026), Monte Carlo. **M30**: start $10,000 · Net Profit $91,172.64 (~911%) · Profit Factor 1.87 · **Max Drawdown 39.47%** · 1,878 trades
+- Second config — **M5**: start $10,000 · Net Profit $223,658.80 (~2,237%) · Profit Factor 1.27 · Max Drawdown 44.76% · 1,627 trades
+- **Compliance**: pair return with Profit Factor + the context line (institutional Gold strategies sit ~1.3–1.5) + its **Max DD** + Myfxbook.
 - Walkthrough: https://youtu.be/I_6VeeVDyPQ
 
 **Individual EA pricing**
@@ -251,7 +253,7 @@ Bake these into the build as hard rules:
 
 ## 11. Open items / assets needed from Devin
 
-1. **Omnicor & Golden Max Drawdown** (backtest %). Required to show profit numbers cleanly. Until then the site uses the Profit-Factor-+-Myfxbook fallback.
+1. ~~**Omnicor & Golden Max Drawdown** (backtest %).~~ **Resolved (v1.3):** provided via MT5 backtests — Omnicor 53.70% (H1) / 18.67% (M30); Golden 39.47% (M30) / 44.76% (M5). Now shown next to each return.
 2. **Logo + any brand marks** (SVG preferred). If none exist, I'll set a clean wordmark in the display font.
 3. **Myfxbook screenshot/equity-curve image** for the trust strip (optional but high-impact above the fold).
 4. **Domain choice**: `username.github.io`, a project subpath, or a custom domain (e.g. algotradingcenter.com)? Affects the Vite `base` config.
@@ -275,7 +277,7 @@ Bake these into the build as hard rules:
 
 **Suggested structure**
 ```
-/public            (poster images, favicon, fonts)
+/public            (favicon, og.png, fonts, backtests/ screenshots)
 /src
   /components      (Nav, Footer, EACard, StatBlock, BundleCard, ContactPanel, Disclaimer)
   /scenes          (R3F: Hero3D, scroll-driven scene + shaders)

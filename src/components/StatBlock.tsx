@@ -16,31 +16,40 @@ const toneClass: Record<Tone, string> = {
   signal: 'text-signal',
 }
 
-/** Builds the ordered metric tiles for an EA, enforcing PRD §8/§10:
- *  EAs with a known Max DD lead with drawdown; the rest lead with return but
- *  always pair it with Profit Factor as the risk context. */
+/** Builds the ordered metric tiles for an EA, enforcing PRD §8/§10. Cenith leads
+ *  with drawdown (capital-preservation framing); the rest lead with return but
+ *  always show Profit Factor + Max Drawdown alongside it as the risk context. */
 function buildStats(ea: EA): { tiles: Tile[]; caption?: string } {
   const m = ea.metrics
   const tiles: Tile[] = []
 
-  if (ea.maxDrawdownKnown && m.maxDrawdown) {
+  if (ea.leadWithDrawdown && m.maxDrawdown) {
     tiles.push({ label: 'Max drawdown', value: m.maxDrawdown, tone: 'warn' })
     if (m.trades) tiles.push({ label: 'Backtested trades', value: m.trades, tone: 'default' })
     if (m.return) tiles.push({ label: 'Net profit', value: m.return, tone: 'gold' })
-    const caption =
+    const leadParts = [
+      m.profitFactor ? `Profit Factor ${m.profitFactor}` : null,
       m.startingBalance && m.netProfit
-        ? `Start ${m.startingBalance} → net profit ${m.netProfit}`
-        : undefined
-    return { tiles, caption }
+        ? `start ${m.startingBalance} → net profit ${m.netProfit}`
+        : null,
+    ].filter(Boolean)
+    return { tiles, caption: leadParts.length ? leadParts.join(' · ') : undefined }
   }
 
   if (m.return) tiles.push({ label: 'Total return', value: m.return, tone: 'gold' })
   if (m.profitFactor)
     tiles.push({ label: 'Profit Factor', value: m.profitFactor, tone: 'signal' })
-  if (m.winRate) tiles.push({ label: 'Win rate', value: m.winRate, tone: 'default' })
-  else if (m.trades) tiles.push({ label: 'Trades', value: m.trades, tone: 'default' })
+  if (m.maxDrawdown)
+    tiles.push({ label: 'Max drawdown', value: m.maxDrawdown, tone: 'warn' })
 
-  const captionParts = [m.growth, m.params].filter(Boolean)
+  const captionParts = [
+    m.winRate ? `Win rate ${m.winRate}` : null,
+    m.growth,
+    m.startingBalance && m.netProfit
+      ? `start ${m.startingBalance} → net ${m.netProfit}`
+      : null,
+    m.params,
+  ].filter(Boolean)
   return { tiles, caption: captionParts.length ? captionParts.join(' · ') : undefined }
 }
 
