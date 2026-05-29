@@ -22,3 +22,7 @@ npm-debug.log*
 
 # tooling artifacts
 .playwright-mcp
+
+# internal docs — kept local, not published to the public repo
+PRD.md
+CLAUDE.md
