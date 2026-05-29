@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { motion, useReducedMotion } from 'motion/react'
+import { m, useReducedMotion } from 'motion/react'
 
 /** Fade + lift reveal. `view` triggers when scrolled into view (once);
  *  `mount` plays on load (for above-the-fold hero). Under prefers-reduced-motion
@@ -31,13 +31,13 @@ export function Reveal({
         }
 
   return (
-    <motion.div
+    <m.div
       className={className}
       initial={{ opacity: 0, y }}
       {...trigger}
       transition={{ duration: 0.6, delay, ease: [0.22, 0.61, 0.36, 1] }}
     >
       {children}
-    </motion.div>
+    </m.div>
   )
 }

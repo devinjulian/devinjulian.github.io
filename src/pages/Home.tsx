@@ -8,14 +8,11 @@ import { MyfxbookLink } from '../components/MyfxbookLink'
 import { PolyBotNote } from '../components/PolyBotNote'
 import { AIAgentNote } from '../components/AIAgentNote'
 import { Reveal } from '../components/Reveal'
-import { HeroCanvas } from '../components/HeroCanvas'
 
 export function Home() {
   return (
     <>
-      <HeroCanvas />
-
-      {/* Hero — beats 1–2: the infinite vs the finite. Orchestrated load reveal. */}
+      {/* Hero — orchestrated load reveal. */}
       <section className="flex min-h-[88vh] items-center">
         <Container>
           <div className="max-w-4xl">

@@ -1,7 +1,8 @@
-import { useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { useLenis } from 'lenis/react'
 import { ContactProvider } from './ContactContext'
+import { AmbientCanvas } from './AmbientCanvas'
 import { Nav } from './Nav'
 import { Footer } from './Footer'
 
@@ -37,11 +38,14 @@ export function Layout() {
         Skip to content
       </a>
       <div aria-hidden className="atmosphere" />
+      <AmbientCanvas />
       <div aria-hidden className="grain" />
       <ScrollManager />
       <Nav />
       <main id="main">
-        <Outlet />
+        <Suspense fallback={<div className="min-h-[60vh]" />}>
+          <Outlet />
+        </Suspense>
       </main>
       <Footer />
     </ContactProvider>
