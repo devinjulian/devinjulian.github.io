@@ -1,0 +1,111 @@
+{
+  "bundles": [
+    {
+      "id": "partner",
+      "name": "Partner Bundle",
+      "subtitle": "IB",
+      "price": 199,
+      "priceLabel": "$199",
+      "spotsLeft": 7,
+      "audience": "For the trader who wants every algorithm at the lowest entry — and is happy to trade through a recommended broker.",
+      "features": [
+        "All three EAs — Omnicor, Cenith, Golden",
+        "10 licenses",
+        "Lifetime updates"
+      ],
+      "requiresIB": true,
+      "ibNote": "Requires registration under one of the recommended IB brokers below. We're transparent about this — it's how the Partner price stays this low.",
+      "flagship": false,
+      "order": 1
+    },
+    {
+      "id": "standard",
+      "name": "Standard Bundle",
+      "subtitle": "Non-IB",
+      "price": 1999,
+      "priceLabel": "$1,999",
+      "spotsLeft": 9,
+      "audience": "For the established trader with broker loyalty who wants full flexibility and no strings.",
+      "features": [
+        "All three EAs — Omnicor, Cenith, Golden",
+        "Unlimited accounts",
+        "Lifetime updates",
+        "Any broker you choose"
+      ],
+      "requiresIB": false,
+      "ibNote": null,
+      "flagship": false,
+      "order": 2
+    },
+    {
+      "id": "founding",
+      "name": "Founding Members Bundle",
+      "subtitle": "Flagship",
+      "price": 3999,
+      "priceLabel": "$3,999",
+      "spotsLeft": 8,
+      "audience": "For the builder who wants ownership, not a rental — the source code, the ecosystem, and a permanent seat at the original price.",
+      "features": [
+        "All three EA source codes (.mq5) — delivered instantly",
+        "PolyBot full Python source — after the Q3 2026 launch",
+        "Everything the lab ships next, at this same price"
+      ],
+      "value": 10994,
+      "valueLabel": "$10,994",
+      "save": 6995,
+      "saveLabel": "$6,995",
+      "requiresIB": false,
+      "ibNote": null,
+      "flagship": true,
+      "order": 3
+    }
+  ],
+  "individualEAs": [
+    {
+      "ea": "Omnicor",
+      "pair": "EURUSD",
+      "partnerIB": "$99",
+      "partnerLicenses": "2 licenses",
+      "anyBroker": "$999",
+      "anyBrokerLicenses": "2 licenses",
+      "sourceCode": "$1,999"
+    },
+    {
+      "ea": "Cenith",
+      "pair": "GBPUSD",
+      "partnerIB": "$99",
+      "partnerLicenses": "1 license",
+      "anyBroker": "$999",
+      "anyBrokerLicenses": "1 license",
+      "sourceCode": "$1,999"
+    },
+    {
+      "ea": "Golden",
+      "pair": "XAUUSD",
+      "partnerIB": "$99",
+      "partnerLicenses": "2 licenses",
+      "anyBroker": "$999",
+      "anyBrokerLicenses": "2 licenses",
+      "sourceCode": "$1,999"
+    }
+  ],
+  "polybot": {
+    "name": "PolyBot",
+    "status": "In development — launches Q3 2026",
+    "disclaimer": "PolyBot is currently in development. No performance claims are made. Founding Members receive the Python source code after the Q3 2026 launch.",
+    "standalone": [
+      { "tier": "Starter", "price": "$497", "detail": "1 wallet" },
+      { "tier": "Pro", "price": "$997", "detail": "3 wallets" },
+      { "tier": "Elite", "price": "$1,997", "detail": "Unlimited wallets" }
+    ],
+    "earlyBird": {
+      "note": "Early-bird waitlist — first 30 only",
+      "tiers": [
+        { "tier": "Starter", "price": "$297", "detail": "1 wallet" },
+        { "tier": "Pro", "price": "$597", "detail": "3 wallets" },
+        { "tier": "Elite", "price": "$1,297", "detail": "Unlimited wallets" }
+      ]
+    }
+  },
+  "scarcityNote": "These counters are updated by hand and reflect real spots. When a bundle fills, its pricing closes permanently — no countdown timers, no resets, no second run at these numbers."
+}

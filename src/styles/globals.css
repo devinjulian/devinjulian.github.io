@@ -1,0 +1,115 @@
+@import 'tailwindcss';
+@import './tokens.css';
+
+/* Satoshi (body) — self-hosted from Fontshare.
+   Fraunces + JetBrains Mono load from @fontsource-variable packages in main.tsx. */
+@font-face {
+  font-family: 'Satoshi Variable';
+  src: url('/fonts/Satoshi-Variable.woff2') format('woff2');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi Variable';
+  src: url('/fonts/Satoshi-VariableItalic.woff2') format('woff2');
+  font-weight: 300 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background-color: var(--color-void);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-void);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Tabular, lined-up numerals everywhere we use the mono face for data. */
+  .font-mono {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum' 1;
+  }
+}
+
+@layer components {
+  /* Fixed atmospheric depth — a warm glow up top, a cooler one low, over the void.
+     Cheap (pure gradients), sits behind all content. */
+  .atmosphere {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        60rem 40rem at 50% -10%,
+        color-mix(in oklab, var(--color-gold) 12%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        50rem 50rem at 85% 110%,
+        color-mix(in oklab, var(--color-signal) 7%, transparent),
+        transparent 70%
+      );
+  }
+
+  /* Film grain — adds a tactile, premium texture without an image asset. */
+  .grain {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 220px 220px;
+  }
+
+  /* Hairline rule with a gold-tinted fade — a recurring divider motif. */
+  .rule-gold {
+    height: 1px;
+    border: 0;
+    background: linear-gradient(
+      to right,
+      transparent,
+      color-mix(in oklab, var(--color-gold) 45%, transparent),
+      transparent
+    );
+  }
+}
+
+/* Respect reduced-motion: no smooth scroll, collapse all transitions/animations. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
