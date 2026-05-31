@@ -13,7 +13,9 @@ function Motes({ count = 1800 }: { count?: number }) {
     for (let i = 0; i < count; i++) {
       arr[i * 3] = (Math.random() - 0.5) * 26
       arr[i * 3 + 1] = (Math.random() - 0.5) * 26
-      arr[i * 3 + 2] = (Math.random() - 0.5) * 14
+      // Keep all motes in front of the camera (z=6) at a safe distance, so none
+      // ever drifts onto the lens and renders as a giant square. z ∈ [-14, -2].
+      arr[i * 3 + 2] = -2 - Math.random() * 12
     }
     return arr
   }, [count])
