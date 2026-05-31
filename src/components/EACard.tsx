@@ -41,7 +41,7 @@ export function EACard({ ea }: { ea: EA }) {
       </div>
 
       <h3 className="mt-4 font-display text-2xl leading-none text-ink">
-        <Link to={`/products#${ea.id}`} className="transition-colors hover:text-gold">
+        <Link to={`/products/${ea.id}`} className="transition-colors hover:text-gold">
           {ea.name}
         </Link>
       </h3>
@@ -64,7 +64,7 @@ export function EACard({ ea }: { ea: EA }) {
       </p>
 
       <Link
-        to={`/products#${ea.id}`}
+        to={`/products/${ea.id}`}
         className="mt-6 inline-flex items-center gap-1.5 font-mono text-[0.7rem] tracking-[0.15em] text-gold uppercase transition-all group-hover:gap-2.5"
       >
         Explore <span aria-hidden>→</span>

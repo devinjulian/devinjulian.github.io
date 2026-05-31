@@ -2,6 +2,7 @@ import { bundles, individualEAs, polybot, scarcityNote, brokers } from '../data'
 import { Container } from '../components/Container'
 import { SectionLabel } from '../components/SectionLabel'
 import { BundleCard } from '../components/BundleCard'
+import { Button } from '../components/Button'
 import { ClaimButton } from '../components/ClaimButton'
 import { RiskDisclaimer } from '../components/RiskDisclaimer'
 import { PolyBotNote } from '../components/PolyBotNote'
@@ -165,59 +166,25 @@ export function Pricing() {
           <Reveal>
             <SectionLabel index="03">PolyBot</SectionLabel>
           </Reveal>
-          <div className="mt-7 grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+          <div className="mt-7">
             <Reveal>
-              <h2 className="font-display text-3xl leading-tight font-light text-ink sm:text-4xl">
+              <h2 className="max-w-2xl font-display text-3xl leading-tight font-light text-ink sm:text-4xl">
                 The next chapter — <em className="text-gold">not yet open.</em>
               </h2>
-              <p className="mt-3 inline-flex rounded-full border border-signal/40 px-3 py-1 font-mono text-[0.7rem] tracking-[0.15em] text-signal uppercase">
+              <p className="mt-4 inline-flex rounded-full border border-signal/40 px-3 py-1 font-mono text-[0.7rem] tracking-[0.15em] text-signal uppercase">
                 {polybot.status}
               </p>
-              <p className="mt-6 max-w-md leading-relaxed text-muted">
+              <p className="mt-6 max-w-xl leading-relaxed text-muted">
                 PolyBot moves the lab on-chain. Pricing is published for transparency, but
                 nothing ships until launch — and Founding Members receive the full Python
                 source the moment it does.
               </p>
-              <PolyBotNote className="mt-7 max-w-md" />
-            </Reveal>
-
-            <Reveal delay={0.12} className="space-y-6">
-              <div className="rounded-xl border border-ink/10 bg-surface/40 p-6">
-                <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/70 uppercase">
-                  Standalone · available after launch
-                </p>
-                <ul className="mt-4 space-y-3">
-                  {polybot.standalone.map((t) => (
-                    <li key={t.tier} className="flex items-baseline justify-between gap-4">
-                      <span className="text-ink">
-                        {t.tier} <span className="text-sm text-muted">· {t.detail}</span>
-                      </span>
-                      <span className="font-mono text-ink tabular-nums">{t.price}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="mt-7">
+                <Button variant="ghost" to="/polybot">
+                  Explore PolyBot &amp; pricing
+                </Button>
               </div>
-
-              <div className="rounded-xl border border-gold/25 bg-surface/40 p-6">
-                <p className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
-                  {polybot.earlyBird.note}
-                </p>
-                <ul className="mt-4 space-y-3">
-                  {polybot.earlyBird.tiers.map((t) => (
-                    <li key={t.tier} className="flex items-baseline justify-between gap-4">
-                      <span className="text-ink">
-                        {t.tier} <span className="text-sm text-muted">· {t.detail}</span>
-                      </span>
-                      <span className="font-mono text-gold tabular-nums">{t.price}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-5">
-                  <ClaimButton item="the PolyBot early-bird waitlist" variant="ghost" size="sm">
-                    Join the waitlist
-                  </ClaimButton>
-                </div>
-              </div>
+              <PolyBotNote className="mt-7 max-w-xl" />
             </Reveal>
           </div>
         </section>

@@ -6,6 +6,8 @@ import { RiskDisclaimer } from './RiskDisclaimer'
 
 const colClass = 'font-mono text-[0.7rem] tracking-[0.2em] text-muted uppercase'
 const itemClass = 'text-sm text-muted transition-colors hover:text-ink'
+const legalClass =
+  'font-mono text-[0.65rem] tracking-[0.15em] text-muted/70 uppercase transition-colors hover:text-ink'
 
 function Ext({ href, children }: { href: string; children: string }) {
   return (
@@ -19,7 +21,7 @@ export function Footer() {
   return (
     <footer className="mt-32 border-t border-ink/10">
       <Container className="py-16">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
           <div className="max-w-xs">
             <Wordmark />
             <p className="mt-4 text-sm leading-relaxed text-muted">
@@ -28,7 +30,7 @@ export function Footer() {
             </p>
           </div>
 
-          <nav aria-label="Pages" className="flex flex-col gap-3">
+          <nav aria-label="Explore" className="flex flex-col gap-3">
             <p className={colClass}>Explore</p>
             <Link to="/products" className={itemClass}>
               Products
@@ -36,8 +38,27 @@ export function Footer() {
             <Link to="/pricing" className={itemClass}>
               Pricing
             </Link>
+            <Link to="/results" className={itemClass}>
+              Results
+            </Link>
+            <Link to="/polybot" className={itemClass}>
+              PolyBot
+            </Link>
             <Link to="/about" className={itemClass}>
               About
+            </Link>
+          </nav>
+
+          <nav aria-label="Support" className="flex flex-col gap-3">
+            <p className={colClass}>Support</p>
+            <Link to="/how-it-works" className={itemClass}>
+              How it works
+            </Link>
+            <Link to="/faq" className={itemClass}>
+              FAQ
+            </Link>
+            <Link to="/contact" className={itemClass}>
+              Contact
             </Link>
           </nav>
 
@@ -60,7 +81,25 @@ export function Footer() {
 
         <RiskDisclaimer className="max-w-3xl" />
 
-        <div className="mt-10 flex flex-col justify-between gap-2 border-t border-ink/5 pt-6 font-mono text-[0.7rem] tracking-[0.15em] text-muted uppercase sm:flex-row">
+        <nav
+          aria-label="Legal"
+          className="mt-8 flex flex-wrap gap-x-6 gap-y-2"
+        >
+          <Link to="/risk-disclosure" className={legalClass}>
+            Risk Disclosure
+          </Link>
+          <Link to="/terms" className={legalClass}>
+            Terms
+          </Link>
+          <Link to="/privacy" className={legalClass}>
+            Privacy
+          </Link>
+          <Link to="/refunds" className={legalClass}>
+            Refunds
+          </Link>
+        </nav>
+
+        <div className="mt-8 flex flex-col justify-between gap-2 border-t border-ink/5 pt-6 font-mono text-[0.7rem] tracking-[0.15em] text-muted uppercase sm:flex-row">
           <span>© {new Date().getFullYear()} Algo Trading Center</span>
           <span>The Time Capitalist</span>
         </div>

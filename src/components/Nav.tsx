@@ -8,6 +8,7 @@ import { Menu, Close } from './icons'
 const LINKS = [
   { to: '/products', label: 'Products' },
   { to: '/pricing', label: 'Pricing' },
+  { to: '/results', label: 'Results' },
   { to: '/about', label: 'About' },
 ]
 
