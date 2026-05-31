@@ -22,7 +22,10 @@ npm-debug.log*
 
 # tooling artifacts
 .playwright-mcp
+.superpowers/
+.claude/
 
 # internal docs — kept local, not published to the public repo
 PRD.md
 CLAUDE.md
+docs/superpowers/
