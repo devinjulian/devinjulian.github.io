@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, m, useReducedMotion } from 'motion/react'
-import { backtest, type Backtest, type EA } from '../data'
+import { backtest, type EA } from '../data'
 
 type LightboxImage = { src: string; alt: string } | null
 
@@ -68,79 +68,31 @@ function Lightbox({ image, onClose }: { image: LightboxImage; onClose: () => voi
   )
 }
 
-/** One backtest equity-curve screenshot. Clicking it (or "Full report") opens the lightbox. */
-function Shot({
-  ea,
-  bt,
-  onFail,
-  onOpen,
-}: {
-  ea: EA
-  bt: Backtest
-  onFail: () => void
-  onOpen: (img: LightboxImage) => void
-}) {
-  const [ok, setOk] = useState(true)
-  if (!ok) return null
-
-  return (
-    <figure className="overflow-hidden rounded-xl border border-ink/10 bg-surface/40">
-      <button
-        type="button"
-        onClick={() => onOpen({ src: bt.equity, alt: `${ea.name} ${bt.tf} backtest equity curve` })}
-        className="block w-full cursor-zoom-in"
-        aria-label={`Enlarge ${ea.name} ${bt.tf} equity curve`}
-      >
-        <img
-          src={bt.equity}
-          alt={`${ea.name} ${bt.tf} backtest equity curve, ${backtest.period}`}
-          loading="lazy"
-          onError={() => {
-            setOk(false)
-            onFail()
-          }}
-          className="block w-full"
-        />
-      </button>
-      <figcaption className="flex items-center justify-between gap-3 px-4 py-3 font-mono text-[0.65rem] tracking-wide text-muted">
-        <span className="tracking-[0.2em] text-ink uppercase">
-          {bt.tf} <span className="text-muted/70 normal-case">· {bt.note}</span>
-        </span>
-        <button
-          type="button"
-          onClick={() => onOpen({ src: bt.report, alt: `${ea.name} ${bt.tf} full backtest report` })}
-          className="text-gold transition-colors hover:text-gold-deep"
-        >
-          Full report ↗
-        </button>
-      </figcaption>
-    </figure>
-  )
-}
-
-/** Per-EA gallery of MT5 backtest screenshots, grouped by timeframe.
- *  Renders nothing until the image files exist (so it never shows empty/broken). */
+/** The real MT5 proof, kept one click away: a labelled trigger per timeframe that
+ *  opens the full backtest report in the lightbox. Renders nothing if no reports exist. */
 export function BacktestGallery({ ea }: { ea: EA }) {
   const items = ea.backtests ?? []
-  const [failed, setFailed] = useState(0)
   const [lightbox, setLightbox] = useState<LightboxImage>(null)
 
-  if (items.length === 0 || failed >= items.length) return null
+  if (items.length === 0) return null
 
   return (
-    <div className="mt-12">
+    <div className="mt-10">
       <p className="font-mono text-[0.65rem] tracking-[0.2em] text-muted/70 uppercase">
-        Backtest results · {backtest.period} · {backtest.method}
+        Verified MT5 backtest · {backtest.period} · {backtest.method}
       </p>
-      <div className="mt-4 grid gap-5 sm:grid-cols-2">
+      <div className="mt-3 flex flex-wrap gap-3">
         {items.map((bt) => (
-          <Shot
-            key={`${ea.id}-${bt.tf}`}
-            ea={ea}
-            bt={bt}
-            onFail={() => setFailed((n) => n + 1)}
-            onOpen={setLightbox}
-          />
+          <button
+            key={bt.tf}
+            type="button"
+            onClick={() =>
+              setLightbox({ src: bt.report, alt: `${ea.name} ${bt.tf} full backtest report` })
+            }
+            className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-4 py-2 font-mono text-[0.7rem] tracking-[0.15em] text-gold uppercase transition-colors hover:border-gold/60"
+          >
+            {bt.tf} report <span aria-hidden>↗</span>
+          </button>
         ))}
       </div>
       <Lightbox image={lightbox} onClose={() => setLightbox(null)} />
