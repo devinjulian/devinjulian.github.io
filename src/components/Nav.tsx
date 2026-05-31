@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import { cn } from '../lib/cn'
 import { Wordmark } from './Wordmark'
 import { ClaimButton } from './ClaimButton'
+import { Menu, Close } from './icons'
 
 const LINKS = [
   { to: '/products', label: 'Products' },
@@ -46,9 +47,7 @@ export function Nav() {
           aria-label={open ? 'Close menu' : 'Open menu'}
           onClick={() => setOpen((v) => !v)}
         >
-          <span aria-hidden className="font-mono text-lg leading-none">
-            {open ? '×' : '≡'}
-          </span>
+          {open ? <Close size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
