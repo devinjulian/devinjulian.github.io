@@ -1,10 +1,13 @@
 import { eas, backtest, links } from '../data'
 import { Container } from '../components/Container'
+import { Section } from '../components/Section'
 import { SectionLabel } from '../components/SectionLabel'
 import { EACard } from '../components/EACard'
 import { ClaimButton } from '../components/ClaimButton'
 import { Button } from '../components/Button'
-import { MyfxbookLink } from '../components/MyfxbookLink'
+import { EquityCurve } from '../components/EquityCurve'
+import { CountUp } from '../components/CountUp'
+import { HeroCanvas } from '../components/HeroCanvas'
 import { PolyBotNote } from '../components/PolyBotNote'
 import { AIAgentNote } from '../components/AIAgentNote'
 import { Reveal } from '../components/Reveal'
@@ -12,9 +15,10 @@ import { Reveal } from '../components/Reveal'
 export function Home() {
   return (
     <>
-      {/* Hero — orchestrated load reveal. */}
-      <section className="flex min-h-[88vh] items-center">
-        <Container>
+      {/* Hero — full-bleed cinematic equity canvas behind lower-left copy. */}
+      <section className="relative flex min-h-[92vh] items-end overflow-hidden pb-16 sm:pb-24">
+        <HeroCanvas />
+        <Container className="relative z-10">
           <div className="max-w-4xl">
             <Reveal mode="mount">
               <p className="font-mono text-xs tracking-[0.3em] text-gold uppercase">
@@ -51,11 +55,10 @@ export function Home() {
       </section>
 
       {/* 01 — The Reality Check */}
-      <section className="py-24 sm:py-32">
-        <Container size="narrow">
+      <Container>
+        <Section index="01" label="The Reality Check" className="py-24 sm:py-32">
           <Reveal>
-            <SectionLabel index="01">The Reality Check</SectionLabel>
-            <h2 className="mt-7 font-display text-4xl leading-tight font-light text-ink sm:text-5xl">
+            <h2 className="font-display text-4xl leading-tight font-light text-ink sm:text-5xl">
               The promise was freedom. What it handed you was a <em className="text-gold">leash</em>.
             </h2>
             <div className="mt-7 space-y-5 text-lg leading-relaxed text-muted">
@@ -71,15 +74,14 @@ export function Home() {
               </p>
             </div>
           </Reveal>
-        </Container>
-      </section>
+        </Section>
+      </Container>
 
-      {/* 02 — The Algorithmic Trinity (beat 3) */}
-      <section className="py-24 sm:py-32">
-        <Container>
+      {/* 02 — The Algorithmic Trinity */}
+      <Container>
+        <Section index="02" label="The Algorithmic Trinity" side="right" className="py-24 sm:py-32">
           <Reveal className="max-w-2xl">
-            <SectionLabel index="02">The Algorithmic Trinity</SectionLabel>
-            <h2 className="mt-7 font-display text-4xl leading-tight font-light text-ink sm:text-5xl">
+            <h2 className="font-display text-4xl leading-tight font-light text-ink sm:text-5xl">
               Three specialists, because each market has a different <em className="text-gold">anatomy</em>.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted">
@@ -89,7 +91,7 @@ export function Home() {
             </p>
           </Reveal>
 
-          <div className="mt-14 grid gap-6 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {eas.map((ea, i) => (
               <Reveal key={ea.id} delay={i * 0.1} className="h-full">
                 <EACard ea={ea} />
@@ -102,85 +104,72 @@ export function Home() {
               See all three in depth
             </Button>
           </Reveal>
-        </Container>
-      </section>
+        </Section>
+      </Container>
 
       {/* 03 — The Proof */}
-      <section className="py-24 sm:py-32">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-            <Reveal>
-              <SectionLabel index="03">The Proof</SectionLabel>
-              <h2 className="mt-7 font-display text-4xl leading-tight font-light text-ink sm:text-5xl">
-                Don't believe us. <em className="text-gold">Verify us.</em>
-              </h2>
-              <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
-                Anyone can post a screenshot. We publish a live, third-party track record
-                you can open right now — alongside the full backtest method behind every
-                number on this site.
-              </p>
-              <div className="mt-8">
-                <Button variant="primary" href={links.myfxbook} external>
-                  Open the live track record
-                </Button>
-              </div>
-            </Reveal>
+      <Container>
+        <Section index="03" label="The Proof" className="py-24 sm:py-32">
+          <Reveal>
+            <h2 className="font-display text-4xl leading-tight font-light text-ink sm:text-5xl">
+              Don't believe us. <em className="text-gold">Verify us.</em>
+            </h2>
+            <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
+              Anyone can post a screenshot. We publish a live, third-party track record
+              you can open right now — alongside the full backtest method behind every
+              number on this site.
+            </p>
 
-            <Reveal delay={0.12}>
-              <dl className="grid grid-cols-1 gap-px self-start overflow-hidden rounded-xl border border-ink/10 bg-ink/10 sm:grid-cols-2">
-                <div className="bg-surface/60 p-6">
-                  <dt className="font-mono text-[0.65rem] tracking-[0.2em] text-muted/70 uppercase">
-                    Live tracking
-                  </dt>
-                  <dd className="mt-2 text-sm text-ink">
-                    <MyfxbookLink>Myfxbook — atc1111</MyfxbookLink>
-                  </dd>
+            <div className="mt-8 max-w-2xl overflow-hidden rounded-2xl border border-ink/10 bg-surface/40">
+              <div className="h-28 sm:h-36">
+                <EquityCurve uid="proof" />
+              </div>
+              <div className="grid grid-cols-2 gap-px bg-ink/10 sm:grid-cols-3">
+                <div className="bg-surface/60 px-5 py-4">
+                  <div className="font-mono text-[0.6rem] tracking-[0.2em] text-muted/70 uppercase">
+                    Profit factor
+                  </div>
+                  <div className="mt-1 font-mono text-2xl text-gold tabular-nums">
+                    <CountUp value="3.65" />
+                  </div>
                 </div>
-                <div className="bg-surface/60 p-6">
-                  <dt className="font-mono text-[0.65rem] tracking-[0.2em] text-muted/70 uppercase">
-                    Backtest window
-                  </dt>
-                  <dd className="mt-2 font-mono text-sm text-ink">{backtest.period}</dd>
+                <div className="bg-surface/60 px-5 py-4">
+                  <div className="font-mono text-[0.6rem] tracking-[0.2em] text-muted/70 uppercase">
+                    Max drawdown
+                  </div>
+                  <div className="mt-1 font-mono text-2xl text-warn tabular-nums">
+                    <CountUp value="53.70%" />
+                  </div>
                 </div>
-                <div className="bg-surface/60 p-6">
-                  <dt className="font-mono text-[0.65rem] tracking-[0.2em] text-muted/70 uppercase">
-                    Method
-                  </dt>
-                  <dd className="mt-2 font-mono text-sm text-ink">{backtest.method}</dd>
+                <div className="col-span-2 bg-surface/60 px-5 py-4 sm:col-span-1">
+                  <div className="font-mono text-[0.6rem] tracking-[0.2em] text-muted/70 uppercase">
+                    Verified
+                  </div>
+                  <div className="mt-1 font-mono text-sm text-ink">Myfxbook · atc1111</div>
                 </div>
-                <div className="bg-surface/60 p-6">
-                  <dt className="font-mono text-[0.65rem] tracking-[0.2em] text-muted/70 uppercase">
-                    Walkthroughs
-                  </dt>
-                  <dd className="mt-2 flex flex-col gap-1">
-                    {eas.map((ea) => (
-                      <a
-                        key={ea.id}
-                        href={ea.walkthrough}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-muted transition-colors hover:text-gold"
-                      >
-                        {ea.name} ↗
-                      </a>
-                    ))}
-                  </dd>
-                </div>
-              </dl>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
+              </div>
+              <p className="px-5 py-3 font-mono text-[0.65rem] tracking-wide text-muted">
+                Omnicor · {backtest.period} · {backtest.method}
+              </p>
+            </div>
+
+            <div className="mt-8">
+              <Button variant="primary" href={links.myfxbook} external>
+                Open the live track record
+              </Button>
+            </div>
+          </Reveal>
+        </Section>
+      </Container>
 
       {/* 04 — The Lab */}
-      <section className="py-24 sm:py-32">
-        <Container size="narrow">
+      <Container>
+        <Section index="04" label="The Lab" side="right" className="py-24 sm:py-32">
           <Reveal>
-            <SectionLabel index="04">The Lab</SectionLabel>
-            <h2 className="mt-7 font-display text-4xl leading-tight font-light text-ink sm:text-5xl">
+            <h2 className="font-display text-4xl leading-tight font-light text-ink sm:text-5xl">
               This isn't a product you shelve. <em className="text-gold">It's a lab.</em>
             </h2>
-            <p className="mt-7 text-lg leading-relaxed text-muted">
+            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted">
               Algo Trading Center is a working research lab, not a finished catalogue. New
               pairs sit in testing, <strong className="font-semibold text-ink">PolyBot</strong>{' '}
               is in development for Q3 2026, and crypto systems come after. The next frontier
@@ -195,12 +184,17 @@ export function Home() {
               <AIAgentNote />
             </div>
           </Reveal>
-        </Container>
-      </section>
+        </Section>
+      </Container>
 
-      {/* 05 — Reclaim Your Time */}
-      <section className="py-24 sm:py-32">
-        <Container size="narrow">
+      {/* 05 — Reclaim Your Time (full-bleed band) */}
+      <section className="relative overflow-hidden border-y border-ink/10 py-28 sm:py-40">
+        <div className="hero-curve">
+          <div className="absolute inset-0 opacity-30">
+            <EquityCurve uid="reclaim" animate={false} />
+          </div>
+        </div>
+        <Container size="narrow" className="relative z-10">
           <Reveal className="text-center">
             <SectionLabel index="05" className="justify-center">
               Reclaim Your Time
