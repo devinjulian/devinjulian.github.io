@@ -1,7 +1,6 @@
 import { backtest, type EA } from '../data'
 import { cn } from '../lib/cn'
 import { MyfxbookLink } from './MyfxbookLink'
-import { CountUp } from './CountUp'
 
 type Tone = 'default' | 'gold' | 'warn' | 'signal'
 interface Tile {
@@ -66,7 +65,7 @@ export function StatBlock({ ea, className }: { ea: EA; className?: string }) {
               {t.label}
             </div>
             <div className={cn('mt-1.5 font-mono text-2xl tabular-nums', toneClass[t.tone])}>
-              <CountUp value={t.value} />
+              {t.value}
             </div>
           </div>
         ))}

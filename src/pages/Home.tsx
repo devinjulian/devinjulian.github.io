@@ -6,7 +6,6 @@ import { EACard } from '../components/EACard'
 import { ClaimButton } from '../components/ClaimButton'
 import { Button } from '../components/Button'
 import { EquityCurve } from '../components/EquityCurve'
-import { CountUp } from '../components/CountUp'
 import { HeroCanvas } from '../components/HeroCanvas'
 import { PolyBotNote } from '../components/PolyBotNote'
 import { AIAgentNote } from '../components/AIAgentNote'
@@ -129,17 +128,13 @@ export function Home() {
                   <div className="font-mono text-[0.6rem] tracking-[0.2em] text-muted/70 uppercase">
                     Profit factor
                   </div>
-                  <div className="mt-1 font-mono text-2xl text-gold tabular-nums">
-                    <CountUp value="3.65" />
-                  </div>
+                  <div className="mt-1 font-mono text-2xl text-gold tabular-nums">3.65</div>
                 </div>
                 <div className="bg-surface/60 px-5 py-4">
                   <div className="font-mono text-[0.6rem] tracking-[0.2em] text-muted/70 uppercase">
                     Max drawdown
                   </div>
-                  <div className="mt-1 font-mono text-2xl text-warn tabular-nums">
-                    <CountUp value="53.70%" />
-                  </div>
+                  <div className="mt-1 font-mono text-2xl text-warn tabular-nums">53.70%</div>
                 </div>
                 <div className="col-span-2 bg-surface/60 px-5 py-4 sm:col-span-1">
                   <div className="font-mono text-[0.6rem] tracking-[0.2em] text-muted/70 uppercase">
