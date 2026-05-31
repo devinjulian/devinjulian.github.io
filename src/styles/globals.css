@@ -97,6 +97,23 @@
       transparent
     );
   }
+
+  /* Break an element out of its centered container to the full viewport width. */
+  .fullbleed {
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+  }
+
+  /* Hero equity backdrop sits behind hero content, never intercepts clicks. */
+  .hero-curve {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent);
+            mask-image: linear-gradient(to bottom, #000 60%, transparent);
+  }
 }
 
 /* Respect reduced-motion: no smooth scroll, collapse all transitions/animations. */
