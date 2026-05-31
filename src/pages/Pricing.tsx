@@ -82,8 +82,38 @@ export function Pricing() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="mt-9 overflow-x-auto">
-              <table className="w-full min-w-[640px] border-collapse text-left">
+            {/* Mobile: stacked cards — no horizontal scroll, no hidden columns */}
+            <div className="mt-9 grid gap-4 md:hidden">
+              {individualEAs.map((row) => (
+                <div key={row.ea} className="rounded-xl border border-ink/10 bg-surface/40 p-5">
+                  <div className="flex items-baseline justify-between">
+                    <span className="font-display text-xl text-ink">{row.ea}</span>
+                    <span className="font-mono text-sm text-muted">{row.pair}</span>
+                  </div>
+                  <dl className="mt-4 grid grid-cols-3 gap-3 font-mono text-sm">
+                    <div>
+                      <dt className="text-[0.6rem] tracking-[0.2em] text-muted/70 uppercase">Partner</dt>
+                      <dd className="mt-1 text-ink">{row.partnerIB}</dd>
+                      <dd className="text-[0.6rem] text-muted/70">{row.partnerLicenses}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-[0.6rem] tracking-[0.2em] text-muted/70 uppercase">Any broker</dt>
+                      <dd className="mt-1 text-ink">{row.anyBroker}</dd>
+                      <dd className="text-[0.6rem] text-muted/70">{row.anyBrokerLicenses}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-[0.6rem] tracking-[0.2em] text-muted/70 uppercase">Source</dt>
+                      <dd className="mt-1 text-gold">{row.sourceCode}</dd>
+                      <dd className="text-[0.6rem] text-muted/70">.mq5 · instant</dd>
+                    </div>
+                  </dl>
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop: table */}
+            <div className="mt-9 hidden md:block">
+              <table className="w-full border-collapse text-left">
                 <thead>
                   <tr className="border-b border-ink/15 font-mono text-[0.65rem] tracking-[0.2em] text-muted/70 uppercase">
                     <th className="py-3 pr-4 font-normal">EA</th>
