@@ -65,7 +65,6 @@ export function Footer() {
           <nav aria-label="Proof" className="flex flex-col gap-3">
             <p className={colClass}>Proof</p>
             <Ext href={links.myfxbook}>Live results — Myfxbook</Ext>
-            <Ext href={links.backupPricing}>Backup pricing page</Ext>
           </nav>
 
           <nav aria-label="Connect" className="flex flex-col gap-3">

@@ -63,9 +63,7 @@ export const terms: LegalDoc = {
   slug: 'terms',
   title: 'Terms & License',
   kicker: 'Legal',
-  updated: UPDATED,
-  draft: true,
-  intro:
+  updated: UPDATED,  intro:
     'These terms cover your use of the Algo Trading Center website and the software licenses we provide.',
   sections: [
     {
@@ -112,9 +110,7 @@ export const privacy: LegalDoc = {
   slug: 'privacy',
   title: 'Privacy Policy',
   kicker: 'Legal',
-  updated: UPDATED,
-  draft: true,
-  intro:
+  updated: UPDATED,  intro:
     'How Algo Trading Center handles the limited information you share with us.',
   sections: [
     {
@@ -154,9 +150,7 @@ export const refunds: LegalDoc = {
   slug: 'refunds',
   title: 'Refund & Purchase Policy',
   kicker: 'Legal',
-  updated: UPDATED,
-  draft: true,
-  intro:
+  updated: UPDATED,  intro:
     'How purchasing works, and how we handle issues — since everything is sold by direct contact.',
   sections: [
     {
