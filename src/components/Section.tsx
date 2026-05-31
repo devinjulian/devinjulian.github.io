@@ -19,28 +19,32 @@ export function Section({
   className?: string
   id?: string
 }) {
-  const rail = (
-    <div className="lg:sticky lg:top-28 lg:self-start">
-      <SectionLabel index={index}>{label}</SectionLabel>
-      <span
-        aria-hidden
-        className="mt-4 hidden h-12 w-px bg-gradient-to-b from-gold/50 to-transparent lg:block"
-      />
-    </div>
-  )
-
+  // Rail is always first in DOM so the label leads on mobile; on lg we use CSS
+  // `order` to move it to the right column when side="right".
   return (
     <section
       id={id}
       className={cn(
-        'grid gap-6 lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-12',
-        side === 'right' && 'lg:grid-cols-[minmax(0,1fr)_14rem]',
+        'grid gap-6 lg:gap-12',
+        side === 'left'
+          ? 'lg:grid-cols-[14rem_minmax(0,1fr)]'
+          : 'lg:grid-cols-[minmax(0,1fr)_14rem]',
         className,
       )}
     >
-      {side === 'left' && rail}
-      <div className={cn(side === 'right' && 'lg:order-first')}>{children}</div>
-      {side === 'right' && rail}
+      <div
+        className={cn(
+          'lg:sticky lg:top-28 lg:self-start',
+          side === 'right' && 'lg:order-2',
+        )}
+      >
+        <SectionLabel index={index}>{label}</SectionLabel>
+        <span
+          aria-hidden
+          className="mt-4 hidden h-12 w-px bg-gradient-to-b from-gold/50 to-transparent lg:block"
+        />
+      </div>
+      <div className={cn(side === 'right' && 'lg:order-1')}>{children}</div>
     </section>
   )
 }
