@@ -64,11 +64,11 @@ export function Results() {
               Every figure is a 5-year backtest, stress-tested.
             </h2>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted">
-              The numbers on this site come from a {backtest.periodLabel.toLowerCase()}, run through
-              a {backtest.methodLabel.toLowerCase()}: trade sequences are resampled many times to see
-              how a strategy holds up across many possible orderings, not one lucky run. Wherever a
-              return is shown, its maximum drawdown and profit factor sit beside it — and the live
-              Myfxbook record is always one click away.
+              Every number on this site comes from a five-year backtest (2021–2026), run through a
+              Monte Carlo method: trade sequences are resampled many times to see how a strategy
+              holds up across many possible orderings, not one lucky run. Wherever a return is
+              shown, its maximum drawdown and profit factor sit beside it — and the live Myfxbook
+              record is always one click away.
             </p>
           </Reveal>
         </Section>
