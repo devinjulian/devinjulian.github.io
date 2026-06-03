@@ -12,13 +12,13 @@ export function Products() {
   return (
     <>
       <PageHero
-        kicker="The Algorithmic Trinity"
+        kicker="Forex Bots"
         title={
           <>
             Three specialists. <em className="text-gold">One smoother curve.</em>
           </>
         }
-        subtitle="A single algorithm can't be fluent in every market. So we built three — each one a specialist in the anatomy of its pair. Open any one to see its mechanism, full stats, and verified MT5 backtests."
+        subtitle="Our Forex algorithms — each a specialist in the anatomy of its pair. Open any one to see its mechanism, full stats, and verified MT5 backtests."
         size="default"
       />
 
