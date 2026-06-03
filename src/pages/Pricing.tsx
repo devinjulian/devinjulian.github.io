@@ -175,9 +175,9 @@ export function Pricing() {
                 {polybot.status}
               </p>
               <p className="mt-6 max-w-xl leading-relaxed text-muted">
-                PolyBot moves the lab on-chain. Pricing is published for transparency, but
-                nothing ships until launch — and Founding Members receive the full Python
-                source the moment it does.
+                PolyBot moves the lab on-chain. Pricing is published for transparency. Founding
+                Members are already in early, closed testing; public launch is planned for Q3
+                2026, when they receive the full Python source.
               </p>
               <div className="mt-7">
                 <Button variant="ghost" to="/polybot">

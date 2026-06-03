@@ -20,6 +20,13 @@ export const reviews: Review[] = [
       'Absolutely incredible. I got the source code at a great price and even gained access to the next project — that is just amazing.',
   },
   {
+    name: 'Anton',
+    initials: 'A',
+    tag: 'Founding Member',
+    quote:
+      "The developer is doing an amazing job. The source code for the 3 EAs is working perfectly. I'm still testing PolyBot and looking forward to the launch of the AI Trading Agent. Kudos to Devin Julian and team!",
+  },
+  {
     name: 'Nadya',
     initials: 'N',
     tag: 'Hands-off user',
@@ -39,6 +46,13 @@ export const reviews: Review[] = [
     tag: 'Verified buyer',
     quote:
       "I'm using 3 Forex bots, and the correlation between them is excellent. I am truly enjoying my time now.",
+  },
+  {
+    name: 'Arthur',
+    initials: 'A',
+    tag: 'Founding Member',
+    quote:
+      "I'm using 3 Forex Bots and the PolyBot, and it's absolutely amazing. I'm just waiting for the AI Trading Agent to be released. Your work is outstanding, and we are willing to wait.",
   },
   {
     name: 'Campbell',

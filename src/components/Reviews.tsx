@@ -51,7 +51,9 @@ export function Reviews() {
               <h2 className="mt-4 font-display text-3xl leading-tight font-light text-ink sm:text-4xl">
                 The people who stopped <em className="text-gold">watching the screen.</em>
               </h2>
-              <p className="mt-3 text-sm text-muted">From members of the Telegram community.</p>
+              <p className="mt-3 text-sm text-muted">
+                Real messages from our Telegram community, shared with their permission.
+              </p>
             </div>
             <div className="hidden shrink-0 gap-2 sm:flex">
               <button type="button" onClick={() => step(-1)} aria-label="Previous reviews" className={arrow}>
@@ -111,8 +113,9 @@ export function Reviews() {
         </Reveal>
 
         <Reveal>
-          <p className="mt-6 font-mono text-[0.62rem] tracking-wide text-muted/60">
-            Individual results vary. Past performance does not guarantee future results.
+          <p className="mt-6 max-w-3xl font-mono text-[0.62rem] leading-relaxed tracking-wide text-muted/60">
+            ATC respects every member's privacy — names and photos appear only with their consent.
+            Individual results vary, and past performance does not guarantee future results.
           </p>
         </Reveal>
       </Container>

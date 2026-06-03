@@ -92,7 +92,7 @@
   "polybot": {
     "name": "PolyBot",
     "status": "In development — launches Q3 2026",
-    "disclaimer": "PolyBot is currently in development. No performance claims are made. Founding Members receive the Python source code after the Q3 2026 launch.",
+    "disclaimer": "PolyBot is in development, with public launch planned for Q3 2026. A limited group of Founding Members is in early, closed testing. No performance claims are made; the full Python source is delivered at launch.",
     "standalone": [
       { "tier": "Starter", "price": "$497", "detail": "1 wallet" },
       { "tier": "Pro", "price": "$997", "detail": "3 wallets" },
