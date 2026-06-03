@@ -123,7 +123,7 @@ export function About() {
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <ClaimButton />
-                <Button variant="ghost" to="/products">
+                <Button variant="ghost" to="/forex">
                   Meet the trinity
                 </Button>
               </div>

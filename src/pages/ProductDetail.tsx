@@ -21,7 +21,7 @@ function SpecItem({ label, value }: { label: string; value: string }) {
 export function ProductDetail() {
   const { id } = useParams()
   const ea = id ? getEA(id) : undefined
-  if (!ea) return <Navigate to="/products" replace />
+  if (!ea) return <Navigate to="/forex" replace />
 
   const idx = eas.findIndex((e) => e.id === ea.id)
   const prev = eas[(idx - 1 + eas.length) % eas.length]
@@ -33,7 +33,7 @@ export function ProductDetail() {
         <Container>
           <Reveal mode="mount">
             <Link
-              to="/products"
+              to="/forex"
               className="font-mono text-[0.7rem] tracking-[0.2em] text-muted uppercase transition-colors hover:text-gold"
             >
               ← The Trinity
@@ -83,10 +83,10 @@ export function ProductDetail() {
         <section className="border-t border-ink/10 py-12">
           <div className="flex flex-wrap items-center justify-between gap-6">
             <div className="flex flex-wrap gap-6 font-mono text-[0.7rem] tracking-[0.15em] uppercase">
-              <Link to={`/products/${prev.id}`} className="text-muted transition-colors hover:text-gold">
+              <Link to={`/forex/${prev.id}`} className="text-muted transition-colors hover:text-gold">
                 ← {prev.name}
               </Link>
-              <Link to={`/products/${next.id}`} className="text-muted transition-colors hover:text-gold">
+              <Link to={`/forex/${next.id}`} className="text-muted transition-colors hover:text-gold">
                 {next.name} →
               </Link>
             </div>
