@@ -7,6 +7,7 @@ import { BacktestGallery } from '../components/BacktestGallery'
 import { Button } from '../components/Button'
 import { ClaimButton } from '../components/ClaimButton'
 import { Reveal } from '../components/Reveal'
+import { JsonLd } from '../components/JsonLd'
 import { eaNarratives } from '../content/eaNarratives'
 
 function SpecItem({ label, value }: { label: string; value: string }) {
@@ -29,6 +30,31 @@ export function ProductDetail() {
 
   return (
     <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'Product',
+          name: `${ea.name} — ${ea.pair} Expert Advisor`,
+          description: ea.tagline,
+          brand: { '@type': 'Brand', name: 'Algo Trading Center' },
+          category: 'Trading software (Expert Advisor)',
+        }}
+      />
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Forex Bots', item: 'https://devinjulian.github.io/forex' },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: ea.name,
+              item: `https://devinjulian.github.io/forex/${ea.id}`,
+            },
+          ],
+        }}
+      />
       <section className="pt-16 pb-8 sm:pt-24">
         <Container>
           <Reveal mode="mount">

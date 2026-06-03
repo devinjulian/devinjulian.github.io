@@ -5,6 +5,7 @@ import { ContactProvider } from './ContactContext'
 import { AmbientCanvas } from './AmbientCanvas'
 import { Nav } from './Nav'
 import { Footer } from './Footer'
+import { SeoManager } from './SeoManager'
 
 function ScrollManager() {
   const { pathname, hash } = useLocation()
@@ -41,6 +42,7 @@ export function Layout() {
       <AmbientCanvas />
       <div aria-hidden className="grain" />
       <ScrollManager />
+      <SeoManager />
       <Nav />
       <main id="main">
         <Suspense fallback={<div className="min-h-[60vh]" />}>
