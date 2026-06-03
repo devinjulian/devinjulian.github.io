@@ -8,6 +8,7 @@ import { EquityCurve } from '../components/EquityCurve'
 import { HeroCanvas } from '../components/HeroCanvas'
 import { PolyBotNote } from '../components/PolyBotNote'
 import { AIAgentNote } from '../components/AIAgentNote'
+import { Reviews } from '../components/Reviews'
 import { Reveal } from '../components/Reveal'
 
 export function Home() {
@@ -123,6 +124,9 @@ export function Home() {
           </Reveal>
         </Container>
       </section>
+
+      {/* In their words — real member reviews (swipeable slider) */}
+      <Reviews />
 
       {/* CTA */}
       <section className="pt-12 pb-8">
