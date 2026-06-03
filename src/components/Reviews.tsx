@@ -109,6 +109,12 @@ export function Reviews() {
             ))}
           </div>
         </Reveal>
+
+        <Reveal>
+          <p className="mt-6 font-mono text-[0.62rem] tracking-wide text-muted/60">
+            Individual results vary. Past performance does not guarantee future results.
+          </p>
+        </Reveal>
       </Container>
     </section>
   )
