@@ -1,5 +1,5 @@
 import { useParams, Navigate, Link } from 'react-router-dom'
-import { eas, getEA } from '../data'
+import { eas, getEA, SITE } from '../data'
 import { Container } from '../components/Container'
 import { EquityCurve } from '../components/EquityCurve'
 import { StatBlock } from '../components/StatBlock'
@@ -7,6 +7,7 @@ import { BacktestGallery } from '../components/BacktestGallery'
 import { Button } from '../components/Button'
 import { ClaimButton } from '../components/ClaimButton'
 import { Reveal } from '../components/Reveal'
+import { JsonLd } from '../components/JsonLd'
 import { eaNarratives } from '../content/eaNarratives'
 
 function SpecItem({ label, value }: { label: string; value: string }) {
@@ -21,7 +22,7 @@ function SpecItem({ label, value }: { label: string; value: string }) {
 export function ProductDetail() {
   const { id } = useParams()
   const ea = id ? getEA(id) : undefined
-  if (!ea) return <Navigate to="/products" replace />
+  if (!ea) return <Navigate to="/forex" replace />
 
   const idx = eas.findIndex((e) => e.id === ea.id)
   const prev = eas[(idx - 1 + eas.length) % eas.length]
@@ -29,11 +30,36 @@ export function ProductDetail() {
 
   return (
     <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'Product',
+          name: `${ea.name} — ${ea.pair} Expert Advisor`,
+          description: ea.tagline,
+          brand: { '@type': 'Brand', name: 'Algo Trading Center' },
+          category: 'Trading software (Expert Advisor)',
+        }}
+      />
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Forex Bots', item: `${SITE}/forex` },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: ea.name,
+              item: `${SITE}/forex/${ea.id}`,
+            },
+          ],
+        }}
+      />
       <section className="pt-16 pb-8 sm:pt-24">
         <Container>
           <Reveal mode="mount">
             <Link
-              to="/products"
+              to="/forex"
               className="font-mono text-[0.7rem] tracking-[0.2em] text-muted uppercase transition-colors hover:text-gold"
             >
               ← The Trinity
@@ -42,9 +68,8 @@ export function ProductDetail() {
               {ea.pair} · {ea.timeframes.join(' & ')}
             </p>
             <h1 className="mt-4 font-display text-5xl leading-none font-light text-ink sm:text-7xl">
-              {ea.name}
+              {ea.name} EA
             </h1>
-            <p className="mt-3 font-display text-2xl text-gold italic">{ea.title}</p>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">{ea.tagline}</p>
           </Reveal>
 
@@ -83,10 +108,10 @@ export function ProductDetail() {
         <section className="border-t border-ink/10 py-12">
           <div className="flex flex-wrap items-center justify-between gap-6">
             <div className="flex flex-wrap gap-6 font-mono text-[0.7rem] tracking-[0.15em] uppercase">
-              <Link to={`/products/${prev.id}`} className="text-muted transition-colors hover:text-gold">
+              <Link to={`/forex/${prev.id}`} className="text-muted transition-colors hover:text-gold">
                 ← {prev.name}
               </Link>
-              <Link to={`/products/${next.id}`} className="text-muted transition-colors hover:text-gold">
+              <Link to={`/forex/${next.id}`} className="text-muted transition-colors hover:text-gold">
                 {next.name} →
               </Link>
             </div>

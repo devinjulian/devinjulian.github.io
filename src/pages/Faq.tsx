@@ -1,13 +1,28 @@
 import { Container } from '../components/Container'
 import { PageHero } from '../components/PageHero'
 import { FaqList } from '../components/FaqList'
+import { JsonLd } from '../components/JsonLd'
 import { Button } from '../components/Button'
 import { ClaimButton } from '../components/ClaimButton'
 import { Reveal } from '../components/Reveal'
+import { faqGroups } from '../data/faq'
 
 export function Faq() {
   return (
     <>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqGroups
+            .flatMap((g) => g.items)
+            .map((it) => ({
+              '@type': 'Question',
+              name: it.q,
+              acceptedAnswer: { '@type': 'Answer', text: it.a },
+            })),
+        }}
+      />
       <PageHero
         kicker="FAQ"
         title={

@@ -5,6 +5,7 @@ import { PageHero } from '../components/PageHero'
 import { EACard } from '../components/EACard'
 import { Button } from '../components/Button'
 import { ClaimButton } from '../components/ClaimButton'
+import { RiskDisclaimer } from '../components/RiskDisclaimer'
 import { Reveal } from '../components/Reveal'
 
 /** Products overview — the three EAs at a glance, each linking to its own detail page. */
@@ -12,13 +13,13 @@ export function Products() {
   return (
     <>
       <PageHero
-        kicker="The Algorithmic Trinity"
+        kicker="Forex Bots"
         title={
           <>
             Three specialists. <em className="text-gold">One smoother curve.</em>
           </>
         }
-        subtitle="A single algorithm can't be fluent in every market. So we built three — each one a specialist in the anatomy of its pair. Open any one to see its mechanism, full stats, and verified MT5 backtests."
+        subtitle="Our Forex algorithms — each a specialist in the anatomy of its pair. Open any one to see its mechanism, full stats, and verified MT5 backtests."
         size="default"
       />
 
@@ -46,10 +47,17 @@ export function Products() {
               <Button variant="primary" to="/pricing">
                 See the bundles
               </Button>
+              <Button variant="ghost" to="/results">
+                See the track record
+              </Button>
               <ClaimButton variant="ghost" />
             </div>
           </Reveal>
         </Section>
+
+        <section className="border-t border-ink/10 py-10">
+          <RiskDisclaimer className="max-w-3xl" />
+        </section>
       </Container>
     </>
   )

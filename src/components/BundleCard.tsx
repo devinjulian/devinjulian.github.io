@@ -37,7 +37,11 @@ export function BundleCard({ bundle }: { bundle: Bundle }) {
         <SpotsLeft count={bundle.spotsLeft} />
       </div>
 
-      <h3 className="mt-4 font-display text-2xl text-ink">{bundle.name}</h3>
+      {/* min-h reserves two lines so the price row lines up even when a name wraps
+          (e.g. "Founding Members Bundle"). */}
+      <h3 className="mt-4 flex min-h-[3.75rem] items-start font-display text-2xl leading-tight text-ink">
+        {bundle.name}
+      </h3>
 
       <div className="mt-3 flex items-baseline gap-2">
         <span
@@ -51,7 +55,8 @@ export function BundleCard({ bundle }: { bundle: Bundle }) {
         <span className="font-mono text-[0.7rem] text-muted">one-time · lifetime</span>
       </div>
 
-      <p className="mt-4 text-sm leading-relaxed text-muted">{bundle.audience}</p>
+      {/* min-h keeps the feature lists starting at the same height across cards. */}
+      <p className="mt-4 min-h-[4.5rem] text-sm leading-relaxed text-muted">{bundle.audience}</p>
 
       <ul className="mt-5 space-y-2.5">
         {bundle.features.map((f) => (

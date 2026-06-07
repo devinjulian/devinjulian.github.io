@@ -102,7 +102,7 @@ export function Results() {
               equity curve smooths into something you can actually live with.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button variant="primary" to="/products">
+              <Button variant="primary" to="/forex">
                 Meet the trinity
               </Button>
               <Button variant="ghost" to="/pricing">

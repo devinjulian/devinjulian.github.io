@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- NOTE: dist/sitemap.xml is REGENERATED at build by scripts/prerender.mjs from
+     src/data/seoMeta.json + eas.json (adds <lastmod>). This file is the fallback;
+     edit routes in seoMeta.json / eas.json, not here. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://devinjulian.github.io/</loc></url>
+  <url><loc>https://devinjulian.github.io/forex</loc></url>
+  <url><loc>https://devinjulian.github.io/forex/omnicor</loc></url>
+  <url><loc>https://devinjulian.github.io/forex/cenith</loc></url>
+  <url><loc>https://devinjulian.github.io/forex/golden</loc></url>
+  <url><loc>https://devinjulian.github.io/polybot</loc></url>
+  <url><loc>https://devinjulian.github.io/ai-agent</loc></url>
+  <url><loc>https://devinjulian.github.io/pricing</loc></url>
+  <url><loc>https://devinjulian.github.io/results</loc></url>
+  <url><loc>https://devinjulian.github.io/about</loc></url>
+  <url><loc>https://devinjulian.github.io/how-it-works</loc></url>
+  <url><loc>https://devinjulian.github.io/faq</loc></url>
+  <url><loc>https://devinjulian.github.io/contact</loc></url>
+  <url><loc>https://devinjulian.github.io/risk-disclosure</loc></url>
+  <url><loc>https://devinjulian.github.io/terms</loc></url>
+  <url><loc>https://devinjulian.github.io/privacy</loc></url>
+  <url><loc>https://devinjulian.github.io/refunds</loc></url>
+</urlset>

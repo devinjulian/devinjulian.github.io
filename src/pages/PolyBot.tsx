@@ -31,7 +31,7 @@ export function PolyBot() {
             The next chapter — <em className="text-gold">not yet open.</em>
           </>
         }
-        subtitle="PolyBot moves the lab on-chain. Pricing is published for transparency, but nothing ships until launch — and Founding Members receive the full Python source the moment it does."
+        subtitle="PolyBot moves the lab on-chain. Pricing is published for transparency. Founding Members are already in early, closed testing; public launch is planned for Q3 2026, when they receive the full Python source."
       />
 
       <Container size="narrow">

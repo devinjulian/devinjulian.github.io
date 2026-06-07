@@ -1,7 +1,8 @@
 import { lazy } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { LazyMotion, domAnimation } from 'motion/react'
 import { SmoothScroll } from './components/SmoothScroll'
+import { RedirectWithParam } from './components/RedirectWithParam'
 import { Layout } from './components/Layout'
 import { Home } from './pages/Home'
 
@@ -12,6 +13,7 @@ const ProductDetail = lazy(() =>
 )
 const Pricing = lazy(() => import('./pages/Pricing').then((m) => ({ default: m.Pricing })))
 const PolyBot = lazy(() => import('./pages/PolyBot').then((m) => ({ default: m.PolyBot })))
+const AiAgent = lazy(() => import('./pages/AiAgent').then((m) => ({ default: m.AiAgent })))
 const Results = lazy(() => import('./pages/Results').then((m) => ({ default: m.Results })))
 const About = lazy(() => import('./pages/About').then((m) => ({ default: m.About })))
 const HowItWorks = lazy(() => import('./pages/HowItWorks').then((m) => ({ default: m.HowItWorks })))
@@ -33,10 +35,17 @@ export function App() {
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/products/:id" element={<ProductDetail />} />
-              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/forex" element={<Products />} />
+              <Route path="/forex/:id" element={<ProductDetail />} />
               <Route path="/polybot" element={<PolyBot />} />
+              <Route path="/ai-agent" element={<AiAgent />} />
+              <Route path="/pricing" element={<Pricing />} />
+              {/* legacy → new */}
+              <Route path="/products" element={<Navigate to="/forex" replace />} />
+              <Route
+                path="/products/:id"
+                element={<RedirectWithParam to={(id) => `/forex/${id}`} />}
+              />
               <Route path="/results" element={<Results />} />
               <Route path="/about" element={<About />} />
               <Route path="/how-it-works" element={<HowItWorks />} />

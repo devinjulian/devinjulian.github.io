@@ -32,8 +32,8 @@ export function Footer() {
 
           <nav aria-label="Explore" className="flex flex-col gap-3">
             <p className={colClass}>Explore</p>
-            <Link to="/products" className={itemClass}>
-              Products
+            <Link to="/forex" className={itemClass}>
+              Forex Bots
             </Link>
             <Link to="/pricing" className={itemClass}>
               Pricing
@@ -43,6 +43,9 @@ export function Footer() {
             </Link>
             <Link to="/polybot" className={itemClass}>
               PolyBot
+            </Link>
+            <Link to="/ai-agent" className={itemClass}>
+              AI Agent
             </Link>
             <Link to="/about" className={itemClass}>
               About

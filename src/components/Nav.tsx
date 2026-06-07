@@ -6,7 +6,9 @@ import { ClaimButton } from './ClaimButton'
 import { Menu, Close } from './icons'
 
 const LINKS = [
-  { to: '/products', label: 'Products' },
+  { to: '/forex', label: 'Forex Bots' },
+  { to: '/polybot', label: 'PolyBot' },
+  { to: '/ai-agent', label: 'AI Agent' },
   { to: '/pricing', label: 'Pricing' },
   { to: '/results', label: 'Results' },
   { to: '/about', label: 'About' },
