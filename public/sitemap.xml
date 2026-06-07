@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- NOTE: dist/sitemap.xml is REGENERATED at build by scripts/prerender.mjs from
+     src/data/seoMeta.json + eas.json (adds <lastmod>). This file is the fallback;
+     edit routes in seoMeta.json / eas.json, not here. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://devinjulian.github.io/</loc></url>
   <url><loc>https://devinjulian.github.io/forex</loc></url>

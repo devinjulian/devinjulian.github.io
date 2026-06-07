@@ -5,6 +5,7 @@ import { PageHero } from '../components/PageHero'
 import { EACard } from '../components/EACard'
 import { Button } from '../components/Button'
 import { ClaimButton } from '../components/ClaimButton'
+import { RiskDisclaimer } from '../components/RiskDisclaimer'
 import { Reveal } from '../components/Reveal'
 
 /** Products overview — the three EAs at a glance, each linking to its own detail page. */
@@ -46,10 +47,17 @@ export function Products() {
               <Button variant="primary" to="/pricing">
                 See the bundles
               </Button>
+              <Button variant="ghost" to="/results">
+                See the track record
+              </Button>
               <ClaimButton variant="ghost" />
             </div>
           </Reveal>
         </Section>
+
+        <section className="border-t border-ink/10 py-10">
+          <RiskDisclaimer className="max-w-3xl" />
+        </section>
       </Container>
     </>
   )

@@ -86,12 +86,12 @@ export function Home() {
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted">
               Algo Trading Center is a working research lab, not a finished catalogue. New
               pairs sit in testing, <strong className="font-semibold text-ink">PolyBot</strong>{' '}
-              is in development for Q3 2026, and crypto systems come after. The next frontier
-              is the <strong className="font-semibold text-ink">AI Trading Agent</strong> — a
-              research desk that studies the market each session the way a hedge-fund team
-              would, in active research and design. Back the lab early and you stop being a
-              customer: you receive what ships at the price you came in at, and you're first
-              in line for what's still being designed.
+              is in development for Q3 2026, and crypto systems come after. The newest frontier,
+              the <strong className="font-semibold text-ink">AI Trading Agent</strong>, is already
+              live in manual testing — a research desk that studies the market each session the
+              way a hedge-fund team would, with every signal human-reviewed. Back the lab early
+              and you stop being a customer: you receive what ships at the price you came in at,
+              and you're first in line for what's still being built.
             </p>
             <div className="mt-7 grid max-w-2xl gap-3 sm:grid-cols-2">
               <PolyBotNote />

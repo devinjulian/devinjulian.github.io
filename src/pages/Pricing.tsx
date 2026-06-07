@@ -6,6 +6,7 @@ import { Button } from '../components/Button'
 import { ClaimButton } from '../components/ClaimButton'
 import { RiskDisclaimer } from '../components/RiskDisclaimer'
 import { PolyBotNote } from '../components/PolyBotNote'
+import { AIAgentNote } from '../components/AIAgentNote'
 import { Reveal } from '../components/Reveal'
 
 export function Pricing() {
@@ -185,6 +186,36 @@ export function Pricing() {
                 </Button>
               </div>
               <PolyBotNote className="mt-7 max-w-xl" />
+            </Reveal>
+          </div>
+        </section>
+
+        {/* AI Trading Agent — live but NOT for sale: no pricing, just context for the
+            Founding Members value prop ("first in line"). Required disclaimer shown. */}
+        <section className="border-t border-ink/10 py-16 sm:py-20">
+          <Reveal>
+            <SectionLabel index="04">AI Trading Agent</SectionLabel>
+          </Reveal>
+          <div className="mt-7">
+            <Reveal>
+              <h2 className="max-w-2xl font-display text-3xl leading-tight font-light text-ink sm:text-4xl">
+                The frontier — <em className="text-gold">not priced yet.</em>
+              </h2>
+              <p className="mt-4 inline-flex rounded-full border border-signal/40 px-3 py-1 font-mono text-[0.7rem] tracking-[0.15em] text-signal uppercase">
+                Live · manual testing
+              </p>
+              <p className="mt-6 max-w-xl leading-relaxed text-muted">
+                The AI Trading Agent is live in a human-reviewed testing phase — crypto
+                decision-support, not a product with a price yet. Its commercial model is still
+                being shaped; Founding Members will be first in line when it ships. Follow the
+                results session by session on the AI Agent page.
+              </p>
+              <div className="mt-7">
+                <Button variant="ghost" to="/ai-agent">
+                  See the testing log
+                </Button>
+              </div>
+              <AIAgentNote className="mt-7 max-w-xl" />
             </Reveal>
           </div>
         </section>

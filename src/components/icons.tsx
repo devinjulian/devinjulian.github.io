@@ -52,3 +52,19 @@ export function ExternalLink({ className, size }: IconProps) {
     </svg>
   )
 }
+
+export function Check({ className, size }: IconProps) {
+  return (
+    <svg {...base(size)} className={className}>
+      <polyline points="4 12 10 18 20 6" />
+    </svg>
+  )
+}
+
+export function Dash({ className, size }: IconProps) {
+  return (
+    <svg {...base(size)} className={className}>
+      <line x1="5" y1="12" x2="19" y2="12" />
+    </svg>
+  )
+}

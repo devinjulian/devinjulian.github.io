@@ -17,7 +17,7 @@ export const reviews: Review[] = [
     initials: 'MG',
     tag: 'Founding Member',
     quote:
-      'Absolutely incredible. I got the source code at a great price and even gained access to the next project — that is just amazing.',
+      'Absolutely incredible. I got the source code at a great price and even gained access to the next project. That is just amazing.',
   },
   {
     name: 'Anton',
@@ -31,7 +31,7 @@ export const reviews: Review[] = [
     initials: 'N',
     tag: 'Hands-off user',
     quote:
-      "My husband works, and I earn passive income from this bot. Thank you, Devin! Now I can show off to my husband — even though I don't understand trading at all.",
+      "My husband works, and I earn passive income from this bot. Thank you, Devin! Now I can show off to my husband, even though I don't understand trading at all.",
   },
   {
     name: 'Theodore',
@@ -87,7 +87,7 @@ export const reviews: Review[] = [
     initials: 'L',
     tag: 'Verified buyer',
     quote:
-      "I don't understand anything about trading, but Devin and his team have been incredibly patient in helping me. Such an amazing project — can't wait for the AI Trading Agent.",
+      "I don't understand anything about trading, but Devin and his team have been incredibly patient in helping me. Such an amazing project. Can't wait for the AI Trading Agent.",
   },
   {
     name: 'Chen',

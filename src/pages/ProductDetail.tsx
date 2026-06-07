@@ -1,5 +1,5 @@
 import { useParams, Navigate, Link } from 'react-router-dom'
-import { eas, getEA } from '../data'
+import { eas, getEA, SITE } from '../data'
 import { Container } from '../components/Container'
 import { EquityCurve } from '../components/EquityCurve'
 import { StatBlock } from '../components/StatBlock'
@@ -45,12 +45,12 @@ export function ProductDetail() {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Forex Bots', item: 'https://devinjulian.github.io/forex' },
+            { '@type': 'ListItem', position: 1, name: 'Forex Bots', item: `${SITE}/forex` },
             {
               '@type': 'ListItem',
               position: 2,
               name: ea.name,
-              item: `https://devinjulian.github.io/forex/${ea.id}`,
+              item: `${SITE}/forex/${ea.id}`,
             },
           ],
         }}
@@ -68,9 +68,8 @@ export function ProductDetail() {
               {ea.pair} · {ea.timeframes.join(' & ')}
             </p>
             <h1 className="mt-4 font-display text-5xl leading-none font-light text-ink sm:text-7xl">
-              {ea.name}
+              {ea.name} EA
             </h1>
-            <p className="mt-3 font-display text-2xl text-gold italic">{ea.title}</p>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">{ea.tagline}</p>
           </Reveal>
 

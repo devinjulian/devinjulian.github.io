@@ -10,7 +10,7 @@ const ROADMAP = [
   { when: 'In testing', what: 'New Forex pairs joining the trinity' },
   { when: 'Q3 2026', what: 'PolyBot — the approach, brought on-chain' },
   { when: 'After', what: 'Dedicated crypto systems' },
-  { when: 'The frontier', what: 'The AI Trading Agent — an AI research desk, in active research & design' },
+  { when: 'Now testing', what: 'The AI Trading Agent — an AI research desk, live in manual testing' },
 ]
 
 export function About() {
