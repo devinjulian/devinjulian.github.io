@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import type { ReactNode } from 'react'
 import { cn } from '../lib/cn'
 
@@ -53,7 +54,10 @@ export function Modal({
     }
   }, [onClose])
 
-  return (
+  // Portal to <body> so the overlay escapes any transformed/overflow ancestor
+  // (e.g. Framer Motion <Reveal>, whose transform would otherwise make `fixed`
+  // resolve relative to that box instead of the viewport — pushing the modal off-centre).
+  return createPortal(
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center p-4"
       role="dialog"
@@ -88,6 +92,7 @@ export function Modal({
         </button>
         {children}
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }
