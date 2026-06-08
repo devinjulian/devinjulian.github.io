@@ -55,7 +55,7 @@ export function Modal({
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-end justify-center sm:items-center"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby={labelledBy}
@@ -71,7 +71,7 @@ export function Modal({
       <div
         ref={dialogRef}
         className={cn(
-          'relative max-h-[90vh] w-full max-w-lg overflow-y-auto border border-ink/10 bg-surface/95 p-7 shadow-2xl shadow-black/60 sm:rounded-2xl',
+          'relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-ink/10 bg-surface/95 p-7 shadow-2xl shadow-black/60',
           className,
         )}
       >
