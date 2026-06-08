@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import type { AiAgentSession } from '../data/aiAgentLog'
 import { useTypewriter } from '../lib/useTypewriter'
 import { cn } from '../lib/cn'
 import { Modal } from './Modal'
+import { Lightbox, type LightboxImage } from './Lightbox'
 
 export function AiAgentDayModal({
   session,
@@ -11,6 +13,7 @@ export function AiAgentDayModal({
   onClose: () => void
 }) {
   const typed = useTypewriter(session?.marketInsight ?? '', 12, session !== null)
+  const [lightbox, setLightbox] = useState<LightboxImage>(null)
   if (!session) return null
 
   const hasSignals = session.signals.length > 0
@@ -77,10 +80,38 @@ export function AiAgentDayModal({
               </p>
 
               <p className="mt-3 text-sm leading-relaxed text-muted">{sig.reason}</p>
+
+              {sig.chart && (
+                <button
+                  type="button"
+                  onClick={() =>
+                    setLightbox({
+                      src: sig.chart!,
+                      alt: sig.chartAlt ?? `${sig.asset} ${sig.direction} chart`,
+                    })
+                  }
+                  className="group mt-3 block w-full overflow-hidden rounded-lg border border-ink/10 focus:ring-2 focus:ring-gold/60 focus:outline-none"
+                  aria-label={`Open ${sig.asset} chart`}
+                >
+                  <span className="relative block">
+                    <img
+                      src={sig.chart}
+                      alt={sig.chartAlt ?? `${sig.asset} ${sig.direction} chart`}
+                      loading="lazy"
+                      className="h-44 w-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.03]"
+                    />
+                    <span className="absolute bottom-2 left-2 rounded-full bg-void/80 px-2.5 py-1 font-mono text-[0.6rem] tracking-[0.15em] text-ink/90 uppercase backdrop-blur-sm">
+                      Chart · tap to zoom
+                    </span>
+                  </span>
+                </button>
+              )}
             </div>
           ))}
         </div>
       )}
+
+      <Lightbox image={lightbox} onClose={() => setLightbox(null)} />
     </Modal>
   )
 }
