@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
-import { useLenis } from 'lenis/react'
 import type { ReactNode } from 'react'
 import { cn } from '../lib/cn'
 
@@ -22,15 +21,10 @@ export function Modal({
 }) {
   const dialogRef = useRef<HTMLDivElement>(null)
   const closeRef = useRef<HTMLButtonElement>(null)
-  const lenis = useLenis()
 
   useEffect(() => {
     const previouslyFocused = document.activeElement as HTMLElement | null
     document.body.style.overflow = 'hidden'
-    // Lenis keeps reacting to touch even with body overflow:hidden, so stop it
-    // outright — otherwise the page scrolls under the modal on mobile and the
-    // URL bar can toggle, shifting the dynamic viewport while the modal is open.
-    lenis?.stop()
     closeRef.current?.focus()
 
     function onKeyDown(e: KeyboardEvent) {
@@ -56,10 +50,9 @@ export function Modal({
     return () => {
       document.removeEventListener('keydown', onKeyDown)
       document.body.style.overflow = ''
-      lenis?.start()
       previouslyFocused?.focus?.()
     }
-  }, [onClose, lenis])
+  }, [onClose])
 
   // Portal to <body> so the overlay escapes any transformed/overflow ancestor
   // (e.g. Framer Motion <Reveal>, whose transform would otherwise make `fixed`
@@ -79,8 +72,12 @@ export function Modal({
         className="absolute inset-0 cursor-default bg-void/85 backdrop-blur-sm"
       />
 
+      {/* data-lenis-prevent: let this panel scroll natively. Lenis (root mode) hijacks
+          wheel/touch and would scroll the page behind the modal instead — and stopping
+          Lenis to lock the page would preventDefault every event and freeze this panel too. */}
       <div
         ref={dialogRef}
+        data-lenis-prevent
         className={cn(
           'relative max-h-[85dvh] w-full max-w-lg overflow-y-auto rounded-2xl border border-ink/10 bg-surface/95 p-7 shadow-2xl shadow-black/60',
           className,
