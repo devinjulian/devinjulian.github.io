@@ -120,7 +120,7 @@ export function AiAgentResults() {
           ))}
         </select>
 
-        <p className="ml-auto font-mono text-xs text-muted">
+        <p className="w-full font-mono text-xs text-muted sm:ml-auto sm:w-auto">
           {MONTH_NAMES[safeMonth - 1]} {year} · {t.profit + t.stoploss} signals ·{' '}
           <span className="text-signal">{t.profit} profit</span> ·{' '}
           <span className="text-warn">{t.stoploss} stop</span>

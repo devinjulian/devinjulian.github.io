@@ -44,7 +44,7 @@ export function Section({
           className="mt-4 hidden h-12 w-px bg-gradient-to-b from-gold/50 to-transparent lg:block"
         />
       </div>
-      <div className={cn(side === 'right' && 'lg:order-1')}>{children}</div>
+      <div className={cn('min-w-0', side === 'right' && 'lg:order-1')}>{children}</div>
     </section>
   )
 }

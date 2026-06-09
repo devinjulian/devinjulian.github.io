@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
+import { useLenis } from 'lenis/react'
 import type { ReactNode } from 'react'
 import { cn } from '../lib/cn'
 
@@ -21,10 +22,15 @@ export function Modal({
 }) {
   const dialogRef = useRef<HTMLDivElement>(null)
   const closeRef = useRef<HTMLButtonElement>(null)
+  const lenis = useLenis()
 
   useEffect(() => {
     const previouslyFocused = document.activeElement as HTMLElement | null
     document.body.style.overflow = 'hidden'
+    // Lenis keeps reacting to touch even with body overflow:hidden, so stop it
+    // outright — otherwise the page scrolls under the modal on mobile and the
+    // URL bar can toggle, shifting the dynamic viewport while the modal is open.
+    lenis?.stop()
     closeRef.current?.focus()
 
     function onKeyDown(e: KeyboardEvent) {
@@ -50,16 +56,17 @@ export function Modal({
     return () => {
       document.removeEventListener('keydown', onKeyDown)
       document.body.style.overflow = ''
+      lenis?.start()
       previouslyFocused?.focus?.()
     }
-  }, [onClose])
+  }, [onClose, lenis])
 
   // Portal to <body> so the overlay escapes any transformed/overflow ancestor
   // (e.g. Framer Motion <Reveal>, whose transform would otherwise make `fixed`
   // resolve relative to that box instead of the viewport — pushing the modal off-centre).
   return createPortal(
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+      className="fixed inset-x-0 top-0 z-[100] flex h-dvh items-center justify-center p-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby={labelledBy}
@@ -75,7 +82,7 @@ export function Modal({
       <div
         ref={dialogRef}
         className={cn(
-          'relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-ink/10 bg-surface/95 p-7 shadow-2xl shadow-black/60',
+          'relative max-h-[85dvh] w-full max-w-lg overflow-y-auto rounded-2xl border border-ink/10 bg-surface/95 p-7 shadow-2xl shadow-black/60',
           className,
         )}
       >
