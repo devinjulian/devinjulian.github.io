@@ -9,7 +9,7 @@ const STEPS = [
   {
     n: '01',
     title: 'Pick your path',
-    body: 'Choose a bundle or a single EA on the pricing page. Not sure which fits? Tell us your broker and goals and we will point you the right way.',
+    body: 'Choose the Founding Members offer or a single EA — pricing lives on each page. Not sure which fits? Tell us your broker and goals and we will point you the right way.',
   },
   {
     n: '02',

@@ -97,7 +97,7 @@ export function About() {
                 You were here first. <em className="text-gold">The pricing remembers that.</em>
               </h2>
               <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted">
-                This is why the Founding Members Bundle exists. Come in early and you don't just
+                This is why Founding Members exists. Come in early and you don't just
                 buy what's on the shelf now — you receive everything the lab ships next, at the
                 price you paid today. No upgrade invoices, no "new tier" emails. A permanent seat
                 at the original number.

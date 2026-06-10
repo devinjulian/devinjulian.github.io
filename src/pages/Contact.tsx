@@ -66,7 +66,7 @@ export function Contact() {
             </p>
             <p className="mt-3 leading-relaxed text-muted italic">“{message}”</p>
             <p className="mt-4 text-sm text-muted">
-              Want the guided version that pre-fills which bundle you're after?{' '}
+              Want the guided version that pre-fills which plan you're after?{' '}
             </p>
             <div className="mt-3">
               <ClaimButton>Open the claim panel</ClaimButton>

@@ -37,19 +37,19 @@ export const faqGroups: FAQGroup[] = [
     items: [
       {
         q: 'How do I buy?',
-        a: 'There is no on-site checkout. You message us on Telegram or by email naming the bundle or EA you want, and we walk you through the next step from there.',
+        a: 'There is no on-site checkout. You message us on Telegram or by email naming the EA, the Founding Members offer, or the signal subscription you want, and we walk you through the next step from there.',
       },
       {
         q: 'How do licenses work?',
-        a: 'Each plan includes a set number of account licenses — the Partner Bundle includes 10, the Standard Bundle is unlimited accounts, and individual EAs include one or two licenses depending on the EA.',
+        a: 'Individual EAs include one or two account licenses depending on the EA (shown on the Forex page), or the .mq5 source outright. Founding Members receive all three EA source codes — no per-account limit.',
       },
       {
-        q: 'What is an IB broker, and why does the Partner Bundle require one?',
-        a: 'The Partner Bundle is $199 because it is tied to registering under one of our recommended introducing-broker (IB) partners — RoboForex, Exness, or Tickmill. We state this openly: it is how that entry price stays possible. The Standard Bundle works with any broker you choose.',
+        q: 'What is an IB broker, and why is the Partner (IB) price lower?',
+        a: 'The Partner (IB) price on an individual EA is lower because it is tied to registering under one of our recommended introducing-broker (IB) partners — RoboForex, Exness, or Tickmill. We state this openly: it is how that entry price stays possible. The any-broker price works with any broker you choose.',
       },
       {
-        q: 'What does the Founding Members Bundle include?',
-        a: 'All three EA source codes (.mq5) delivered instantly, the full PolyBot Python source after its Q3 2026 launch, and everything the lab ships next at the same price you came in at.',
+        q: 'What does the Founding Members offer include?',
+        a: 'All three EA source codes (.mq5) delivered instantly, the full AI Trading Agent source — the engine itself, not just its signals — lifetime all-access signals (Crypto Futures + Polymarket), and everything the lab ships next at the price you came in at.',
       },
     ],
   },

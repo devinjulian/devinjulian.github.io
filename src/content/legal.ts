@@ -75,7 +75,7 @@ export const terms: LegalDoc = {
     {
       heading: 'What a license grants',
       paragraphs: [
-        'A purchase grants you a license to use the relevant Expert Advisor (EA) software on the number of trading accounts stated in your plan — for example, the Partner Bundle includes 10 account licenses and the Standard Bundle is unlimited accounts. Plans that include source code (the Founding Members Bundle and the individual source-code tier) grant you the .mq5 source for your own use.',
+        'A purchase grants you a license to use the relevant Expert Advisor (EA) software on the number of trading accounts stated in your plan — for example, an individual EA includes one or two account licenses depending on the EA. Plans that include source code (the Founding Members offer and the individual source-code tier) grant you the .mq5 source for your own use.',
         'Lifetime updates, where stated, mean updates to the software you purchased for as long as the lab maintains it.',
       ],
     },
@@ -168,7 +168,7 @@ export const refunds: LegalDoc = {
     {
       heading: 'Lifetime access and Founding Members',
       paragraphs: [
-        'Plans that include lifetime updates continue to receive updates to the software you purchased. Founding Members receive everything the lab ships next at the price they came in at, and receive the PolyBot source code after its Q3 2026 launch.',
+        'Plans that include lifetime updates continue to receive updates to the software you purchased. Founding Members receive everything the lab ships next at the price they came in at — including the full AI Trading Agent source and lifetime all-access signals.',
       ],
     },
     {

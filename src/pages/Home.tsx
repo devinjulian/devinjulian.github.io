@@ -140,7 +140,7 @@ export function Home() {
                 Claim your seat at the <em className="text-gold">original price.</em>
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-muted">
-                Founding seats are limited, and the counters are real. When a bundle fills,
+                Founding seats are limited, and the counters are real. When it fills,
                 its pricing closes for good.
               </p>
               <div className="mt-9 flex flex-wrap justify-center gap-4">
