@@ -1,4 +1,4 @@
-import { eas } from '../data'
+import { eas, links } from '../data'
 import { Container } from '../components/Container'
 import { Section } from '../components/Section'
 import { PageHero } from '../components/PageHero'
@@ -44,10 +44,10 @@ export function Products() {
               which is the entire point of owning all three.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
-              <Button variant="primary" to="/pricing">
-                See the bundles
+              <Button variant="primary" to="/founding-members">
+                Become a Founding Member
               </Button>
-              <Button variant="ghost" to="/results">
+              <Button variant="ghost" href={links.myfxbook} external>
                 See the track record
               </Button>
               <ClaimButton variant="ghost" />

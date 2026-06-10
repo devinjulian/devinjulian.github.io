@@ -12,21 +12,17 @@
       "title": "Forex Trading Bots — Omnicor, Cenith, Golden",
       "description": "Three Forex MT4/MT5 expert advisors — EURUSD, GBPUSD and gold — each a specialist, with verified 2021–2026 backtests."
     },
-    "/polybot": {
-      "title": "PolyBot — on-chain trading bot (in development)",
-      "description": "PolyBot moves the lab on-chain. In development, public launch Q3 2026. No performance claims are made."
+    "/crypto-futures-signals": {
+      "title": "Crypto Futures Signals — AI Trading Agent",
+      "description": "AI crypto signals for futures: daily, human-reviewed Buy/Sell calls with risk shown, forward-tested in the open. One subscription, all-access (crypto + Polymarket)."
     },
-    "/ai-agent": {
-      "title": "AI Trading Agent — live, in manual testing",
-      "description": "An AI research desk issuing human-reviewed crypto Buy/Sell decisions, forward-tested in the open. Decision-support, not for sale yet; no performance claims."
+    "/polymarket": {
+      "title": "Polymarket Signals — AI event signals (crypto · macro · politics)",
+      "description": "AI-issued Polymarket signals on crypto, macro and market-moving political events. Decision-support you execute yourself; forward-tested in the open."
     },
-    "/pricing": {
-      "title": "Pricing — bundles & individual EAs",
-      "description": "One-time, lifetime pricing for the ATC algorithms. Bundles, individual EAs and PolyBot — purchase by direct contact."
-    },
-    "/results": {
-      "title": "Results — verified live track record & backtests",
-      "description": "A live Myfxbook track record plus the full MT5 backtest behind every number. 2021–2026, Monte Carlo method."
+    "/founding-members": {
+      "title": "Founding Members — back the lab at the early-phase price",
+      "description": "Own the engine: all three EA source codes + the full AI Trading Agent brain + lifetime all-access signals. One early-phase Founding Members offer."
     },
     "/about": {
       "title": "About — the trading lab",
@@ -38,7 +34,7 @@
     },
     "/faq": {
       "title": "FAQ",
-      "description": "Common pre-sale questions about the ATC algorithms, licenses, brokers, results, and PolyBot."
+      "description": "Common pre-sale questions about the ATC algorithms, licenses, brokers, results, and the signal subscriptions."
     },
     "/contact": {
       "title": "Contact",

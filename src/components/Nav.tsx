@@ -7,10 +7,9 @@ import { Menu, Close } from './icons'
 
 const LINKS = [
   { to: '/forex', label: 'Forex Bots' },
-  { to: '/polybot', label: 'PolyBot' },
-  { to: '/ai-agent', label: 'AI Agent' },
-  { to: '/pricing', label: 'Pricing' },
-  { to: '/results', label: 'Results' },
+  { to: '/crypto-futures-signals', label: 'Crypto Futures Signals' },
+  { to: '/polymarket', label: 'Polymarket Signals' },
+  { to: '/founding-members', label: 'Founding Members' },
   { to: '/about', label: 'About' },
 ]
 

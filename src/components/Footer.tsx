@@ -35,17 +35,14 @@ export function Footer() {
             <Link to="/forex" className={itemClass}>
               Forex Bots
             </Link>
-            <Link to="/pricing" className={itemClass}>
-              Pricing
+            <Link to="/crypto-futures-signals" className={itemClass}>
+              Crypto Futures Signals
             </Link>
-            <Link to="/results" className={itemClass}>
-              Results
+            <Link to="/polymarket" className={itemClass}>
+              Polymarket Signals
             </Link>
-            <Link to="/polybot" className={itemClass}>
-              PolyBot
-            </Link>
-            <Link to="/ai-agent" className={itemClass}>
-              AI Agent
+            <Link to="/founding-members" className={itemClass}>
+              Founding Members
             </Link>
             <Link to="/about" className={itemClass}>
               About

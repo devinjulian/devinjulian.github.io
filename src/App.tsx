@@ -14,7 +14,6 @@ const ProductDetail = lazy(() =>
 const Pricing = lazy(() => import('./pages/Pricing').then((m) => ({ default: m.Pricing })))
 const PolyBot = lazy(() => import('./pages/PolyBot').then((m) => ({ default: m.PolyBot })))
 const AiAgent = lazy(() => import('./pages/AiAgent').then((m) => ({ default: m.AiAgent })))
-const Results = lazy(() => import('./pages/Results').then((m) => ({ default: m.Results })))
 const About = lazy(() => import('./pages/About').then((m) => ({ default: m.About })))
 const HowItWorks = lazy(() => import('./pages/HowItWorks').then((m) => ({ default: m.HowItWorks })))
 const Faq = lazy(() => import('./pages/Faq').then((m) => ({ default: m.Faq })))
@@ -37,16 +36,18 @@ export function App() {
               <Route path="/" element={<Home />} />
               <Route path="/forex" element={<Products />} />
               <Route path="/forex/:id" element={<ProductDetail />} />
-              <Route path="/polybot" element={<PolyBot />} />
-              <Route path="/ai-agent" element={<AiAgent />} />
-              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/crypto-futures-signals" element={<AiAgent />} />
+              <Route path="/ai-agent" element={<Navigate to="/crypto-futures-signals" replace />} />
+              <Route path="/polymarket" element={<PolyBot />} />
+              <Route path="/polybot" element={<Navigate to="/polymarket" replace />} />
+              <Route path="/founding-members" element={<Pricing />} />
+              <Route path="/pricing" element={<Navigate to="/founding-members" replace />} />
               {/* legacy → new */}
               <Route path="/products" element={<Navigate to="/forex" replace />} />
               <Route
                 path="/products/:id"
                 element={<RedirectWithParam to={(id) => `/forex/${id}`} />}
               />
-              <Route path="/results" element={<Results />} />
               <Route path="/about" element={<About />} />
               <Route path="/how-it-works" element={<HowItWorks />} />
               <Route path="/faq" element={<Faq />} />

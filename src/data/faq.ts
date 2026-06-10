@@ -62,7 +62,7 @@ export const faqGroups: FAQGroup[] = [
       },
       {
         q: 'Can I verify the results myself?',
-        a: 'Yes. A live, third-party track record is published on Myfxbook, and every EA’s full MT5 backtest report is available on the Results page. The AI Trading Agent’s decisions are logged session by session — wins, losses, and no-trade days alike — on the AI Agent page.',
+        a: 'Yes. A live, third-party track record is published on Myfxbook, and every EA’s full MT5 backtest report is available on its Forex page. The AI Trading Agent’s decisions are logged session by session — wins, losses, and no-trade days alike — on the Crypto Futures Signals page.',
       },
       {
         q: 'What is the Monte Carlo method, and what period do the backtests cover?',
@@ -71,15 +71,15 @@ export const faqGroups: FAQGroup[] = [
     ],
   },
   {
-    title: 'PolyBot & what’s next',
+    title: 'The signals & what’s next',
     items: [
       {
-        q: 'When does PolyBot launch?',
-        a: 'PolyBot is in development, launching Q3 2026. No performance claims are made, and Founding Members receive the Python source code after the launch.',
+        q: 'What are the signal subscriptions?',
+        a: 'The lab runs two live signal streams — Crypto Futures and Polymarket — powered by the AI Trading Agent. One subscription ($10/month or $99/year) gives access to both, delivered in a private channel. You place every trade yourself; results are shown as R-multiples with risk, never as profit promises.',
       },
       {
         q: 'What is the AI Trading Agent?',
-        a: 'It is the lab’s newest system — now live in a manual, human-reviewed testing phase, issuing crypto Buy/Sell decisions each session. You can follow the session-by-session results on the AI Agent page. It is decision-support, not financial advice, and not for sale yet; no performance guarantees are made. Founding Members will be first in line when it ships.',
+        a: 'It is the lab’s newest system — now live in a manual, human-reviewed testing phase, issuing crypto Buy/Sell decisions each session. You can follow the session-by-session results on the Crypto Futures Signals page. Live signals are available by subscription (delivered in a private channel); the public log is free. It is decision-support, not financial advice — you place every trade yourself, and no performance guarantees are made.',
       },
     ],
   },
