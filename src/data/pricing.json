@@ -1,63 +1,23 @@
 {
   "bundles": [
     {
-      "id": "partner",
-      "name": "Partner Bundle",
-      "subtitle": "IB",
-      "price": 199,
-      "priceLabel": "$199",
-      "spotsLeft": 7,
-      "audience": "For the trader who wants every algorithm at the lowest entry — and is happy to trade through a recommended broker.",
-      "features": [
-        "All three EAs — Omnicor, Cenith, Golden",
-        "10 licenses",
-        "Lifetime updates"
-      ],
-      "requiresIB": true,
-      "ibNote": "Requires registration under one of the recommended IB brokers below. We're transparent about this — it's how the Partner price stays this low.",
-      "flagship": false,
-      "order": 1
-    },
-    {
-      "id": "standard",
-      "name": "Standard Bundle",
-      "subtitle": "Non-IB",
-      "price": 1999,
-      "priceLabel": "$1,999",
-      "spotsLeft": 9,
-      "audience": "For the established trader with broker loyalty who wants full flexibility and no strings.",
-      "features": [
-        "All three EAs — Omnicor, Cenith, Golden",
-        "Unlimited accounts",
-        "Lifetime updates",
-        "Any broker you choose"
-      ],
-      "requiresIB": false,
-      "ibNote": null,
-      "flagship": false,
-      "order": 2
-    },
-    {
       "id": "founding",
-      "name": "Founding Members Bundle",
-      "subtitle": "Flagship",
+      "name": "Founding Members",
+      "subtitle": "Early Phase",
       "price": 3999,
       "priceLabel": "$3,999",
       "spotsLeft": 8,
-      "audience": "For the builder who wants ownership, not a rental — the source code, the ecosystem, and a permanent seat at the original price.",
+      "audience": "For the builder who backs the lab at its earliest phase — and owns the engine, not a rental.",
       "features": [
         "All three EA source codes (.mq5) — delivered instantly",
-        "PolyBot full Python source — after the Q3 2026 launch",
-        "Everything the lab ships next, at this same price"
+        "The full AI Trading Agent source — own the engine, not just its signals",
+        "Lifetime all-access signals (Crypto Futures + Polymarket)",
+        "Everything the lab ships next, at this price — first in line for automation"
       ],
-      "value": 10994,
-      "valueLabel": "$10,994",
-      "save": 6995,
-      "saveLabel": "$6,995",
       "requiresIB": false,
       "ibNote": null,
       "flagship": true,
-      "order": 3
+      "order": 1
     }
   ],
   "individualEAs": [
