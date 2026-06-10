@@ -11,6 +11,7 @@ import type {
   PolyBot,
   Broker,
   Links,
+  Subscription,
 } from './types'
 
 // Canonical site identity — single source of truth (shared with scripts/prerender.mjs).
@@ -24,6 +25,7 @@ export const eas = easData.eas as unknown as EA[]
 export const bundles = pricingData.bundles as unknown as Bundle[]
 export const individualEAs = pricingData.individualEAs as IndividualEAPrice[]
 export const polybot = pricingData.polybot as PolyBot
+export const subscription = pricingData.subscription as Subscription
 export const scarcityNote = pricingData.scarcityNote
 
 export const brokers = brokersData as Broker[]
@@ -36,9 +38,13 @@ export const RISK_DISCLAIMER =
 /** Required wherever PolyBot appears (PRD §8/§10). */
 export const POLYBOT_DISCLAIMER = polybot.disclaimer
 
-/** Required wherever the AI Trading Agent is mentioned — testing-phase framing (PRD §8). */
+/** Required wherever the AI Trading Agent / Crypto Futures Signals appear (PRD §8). */
 export const AI_AGENT_DISCLAIMER =
-  'The AI Trading Agent is in a manual, human-reviewed testing phase — every signal is checked by a person and nothing is automated. The results shown are from this forward test and are an early, limited sample; past performance does not guarantee future results, and crypto trading carries a substantial risk of loss. It is decision-support, not financial advice. The Agent is not for sale yet — Founding Members will be first in line.'
+  'The AI Trading Agent is in a manual, human-reviewed testing phase — every signal is checked by a person and nothing is automated. Results shown are from this forward test and are an early, limited sample; past performance does not guarantee future results, and crypto trading carries a substantial risk of loss. It is decision-support, not financial advice — you place every trade yourself on your own account. Live signals are available by paid subscription; the public results log is free.'
+
+/** Required wherever Polymarket Signals appear (PRD §8). */
+export const POLYMARKET_DISCLAIMER =
+  'Polymarket Signals are decision-support in a forward-testing phase, executed by you on your own Polymarket account — not financial advice, and not automated by us. Results are shown as outcomes / R-multiples with risk shown, never as profit promises. Prediction-market and crypto trading carry a substantial risk of loss; past results do not guarantee future results.'
 
 export const getEA = (id: string): EA | undefined => eas.find((e) => e.id === id)
 

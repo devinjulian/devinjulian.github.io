@@ -107,5 +107,15 @@
       ]
     }
   },
+  "subscription": {
+    "monthly": "$10",
+    "monthlyAmount": 10,
+    "yearly": "$99",
+    "yearlyAmount": 99,
+    "yearlyNote": "2 months free · ~17% off",
+    "allAccessNote": "One subscription, both signals — Crypto Futures and Polymarket. Live signals are delivered in a private channel; you place every trade yourself.",
+    "channel": "private Telegram channel",
+    "payment": "crypto, verified manually"
+  },
   "scarcityNote": "These counters are updated by hand and reflect real spots. When a bundle fills, its pricing closes permanently — no countdown timers, no resets, no second run at these numbers."
 }

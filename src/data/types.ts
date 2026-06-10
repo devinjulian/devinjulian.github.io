@@ -93,6 +93,17 @@ export interface PolyBot {
   earlyBird: { note: string; tiers: PolyBotTier[] }
 }
 
+export interface Subscription {
+  monthly: string
+  monthlyAmount: number
+  yearly: string
+  yearlyAmount: number
+  yearlyNote: string
+  allAccessNote: string
+  channel: string
+  payment: string
+}
+
 export interface Broker {
   name: string
   url: string
