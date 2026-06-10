@@ -6,7 +6,6 @@ import { ClaimButton } from '../components/ClaimButton'
 import { Button } from '../components/Button'
 import { EquityCurve } from '../components/EquityCurve'
 import { HeroCanvas } from '../components/HeroCanvas'
-import { PolyBotNote } from '../components/PolyBotNote'
 import { AIAgentNote } from '../components/AIAgentNote'
 import { Reviews } from '../components/Reviews'
 import { Reveal } from '../components/Reveal'
@@ -84,17 +83,17 @@ export function Home() {
               This isn't a product you shelve. <em className="text-gold">It's a lab.</em>
             </h2>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted">
-              Algo Trading Center is a working research lab, not a finished catalogue. New
-              pairs sit in testing, <strong className="font-semibold text-ink">PolyBot</strong>{' '}
-              is in development for Q3 2026, and crypto systems come after. The newest frontier,
-              the <strong className="font-semibold text-ink">AI Trading Agent</strong>, is already
-              live in manual testing — a research desk that studies the market each session the
-              way a hedge-fund team would, with every signal human-reviewed. Back the lab early
-              and you stop being a customer: you receive what ships at the price you came in at,
-              and you're first in line for what's still being built.
+              Algo Trading Center is a working research lab, not a finished catalogue. New pairs
+              sit in testing, and the newest frontier — the{' '}
+              <strong className="font-semibold text-ink">AI Trading Agent</strong> — is already
+              live in manual testing, now issuing{' '}
+              <strong className="font-semibold text-ink">Crypto Futures and Polymarket signals</strong>:
+              a research desk that studies the market each session the way a hedge-fund team would,
+              with every signal human-reviewed. Back the lab early and you stop being a customer:
+              you receive what ships at the price you came in at, and you're first in line for
+              what's still being built.
             </p>
-            <div className="mt-7 grid max-w-2xl gap-3 sm:grid-cols-2">
-              <PolyBotNote />
+            <div className="mt-7 max-w-xl">
               <AIAgentNote />
             </div>
           </Reveal>

@@ -8,7 +8,6 @@ import type {
   EA,
   Bundle,
   IndividualEAPrice,
-  PolyBot,
   Broker,
   Links,
   Subscription,
@@ -24,7 +23,6 @@ export const eas = easData.eas as unknown as EA[]
 
 export const bundles = pricingData.bundles as unknown as Bundle[]
 export const individualEAs = pricingData.individualEAs as IndividualEAPrice[]
-export const polybot = pricingData.polybot as PolyBot
 export const subscription = pricingData.subscription as Subscription
 export const scarcityNote = pricingData.scarcityNote
 
@@ -35,8 +33,6 @@ export const links = linksData as Links
 export const RISK_DISCLAIMER =
   'Past performance does not guarantee future results. Trading involves substantial risk of loss. Results shown are from backtests on historical data; live results will vary based on broker conditions, spread, slippage, and chosen parameters.'
 
-/** Required wherever PolyBot appears (PRD §8/§10). */
-export const POLYBOT_DISCLAIMER = polybot.disclaimer
 
 /** Required wherever the AI Trading Agent / Crypto Futures Signals appear (PRD §8). */
 export const AI_AGENT_DISCLAIMER =

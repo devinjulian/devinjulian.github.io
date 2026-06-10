@@ -49,24 +49,6 @@
       "sourceCode": "$1,999"
     }
   ],
-  "polybot": {
-    "name": "PolyBot",
-    "status": "In development — launches Q3 2026",
-    "disclaimer": "PolyBot is in development, with public launch planned for Q3 2026. A limited group of Founding Members is in early, closed testing. No performance claims are made; the full Python source is delivered at launch.",
-    "standalone": [
-      { "tier": "Starter", "price": "$497", "detail": "1 wallet" },
-      { "tier": "Pro", "price": "$997", "detail": "3 wallets" },
-      { "tier": "Elite", "price": "$1,997", "detail": "Unlimited wallets" }
-    ],
-    "earlyBird": {
-      "note": "Early-bird waitlist — first 30 only",
-      "tiers": [
-        { "tier": "Starter", "price": "$297", "detail": "1 wallet" },
-        { "tier": "Pro", "price": "$597", "detail": "3 wallets" },
-        { "tier": "Elite", "price": "$1,297", "detail": "Unlimited wallets" }
-      ]
-    }
-  },
   "subscription": {
     "monthly": "$10",
     "monthlyAmount": 10,

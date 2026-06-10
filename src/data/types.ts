@@ -79,20 +79,6 @@ export interface IndividualEAPrice {
   sourceCode: string
 }
 
-export interface PolyBotTier {
-  tier: string
-  price: string
-  detail: string
-}
-
-export interface PolyBot {
-  name: string
-  status: string
-  disclaimer: string
-  standalone: PolyBotTier[]
-  earlyBird: { note: string; tiers: PolyBotTier[] }
-}
-
 export interface Subscription {
   monthly: string
   monthlyAmount: number

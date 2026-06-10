@@ -2,15 +2,13 @@ import { Container } from '../components/Container'
 import { Section } from '../components/Section'
 import { Button } from '../components/Button'
 import { ClaimButton } from '../components/ClaimButton'
-import { PolyBotNote } from '../components/PolyBotNote'
 import { AIAgentNote } from '../components/AIAgentNote'
 import { Reveal } from '../components/Reveal'
 
 const ROADMAP = [
   { when: 'In testing', what: 'New Forex pairs joining the trinity' },
-  { when: 'Q3 2026', what: 'PolyBot — the approach, brought on-chain' },
-  { when: 'After', what: 'Dedicated crypto systems' },
-  { when: 'Now testing', what: 'The AI Trading Agent — an AI research desk, live in manual testing' },
+  { when: 'Live now', what: 'AI Trading Agent — Crypto Futures & Polymarket signals (private subscription)' },
+  { when: 'Next', what: 'Supervised automation — the same brain, execution on your terms' },
 ]
 
 export function About() {
@@ -87,8 +85,7 @@ export function About() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                <PolyBotNote />
+              <div className="mt-6 max-w-xl">
                 <AIAgentNote />
               </div>
             </Reveal>
