@@ -5,6 +5,7 @@ import { PageHero } from '../components/PageHero'
 import { AIAgentNote } from '../components/AIAgentNote'
 import { AiAgentResults } from '../components/AiAgentResults'
 import { AiAgentAbout } from '../components/AiAgentAbout'
+import { SignalPricing } from '../components/SignalPricing'
 import { Button } from '../components/Button'
 import { RiskDisclaimer } from '../components/RiskDisclaimer'
 import { Reveal } from '../components/Reveal'
@@ -62,8 +63,9 @@ export function AiAgent() {
         >
           <Reveal>
             <p className="max-w-2xl text-lg leading-relaxed text-muted">
-              See how the Agent reaches a decision, follow the testing as it runs, and take your place
-              in line for launch — Founding Members are first when it ships.
+              See how the Agent reaches a decision, follow the testing in the open, then get the live
+              calls the moment they're issued. The daily log here is free; live signals go to
+              subscribers in a private channel — one subscription covers crypto and Polymarket.
             </p>
             <div className="mt-7 flex flex-wrap gap-4">
               <Button variant="primary" href={links.telegram} external>
@@ -76,6 +78,7 @@ export function AiAgent() {
                 Become a Founding Member
               </Button>
             </div>
+            <SignalPricing className="mt-10 max-w-2xl" />
           </Reveal>
         </Section>
 
