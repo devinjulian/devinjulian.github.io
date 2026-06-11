@@ -12,7 +12,7 @@ export function BacktestGallery({ ea }: { ea: EA }) {
 
   return (
     <div className="mt-10">
-      <p className="font-mono text-[0.65rem] tracking-[0.2em] text-muted/70 uppercase">
+      <p className="font-mono text-[0.65rem] tracking-[0.2em] text-muted/80 uppercase">
         Verified MT5 backtest · {backtest.period} · {backtest.method}
       </p>
       <div className="mt-3 flex flex-wrap gap-3">

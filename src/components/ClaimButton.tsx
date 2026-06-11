@@ -5,7 +5,7 @@ import { useContact } from './ContactContext'
 /** Primary conversion CTA. Opens the contact panel pre-filled with `item`. */
 export function ClaimButton({
   item,
-  children = 'Claim a Spot',
+  children = 'Get Started',
   variant = 'primary',
   size = 'md',
   className,

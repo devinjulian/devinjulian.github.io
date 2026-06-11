@@ -1,31 +1,30 @@
 import { Check } from './icons'
 import { Modal } from './Modal'
 
-/** The Agent's per-session pipeline, shown as a numbered timeline. */
+/** The Agent's per-session pipeline, shown as a numbered timeline.
+ *  CONFIDENTIAL (owner, 2026-06-11): never describe the Agent's internal
+ *  composition in public copy — keep the wording generic ("a full research
+ *  desk's work"), no enumeration of the specialist roles inside it. */
 const STEPS: { title: string; body: string }[] = [
   {
-    title: 'Ingest the data',
-    body: 'Each session it pulls real, computed market data — price structure, volatility, funding and macro context — not headlines or vibes.',
+    title: 'Read the market',
+    body: 'Each session it works from real, computed market data — price structure, volatility and the broader forces moving the market — not headlines or vibes.',
   },
   {
-    title: 'Convene the panel',
-    body: 'Five specialist views weigh in independently: technical, quantitative, macro, market-strategy and risk. Each argues its own case.',
+    title: 'Weigh every angle',
+    body: 'It does the work of an entire research desk before a single position is considered — studying the market from multiple independent angles, the way a professional team would.',
   },
   {
-    title: 'Reach one view',
-    body: 'Their findings are synthesised into a single high-conviction call — buy, sell, or stand aside. Below a conviction threshold, the honest answer is no trade.',
+    title: 'Commit to one call',
+    body: 'Everything distils into a single high-conviction decision — buy, sell, or stand aside. Below conviction, the honest answer is no trade.',
   },
   {
     title: 'Pass the risk gate',
     body: 'A hard risk gate sits after the AI. It sizes the position and sets stop-loss and take-profit, so a single wrong call can never blow the account.',
   },
   {
-    title: 'Human review',
-    body: 'A person checks every signal before anything is acted on. Nothing is automated yet — this is the manual testing phase.',
-  },
-  {
     title: 'Log it in the open',
-    body: 'Every decision, taken or skipped, is recorded in the testing log with its reasoning and an R-multiple outcome.',
+    body: 'Every decision, taken or skipped, is recorded in the public log with its reasoning and an R-multiple outcome.',
   },
 ]
 
@@ -33,7 +32,7 @@ const STEPS: { title: string; body: string }[] = [
 const DIFFS: { strong: string; rest: string }[] = [
   { strong: 'Probabilistic, not predictive', rest: 'it forms a view of the odds; it never claims to predict the price.' },
   { strong: 'Risk-gated, not a black box', rest: 'hard stops sit after the model and are always shown.' },
-  { strong: 'Human-in-the-loop', rest: 'every signal is reviewed — no blind auto-execution.' },
+  { strong: 'Accountable in public', rest: 'every call lands in the open log before the outcome is known.' },
   { strong: 'Decision-support, not a "money machine"', rest: 'it informs a decision; it never promises profit.' },
 ]
 
@@ -64,7 +63,7 @@ export function AiAgentAbout({ onClose }: { onClose: () => void }) {
       </ol>
 
       <div className="mt-8 rounded-xl border border-ink/10 bg-void/40 p-5">
-        <h3 className="font-mono text-[0.65rem] tracking-[0.2em] text-muted/70 uppercase">
+        <h3 className="font-mono text-[0.65rem] tracking-[0.2em] text-muted/80 uppercase">
           Why it's different from other AI agents
         </h3>
         <ul className="mt-3 space-y-2.5">

@@ -20,7 +20,7 @@ export function EACard({ ea }: { ea: EA }) {
   return (
     <article className="group flex h-full flex-col rounded-2xl border border-ink/10 bg-surface/40 p-6 transition-[border-color,transform] duration-300 hover:-translate-y-1 hover:border-gold/40">
       <div className="flex items-baseline justify-between">
-        <span className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/70 uppercase">
+        <span className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
           {ea.pair} · {ea.timeframes.join(' & ')}
         </span>
         <span className="font-mono text-[0.7rem] text-muted/40 tabular-nums">0{ea.order}</span>
@@ -39,7 +39,7 @@ export function EACard({ ea }: { ea: EA }) {
       <dl className="mt-6 grid grid-cols-3 gap-3 border-t border-ink/10 pt-5">
         {stats.map((s) => (
           <div key={s.label}>
-            <dt className="font-mono text-[0.55rem] tracking-[0.12em] text-muted/60 uppercase">
+            <dt className="font-mono text-[0.55rem] tracking-[0.12em] text-muted/80 uppercase">
               {s.label}
             </dt>
             <dd className={`mt-1 font-mono text-lg tabular-nums ${s.tone}`}>{s.value}</dd>
@@ -48,7 +48,7 @@ export function EACard({ ea }: { ea: EA }) {
       </dl>
 
       {caption && (
-        <p className="mt-3 font-mono text-[0.6rem] tracking-wide text-muted/70">{caption}</p>
+        <p className="mt-3 font-mono text-[0.6rem] tracking-wide text-muted/80">{caption}</p>
       )}
 
       <p className="mt-3 font-mono text-[0.65rem] tracking-wide text-muted/80">

@@ -92,6 +92,9 @@ export function Reviews() {
                     <img
                       src={r.photo}
                       alt={r.name}
+                      width={44}
+                      height={44}
+                      loading="lazy"
                       className="h-11 w-11 rounded-full object-cover"
                       draggable={false}
                     />
@@ -102,7 +105,7 @@ export function Reviews() {
                   )}
                   <div>
                     <p className="text-ink">{r.name}</p>
-                    <p className="font-mono text-[0.65rem] tracking-[0.15em] text-muted/70 uppercase">
+                    <p className="font-mono text-[0.65rem] tracking-[0.15em] text-muted/80 uppercase">
                       {r.tag}
                     </p>
                   </div>
@@ -113,7 +116,7 @@ export function Reviews() {
         </Reveal>
 
         <Reveal>
-          <p className="mt-6 max-w-3xl font-mono text-[0.62rem] leading-relaxed tracking-wide text-muted/60">
+          <p className="mt-6 max-w-3xl font-mono text-[0.62rem] leading-relaxed tracking-wide text-muted/80">
             ATC respects every member's privacy — names and photos appear only with their consent.
             Individual results vary, and past performance does not guarantee future results.
           </p>

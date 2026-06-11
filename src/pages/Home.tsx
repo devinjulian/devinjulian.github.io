@@ -1,4 +1,3 @@
-import { backtest, links } from '../data'
 import { Container } from '../components/Container'
 import { Section } from '../components/Section'
 import { SectionLabel } from '../components/SectionLabel'
@@ -6,7 +5,6 @@ import { ClaimButton } from '../components/ClaimButton'
 import { Button } from '../components/Button'
 import { EquityCurve } from '../components/EquityCurve'
 import { HeroCanvas } from '../components/HeroCanvas'
-import { AIAgentNote } from '../components/AIAgentNote'
 import { Reviews } from '../components/Reviews'
 import { Reveal } from '../components/Reveal'
 
@@ -38,14 +36,18 @@ export function Home() {
             <Reveal mode="mount" delay={0.3} className="mt-10">
               <div className="flex flex-wrap items-center gap-4">
                 <ClaimButton />
-                <Button variant="ghost" href={links.myfxbook} external>
-                  See the live results
+                <Button variant="ghost" to="/forex">
+                  Forex Bots
+                </Button>
+                <Button variant="ghost" to="/crypto-futures-signals">
+                  AI Signals
                 </Button>
               </div>
             </Reveal>
             <Reveal mode="mount" delay={0.42} className="mt-8">
               <p className="font-mono text-[0.7rem] tracking-wide text-muted/80">
-                Verified on Myfxbook · {backtest.periodLabel} · {backtest.methodLabel}
+                Forex verified on Myfxbook · AI signal log published daily, free · every result
+                shown with its risk
               </p>
             </Reveal>
           </div>
@@ -83,19 +85,15 @@ export function Home() {
               This isn't a product you shelve. <em className="text-gold">It's a lab.</em>
             </h2>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted">
-              Algo Trading Center is a working research lab, not a finished catalogue. New pairs
-              sit in testing, and the newest frontier — the{' '}
-              <strong className="font-semibold text-ink">AI Trading Agent</strong> — is already
-              live in manual testing, now issuing{' '}
-              <strong className="font-semibold text-ink">Crypto Futures and Polymarket signals</strong>:
-              a research desk that studies the market each session the way a hedge-fund team would,
-              with every signal human-reviewed. Back the lab early and you stop being a customer:
-              you receive what ships at the price you came in at, and you're first in line for
-              what's still being built.
+              Algo Trading Center runs three machines: the{' '}
+              <strong className="font-semibold text-ink">Forex trinity</strong> — three EAs you own
+              outright — and the newest frontier, the{' '}
+              <strong className="font-semibold text-ink">AI Trading Agent</strong>, now live and
+              issuing <strong className="font-semibold text-ink">Crypto Futures and Polymarket signals</strong>:
+              an AI that does an entire research desk's work before every call, every session. The
+              daily logs are public — taken or skipped, wins and losses alike — so you can watch it
+              work before you pay for anything.
             </p>
-            <div className="mt-7 max-w-xl">
-              <AIAgentNote />
-            </div>
           </Reveal>
         </Section>
       </Container>
@@ -137,16 +135,20 @@ export function Home() {
                 className="absolute -top-px right-16 left-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent"
               />
               <h2 className="font-display text-4xl leading-tight font-light text-ink sm:text-5xl">
-                Claim your seat at the <em className="text-gold">original price.</em>
+                Own the machine. <em className="text-gold">Keep your hours.</em>
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-muted">
-                Founding seats are limited, and the counters are real. When it fills,
-                its pricing closes for good.
+                Own the Forex trinity outright with one lifetime license, or plug into the live
+                AI signal desk by subscription — either way, the machine works the hours so you
+                don't have to.
               </p>
               <div className="mt-9 flex flex-wrap justify-center gap-4">
                 <ClaimButton />
-                <Button variant="ghost" to="/pricing">
-                  See pricing
+                <Button variant="ghost" to="/forex">
+                  Forex pricing
+                </Button>
+                <Button variant="ghost" to="/crypto-futures-signals">
+                  Signal pricing
                 </Button>
               </div>
             </div>

@@ -75,7 +75,7 @@ export const terms: LegalDoc = {
     {
       heading: 'What a license grants',
       paragraphs: [
-        'A purchase grants you a license to use the relevant Expert Advisor (EA) software on the number of trading accounts stated in your plan — for example, an individual EA includes one or two account licenses depending on the EA. Plans that include source code (the Founding Members offer and the individual source-code tier) grant you the .mq5 source for your own use.',
+        'A purchase grants you a license to use the Expert Advisor (EA) software on the number of trading account numbers stated in your plan — the Partner (IB) and any-broker tiers each cover three trading account numbers, for the lifetime of the product. Plans that include source code (the source-code tier) grant you the .mq5 source for your own use.',
         'Lifetime updates, where stated, mean updates to the software you purchased for as long as the lab maintains it.',
       ],
     },
@@ -88,7 +88,7 @@ export const terms: LegalDoc = {
     {
       heading: 'Brokers and Partner plans',
       paragraphs: [
-        'Partner-tier pricing requires registering a trading account under one of our recommended introducing brokers (RoboForex, Exness, or Tickmill). The Standard and Founding tiers work with any broker.',
+        'Partner (IB) pricing requires registering a trading account under one of our recommended introducing brokers (RoboForex, Exness, or Tickmill). The any-broker and source-code tiers work with any broker.',
       ],
     },
     {
@@ -166,15 +166,15 @@ export const refunds: LegalDoc = {
       ],
     },
     {
-      heading: 'Lifetime access and Founding Members',
+      heading: 'Lifetime access',
       paragraphs: [
-        'Plans that include lifetime updates continue to receive updates to the software you purchased. Founding Members receive everything the lab ships next at the price they came in at — including the full AI Trading Agent source and lifetime all-access signals.',
+        'Licenses are lifetime: you pay once for the tier you chose, and plans that include lifetime updates continue to receive updates to the software you purchased for as long as the lab maintains it.',
       ],
     },
     {
-      heading: 'Pricing and scarcity',
+      heading: 'Pricing',
       paragraphs: [
-        'Spot counters are updated by hand and reflect real availability. When a bundle fills, its pricing closes permanently — there are no countdown timers and no resets.',
+        'Prices are stated on the relevant product page at the time of purchase and may change for future buyers. A purchased license is not affected by later price changes — what you bought stays yours under the terms you bought it.',
       ],
     },
     {

@@ -2,7 +2,6 @@ import { Container } from '../components/Container'
 import { Section } from '../components/Section'
 import { Button } from '../components/Button'
 import { ClaimButton } from '../components/ClaimButton'
-import { AIAgentNote } from '../components/AIAgentNote'
 import { Reveal } from '../components/Reveal'
 
 const ROADMAP = [
@@ -85,25 +84,9 @@ export function About() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 max-w-xl">
-                <AIAgentNote />
-              </div>
             </Reveal>
           </Section>
 
-          <Section index="03" label="The Founding Promise" className="py-16 sm:py-20">
-            <Reveal>
-              <h2 className="font-display text-3xl leading-tight font-light text-ink sm:text-4xl">
-                You were here first. <em className="text-gold">The pricing remembers that.</em>
-              </h2>
-              <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted">
-                This is why Founding Members exists. Come in early and you don't just
-                buy what's on the shelf now — you receive everything the lab ships next, at the
-                price you paid today. No upgrade invoices, no "new tier" emails. A permanent seat
-                at the original number.
-              </p>
-            </Reveal>
-          </Section>
         </div>
       </Container>
 

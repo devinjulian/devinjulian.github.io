@@ -21,7 +21,7 @@ export function LegalPage({ doc }: { doc: LegalDoc }) {
         )}
 
         <Reveal>
-          <p className="mt-8 font-mono text-[0.7rem] tracking-[0.2em] text-muted/70 uppercase">
+          <p className="mt-8 font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
             Last updated · {doc.updated}
           </p>
         </Reveal>

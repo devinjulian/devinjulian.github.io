@@ -13,7 +13,7 @@ import { eaNarratives } from '../content/eaNarratives'
 function SpecItem({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <dt className="font-mono text-[0.6rem] tracking-[0.2em] text-muted/60 uppercase">{label}</dt>
+      <dt className="font-mono text-[0.6rem] tracking-[0.2em] text-muted/80 uppercase">{label}</dt>
       <dd className="mt-1 font-mono text-sm text-ink">{value}</dd>
     </div>
   )
@@ -117,7 +117,7 @@ export function ProductDetail() {
             </div>
             <div className="flex flex-wrap gap-4">
               <ClaimButton item={`${ea.name} EA`} />
-              <Button variant="ghost" to="/pricing">
+              <Button variant="ghost" to="/forex">
                 See pricing
               </Button>
             </div>

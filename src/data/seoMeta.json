@@ -10,19 +10,15 @@
     },
     "/forex": {
       "title": "Forex Trading Bots — Omnicor, Cenith, Golden",
-      "description": "Three Forex MT4/MT5 expert advisors — EURUSD, GBPUSD and gold — each a specialist, with verified 2021–2026 backtests."
+      "description": "Three Forex MT4/MT5 expert advisors — EURUSD, GBPUSD and gold — sold as one bundle. Every license includes all three, with verified 2021–2026 backtests."
     },
     "/crypto-futures-signals": {
       "title": "Crypto Futures Signals — AI Trading Agent",
-      "description": "AI crypto signals for futures: daily, human-reviewed Buy/Sell calls with risk shown, forward-tested in the open. One subscription, all-access (crypto + Polymarket)."
+      "description": "Live AI crypto futures signals: daily Buy/Sell calls with entry, stop and target — every result logged in a free public record. One subscription, all-access (crypto + Polymarket)."
     },
     "/polymarket": {
       "title": "Polymarket Signals — AI event signals (crypto · macro · politics)",
-      "description": "AI-issued Polymarket signals on crypto, macro and market-moving political events. Decision-support you execute yourself; forward-tested in the open."
-    },
-    "/founding-members": {
-      "title": "Founding Members — back the lab at the early-phase price",
-      "description": "Own the engine: all three EA source codes + the full AI Trading Agent brain + lifetime all-access signals. One early-phase Founding Members offer."
+      "description": "Live AI Polymarket signals on crypto, macro and market-moving political events. Decision-support you execute yourself, with results logged in the open."
     },
     "/about": {
       "title": "About — the trading lab",

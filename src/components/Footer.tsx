@@ -7,7 +7,7 @@ import { RiskDisclaimer } from './RiskDisclaimer'
 const colClass = 'font-mono text-[0.7rem] tracking-[0.2em] text-muted uppercase'
 const itemClass = 'text-sm text-muted transition-colors hover:text-ink'
 const legalClass =
-  'font-mono text-[0.65rem] tracking-[0.15em] text-muted/70 uppercase transition-colors hover:text-ink'
+  'font-mono text-[0.65rem] tracking-[0.15em] text-muted/80 uppercase transition-colors hover:text-ink'
 
 function Ext({ href, children }: { href: string; children: string }) {
   return (
@@ -40,9 +40,6 @@ export function Footer() {
             </Link>
             <Link to="/polymarket" className={itemClass}>
               Polymarket Signals
-            </Link>
-            <Link to="/founding-members" className={itemClass}>
-              Founding Members
             </Link>
             <Link to="/about" className={itemClass}>
               About

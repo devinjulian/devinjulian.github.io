@@ -9,7 +9,7 @@ const STEPS = [
   {
     n: '01',
     title: 'Pick your path',
-    body: 'Choose the Founding Members offer or a single EA — pricing lives on each page. Not sure which fits? Tell us your broker and goals and we will point you the right way.',
+    body: 'Every license includes all three EAs — the only choice is the tier: Partner (IB), any-broker, or source code. Pricing lives on the Forex page. Not sure which fits? Tell us your broker and goals and we will point you the right way.',
   },
   {
     n: '02',
@@ -19,12 +19,12 @@ const STEPS = [
   {
     n: '03',
     title: 'Set up your broker',
-    body: 'Standard and Founding tiers run with any broker you like. The Partner tier is registered under one of our recommended introducing brokers (RoboForex, Exness, or Tickmill) — that is what keeps its price low.',
+    body: 'The any-broker and source-code tiers run with any broker you like. The Partner (IB) tier is registered under one of our recommended introducing brokers (RoboForex, Exness, or Tickmill) — that is what keeps its price low.',
   },
   {
     n: '04',
     title: 'Receive your EA and license',
-    body: 'You get the EA for MetaTrader 4 and 5 plus your account license. Founding Members and the source-code tier also receive the .mq5 source.',
+    body: 'You get all three EAs for MetaTrader 4 and 5, plus a license covering three trading account numbers — lifetime. The source-code tier receives the full .mq5 source instead, with no account lock.',
   },
   {
     n: '05',
@@ -68,7 +68,7 @@ export function HowItWorks() {
 
         <Reveal>
           <div className="mt-10 rounded-2xl border border-ink/10 bg-surface/40 p-6">
-            <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/70 uppercase">
+            <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
               What you'll need
             </p>
             <ul className="mt-4 grid gap-2 text-muted sm:grid-cols-2">
@@ -83,7 +83,7 @@ export function HowItWorks() {
         <Reveal>
           <div className="mt-10 flex flex-wrap gap-4">
             <ClaimButton />
-            <Button variant="ghost" to="/pricing">
+            <Button variant="ghost" to="/forex">
               See pricing
             </Button>
             <Button variant="ghost" to="/faq">

@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Container } from '../components/Container'
 import { Section } from '../components/Section'
 import { PageHero } from '../components/PageHero'
-import { AIAgentNote } from '../components/AIAgentNote'
 import { AiAgentResults } from '../components/AiAgentResults'
 import { AiAgentAbout } from '../components/AiAgentAbout'
 import { SignalPricing } from '../components/SignalPricing'
@@ -20,26 +19,26 @@ export function AiAgent() {
         kicker="The Frontier"
         title={
           <>
-            The AI Trading Agent. <em className="text-gold">Live, in manual testing.</em>
+            The AI Trading Agent. <em className="text-gold">Now live.</em>
           </>
         }
-        subtitle="An AI research desk that reads the context rule-based bots are blind to — now issuing crypto Buy/Sell decisions, every one reviewed by a human. It is decision-support in a testing phase, not a product you can buy yet."
+        subtitle="An AI that reads the context rule-based bots are blind to — doing an entire research desk's work before every call, then issuing it as one clean crypto Buy/Sell signal with the stop and target attached. Subscribers get each signal the moment it's issued; the record below is public."
         size="default"
       />
 
       <Container size="default">
         <Reveal>
           <p className="inline-flex rounded-full border border-signal/40 px-3 py-1 font-mono text-[0.7rem] tracking-[0.15em] text-signal uppercase">
-            Live · manual testing
+            Live · issuing signals
           </p>
         </Reveal>
 
-        {/* The testing log is the focus of this page — first under the hero. */}
-        <Section label="The testing log" className="mt-8">
+        {/* The signal log is the focus of this page — first under the hero. */}
+        <Section label="The signal log" className="mt-8">
           <Reveal>
             <p className="max-w-2xl text-lg leading-relaxed text-muted">
-              Forward-testing in the open — every session is logged below, taken or skipped, with the
-              reasoning behind it. Some days the most honest call is to do nothing. Results are shown
+              The record, in the open — every session is logged below, taken or skipped, with the
+              reasoning behind it. Some days the strongest call is to stand aside. Results are shown
               as R-multiples (reward versus the risk taken), never as profit promises.
             </p>
           </Reveal>
@@ -52,7 +51,6 @@ export function AiAgent() {
           <Reveal className="mt-8">
             <AiAgentResults />
           </Reveal>
-          <AIAgentNote className="mt-8 max-w-xl" />
         </Section>
 
         {/* Deeper context + conversion live at the bottom, out of the table's way. */}
@@ -63,8 +61,8 @@ export function AiAgent() {
         >
           <Reveal>
             <p className="max-w-2xl text-lg leading-relaxed text-muted">
-              See how the Agent reaches a decision, follow the testing in the open, then get the live
-              calls the moment they're issued. The daily log here is free; live signals go to
+              See how the Agent reaches a decision, watch the record build in the open, then get the
+              live calls the moment they're issued. The daily log here is free; live signals go to
               subscribers in a private channel — one subscription covers crypto and Polymarket.
             </p>
             <div className="mt-7 flex flex-wrap gap-4">
@@ -73,9 +71,6 @@ export function AiAgent() {
               </Button>
               <Button variant="ghost" onClick={() => setAboutOpen(true)}>
                 How it works
-              </Button>
-              <Button variant="ghost" to="/pricing">
-                Become a Founding Member
               </Button>
             </div>
             <SignalPricing className="mt-10 max-w-2xl" />

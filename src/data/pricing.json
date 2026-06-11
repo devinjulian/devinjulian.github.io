@@ -1,52 +1,52 @@
 {
-  "bundles": [
+  "forexTiers": [
     {
-      "id": "founding",
-      "name": "Founding Members",
-      "subtitle": "Early Phase",
-      "price": 3999,
-      "priceLabel": "$3,999",
-      "spotsLeft": 8,
-      "audience": "For the builder who backs the lab at its earliest phase — and owns the engine, not a rental.",
+      "id": "partner-ib",
+      "name": "Partner (IB)",
+      "price": "$99",
+      "priceAmount": 99,
+      "tagline": "The entry price — made possible by our partner brokers.",
       "features": [
-        "All three EA source codes (.mq5) — delivered instantly",
-        "The full AI Trading Agent source — own the engine, not just its signals",
-        "Lifetime all-access signals (Crypto Futures + Polymarket)",
-        "Everything the lab ships next, at this price — first in line for automation"
+        "All three EAs — Omnicor, Cenith & Golden",
+        "License for 3 trading account numbers",
+        "Lifetime — pay once, no renewals",
+        "MT4 & MT5 builds"
+      ],
+      "requiresIB": true,
+      "ibNote": "Requires a trading account under one of our partner IB brokers",
+      "order": 1
+    },
+    {
+      "id": "any-broker",
+      "name": "Any Broker",
+      "price": "$999",
+      "priceAmount": 999,
+      "tagline": "The same bundle, on whatever broker you already trust.",
+      "features": [
+        "All three EAs — Omnicor, Cenith & Golden",
+        "License for 3 trading account numbers",
+        "Lifetime — pay once, no renewals",
+        "MT4 & MT5 builds · works with any broker"
       ],
       "requiresIB": false,
       "ibNote": null,
-      "flagship": true,
-      "order": 1
-    }
-  ],
-  "individualEAs": [
-    {
-      "ea": "Omnicor",
-      "pair": "EURUSD",
-      "partnerIB": "$99",
-      "partnerLicenses": "2 licenses",
-      "anyBroker": "$999",
-      "anyBrokerLicenses": "2 licenses",
-      "sourceCode": "$1,999"
+      "order": 2
     },
     {
-      "ea": "Cenith",
-      "pair": "GBPUSD",
-      "partnerIB": "$99",
-      "partnerLicenses": "1 license",
-      "anyBroker": "$999",
-      "anyBrokerLicenses": "1 license",
-      "sourceCode": "$1,999"
-    },
-    {
-      "ea": "Golden",
-      "pair": "XAUUSD",
-      "partnerIB": "$99",
-      "partnerLicenses": "2 licenses",
-      "anyBroker": "$999",
-      "anyBrokerLicenses": "2 licenses",
-      "sourceCode": "$1,999"
+      "id": "source-code",
+      "name": "Source Code",
+      "price": "$2,499",
+      "priceAmount": 2499,
+      "tagline": "Own the engines themselves — the full .mq5 source of all three.",
+      "features": [
+        "Full .mq5 source — Omnicor, Cenith & Golden",
+        "No account-number lock",
+        "Delivered instantly",
+        "Yours permanently"
+      ],
+      "requiresIB": false,
+      "ibNote": null,
+      "order": 3
     }
   ],
   "subscription": {
@@ -58,6 +58,5 @@
     "allAccessNote": "One subscription, both signals — Crypto Futures and Polymarket. Live signals are delivered in a private channel; you place every trade yourself.",
     "channel": "private Telegram channel",
     "payment": "crypto, verified manually"
-  },
-  "scarcityNote": "These counters are updated by hand and reflect real spots. When a bundle fills, its pricing closes permanently — no countdown timers, no resets, no second run at these numbers."
+  }
 }

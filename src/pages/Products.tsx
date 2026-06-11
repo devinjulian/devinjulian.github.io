@@ -1,4 +1,4 @@
-import { eas, links, individualEAs, brokers, scarcityNote } from '../data'
+import { eas, links, forexTiers, brokers } from '../data'
 import { Container } from '../components/Container'
 import { Section } from '../components/Section'
 import { SectionLabel } from '../components/SectionLabel'
@@ -45,100 +45,75 @@ export function Products() {
               which is the entire point of owning all three.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
-              <Button variant="primary" to="/founding-members">
-                Become a Founding Member
-              </Button>
+              <ClaimButton>Own all three</ClaimButton>
               <Button variant="ghost" href={links.myfxbook} external>
                 See the track record
               </Button>
-              <ClaimButton variant="ghost" />
             </div>
           </Reveal>
         </Section>
 
-        {/* EA pricing — moved here from the old Pricing page (v1.6, 2026-06-10) */}
+        {/* Pricing — one bundle, three ways to own it (v1.7, 2026-06-11) */}
         <section className="border-t border-ink/10 py-16 sm:py-20">
           <Reveal>
-            <SectionLabel>EA pricing</SectionLabel>
+            <SectionLabel>Pricing</SectionLabel>
             <h2 className="mt-7 max-w-2xl font-display text-3xl leading-tight font-light text-ink sm:text-4xl">
-              Rather start with one? Each algorithm stands on its own.
+              One bundle, all three EAs. <em className="text-gold">Choose how you own it.</em>
             </h2>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
+              Every tier includes Omnicor, Cenith and Golden together — the EAs are not sold
+              separately. The only decision is the license that fits you.
+            </p>
           </Reveal>
 
           <Reveal delay={0.1}>
-            {/* Mobile: stacked cards — no horizontal scroll, no hidden columns */}
-            <div className="mt-9 grid gap-4 md:hidden">
-              {individualEAs.map((row) => (
-                <div key={row.ea} className="rounded-xl border border-ink/10 bg-surface/40 p-5">
-                  <div className="flex items-baseline justify-between">
-                    <span className="font-display text-xl text-ink">{row.ea}</span>
-                    <span className="font-mono text-sm text-muted">{row.pair}</span>
+            <div className="mt-10 grid gap-5 lg:grid-cols-3">
+              {forexTiers.map((tier) => (
+                <div
+                  key={tier.id}
+                  className="flex h-full flex-col rounded-2xl border border-ink/10 bg-surface/40 p-7"
+                >
+                  <p className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
+                    {tier.name}
+                  </p>
+                  <p className="mt-4 font-display text-4xl font-light text-ink">
+                    {tier.price}
+                    <span className="ml-2 font-mono text-[0.65rem] tracking-[0.15em] text-muted/80 uppercase">
+                      one-time
+                    </span>
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">{tier.tagline}</p>
+                  <ul className="mt-6 flex-1 space-y-2.5 text-sm leading-relaxed text-muted">
+                    {tier.features.map((f) => (
+                      <li key={f} className="flex gap-2.5">
+                        <span aria-hidden className="text-gold">
+                          ·
+                        </span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  {tier.ibNote && (
+                    <p className="mt-5 text-xs leading-relaxed text-muted/80">
+                      {tier.ibNote} — listed below.
+                    </p>
+                  )}
+                  <div className="mt-6">
+                    <ClaimButton
+                      item={`${tier.name} bundle (${tier.price})`}
+                      variant={tier.requiresIB ? 'primary' : 'ghost'}
+                      className="w-full"
+                    >
+                      Claim {tier.name}
+                    </ClaimButton>
                   </div>
-                  <dl className="mt-4 grid grid-cols-3 gap-3 font-mono text-sm">
-                    <div>
-                      <dt className="text-[0.6rem] tracking-[0.2em] text-muted/70 uppercase">Partner</dt>
-                      <dd className="mt-1 text-ink">{row.partnerIB}</dd>
-                      <dd className="text-[0.6rem] text-muted/70">{row.partnerLicenses}</dd>
-                    </div>
-                    <div>
-                      <dt className="text-[0.6rem] tracking-[0.2em] text-muted/70 uppercase">Any broker</dt>
-                      <dd className="mt-1 text-ink">{row.anyBroker}</dd>
-                      <dd className="text-[0.6rem] text-muted/70">{row.anyBrokerLicenses}</dd>
-                    </div>
-                    <div>
-                      <dt className="text-[0.6rem] tracking-[0.2em] text-muted/70 uppercase">Source</dt>
-                      <dd className="mt-1 text-gold">{row.sourceCode}</dd>
-                      <dd className="text-[0.6rem] text-muted/70">.mq5 · instant</dd>
-                    </div>
-                  </dl>
                 </div>
               ))}
             </div>
 
-            {/* Desktop: table */}
-            <div className="mt-9 hidden md:block">
-              <table className="w-full border-collapse text-left">
-                <thead>
-                  <tr className="border-b border-ink/15 font-mono text-[0.65rem] tracking-[0.2em] text-muted/70 uppercase">
-                    <th className="py-3 pr-4 font-normal">EA</th>
-                    <th className="py-3 pr-4 font-normal">Pair</th>
-                    <th className="py-3 pr-4 font-normal">Partner (IB)</th>
-                    <th className="py-3 pr-4 font-normal">Any broker</th>
-                    <th className="py-3 font-normal">Source code</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {individualEAs.map((row) => (
-                    <tr key={row.ea} className="border-b border-ink/5">
-                      <td className="py-4 pr-4 font-display text-lg text-ink">{row.ea}</td>
-                      <td className="py-4 pr-4 font-mono text-sm text-muted">{row.pair}</td>
-                      <td className="py-4 pr-4">
-                        <span className="font-mono text-sm text-ink">{row.partnerIB}</span>
-                        <span className="block font-mono text-[0.65rem] text-muted/70">
-                          {row.partnerLicenses}
-                        </span>
-                      </td>
-                      <td className="py-4 pr-4">
-                        <span className="font-mono text-sm text-ink">{row.anyBroker}</span>
-                        <span className="block font-mono text-[0.65rem] text-muted/70">
-                          {row.anyBrokerLicenses}
-                        </span>
-                      </td>
-                      <td className="py-4">
-                        <span className="font-mono text-sm text-gold">{row.sourceCode}</span>
-                        <span className="block font-mono text-[0.65rem] text-muted/70">
-                          .mq5 · instant
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
             {/* IB brokers — stated plainly, not hidden */}
             <div className="mt-8 rounded-xl border border-ink/10 bg-surface/30 p-6">
-              <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/70 uppercase">
+              <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
                 The Partner (IB) price requires one of these brokers
               </p>
               <div className="mt-4 flex flex-wrap gap-3">
@@ -160,14 +135,10 @@ export function Products() {
             </div>
 
             <p className="mt-6 border-l-2 border-gold/40 pl-4 text-sm leading-relaxed text-muted">
-              {scarcityNote}
+              A license covers three trading account numbers of your choosing, for life — pay
+              once, no renewals. The source-code tier has no account lock: you receive the
+              .mq5 files themselves.
             </p>
-
-            <div className="mt-8">
-              <ClaimButton item="an individual EA" variant="ghost">
-                Claim an individual EA
-              </ClaimButton>
-            </div>
           </Reveal>
         </section>
 

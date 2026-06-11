@@ -14,7 +14,7 @@ export function NotFound() {
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Button to="/">Back home</Button>
-          <Button variant="ghost" to="/pricing">
+          <Button variant="ghost" to="/forex">
             See pricing
           </Button>
         </div>

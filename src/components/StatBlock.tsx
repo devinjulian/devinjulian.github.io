@@ -61,7 +61,7 @@ export function StatBlock({ ea, className }: { ea: EA; className?: string }) {
       <div className="grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-ink/10 bg-ink/10 sm:grid-cols-3">
         {tiles.map((t) => (
           <div key={t.label} className="bg-surface/60 px-5 py-5">
-            <div className="font-mono text-[0.65rem] tracking-[0.2em] text-muted/70 uppercase">
+            <div className="font-mono text-[0.65rem] tracking-[0.2em] text-muted/80 uppercase">
               {t.label}
             </div>
             <div className={cn('mt-1.5 font-mono text-2xl tabular-nums', toneClass[t.tone])}>

@@ -50,33 +50,17 @@ export interface EA {
   backtests?: Backtest[]
 }
 
-export interface Bundle {
+/** One way to own the three-EA bundle (every tier includes all three EAs — PRD §8). */
+export interface ForexTier {
   id: string
   name: string
-  subtitle: string
-  price: number
-  priceLabel: string
-  spotsLeft: number
-  audience: string
+  price: string
+  priceAmount: number
+  tagline: string
   features: string[]
   requiresIB: boolean
   ibNote: string | null
-  value?: number
-  valueLabel?: string
-  save?: number
-  saveLabel?: string
-  flagship: boolean
   order: number
-}
-
-export interface IndividualEAPrice {
-  ea: string
-  pair: string
-  partnerIB: string
-  partnerLicenses: string
-  anyBroker: string
-  anyBrokerLicenses: string
-  sourceCode: string
 }
 
 export interface Subscription {

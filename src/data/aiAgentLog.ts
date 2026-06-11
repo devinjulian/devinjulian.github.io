@@ -1,4 +1,4 @@
-// Single source of truth for the AI Trading Agent manual-testing log.
+// Single source of truth for the AI Trading Agent public results log.
 // COMPLIANCE: real, owner-provided data only — never fabricate. Results are R-multiples
 // (reward vs. the risk taken), never $ or % profit. Each session is one calendar day and
 // may hold zero, one, or many signals (the Agent's daily report can flag several).
@@ -25,8 +25,13 @@ export interface AiSignal {
 export interface AiAgentSession {
   date: string // ISO 'YYYY-MM-DD' — one report per day
   marketInsight: string // concise read of the session (typewriter in the modal); for a
-  // no-signal day this explains why the Agent stood aside
+  // no-signal / no-trade day this explains why the Agent stood aside
   signals: AiSignal[] // empty array = no-signal day
+  // True when the Agent deliberately stood down for the day because of high-impact
+  // news (NOT its own no-setup judgement). Always paired with signals: [] — these
+  // days have NO outcome and must never be counted as profit/stop. The calendar
+  // tints them distinctly and labels them "No trade"; `marketInsight` carries the news.
+  newsHold?: boolean
 }
 
 /** True only while the table shows illustrative placeholders. Real data → false. */
@@ -151,6 +156,57 @@ export const aiAgentLog: AiAgentSession[] = [
       },
     ],
   },
+  {
+    date: '2026-06-09',
+    marketInsight:
+      'No high-impact news on the calendar and a clear macro slate — clean conditions to trade. The scan surfaced two full-confidence setups on opposite sides: a HYPE short into a failed breakout, and an ETH long into a tested demand zone. Two more names were noted watch-only — ZEC on the spot side and a Base-ecosystem rotation (CTR after AERO) — not full setups, so they were left off the ticket.',
+    signals: [
+      {
+        asset: 'HYPE/USDT',
+        direction: 'Short',
+        entry: '59.143',
+        stopLoss: '61.281',
+        takeProfit: 'TP1 57.200',
+        leverage: '3x',
+        result: 'Hit TP1 (+0.9R)',
+        outcome: 'profit',
+        reason:
+          'HYPE down ~9% on the day — from a 64.63 high to 58.78 — after a failed breakout at the 64 zone and losing the 75.48 ATH area. Sell volume dominant; M1 structure firmly bearish, and the breakdown under 60 opened the path toward 57. Tight stop above the swing high.',
+        chart: '/ai-agent/2026-06-09-hype.jpg',
+        chartAlt:
+          'HYPE/USDT 15m chart — short from 59.143 with stop above 61.281; price breaks down through the 57.200 target zone to ~57.0.',
+      },
+      {
+        asset: 'ETH/USDT',
+        direction: 'Long',
+        entry: '1,628',
+        stopLoss: '1,606',
+        takeProfit: 'TP1 1,650',
+        leverage: '2x',
+        result: 'Hit TP1 (+1.0R)',
+        outcome: 'profit',
+        reason:
+          'ETH down ~4% from 1,712 to 1,630, nearly tagging the 1,626 demand zone. Accumulation into weakness on the week, oversold on M15 with RSI under 25. Entry at the demand zone to catch the bounce, with a tight ~1.5% stop and a first target back at 1,650.',
+        chart: '/ai-agent/2026-06-09-eth.jpg',
+        chartAlt:
+          'ETH/USDT 15m chart — long from 1,628 with stop at 1,606; price rallies up through the 1,650 target before easing back.',
+      },
+    ],
+  },
+  {
+    date: '2026-06-10',
+    marketInsight:
+      'High-impact news held the Agent out of the market today. Overnight, the Humanity Protocol multisig was compromised — roughly 300M tokens minted across 17 related wallets — and a four-year-old vulnerability in Zcash’s Orchard pool was disclosed, sending ZEC down ~10% on panic. With the security sector under pressure and a likely dead-cat bounce setting traps, the disciplined call was to stand aside. No trade taken.',
+    signals: [],
+    newsHold: true,
+  },
+  {
+    date: '2026-06-11',
+    marketInsight:
+      'A news-driven tape, so the Agent stood down. The CFTC chair acknowledged current rules can’t classify Hyperliquid and are being rewritten; Circle moved to route the bulk of USDC yield back to the protocol; and Coinbase took on management of $6B of on-chain USDC. Net constructive for DeFi, but with regulation headlines moving prices, the call was to wait for the dust to settle rather than trade the noise. No trade taken.',
+    signals: [],
+    newsHold: true,
+  },
 ]
 
 const ymOf = (date: string): { year: number; month: number } => {
@@ -180,17 +236,20 @@ export function entriesFor(year: number, month: number): AiAgentSession[] {
     .sort((a, b) => a.date.localeCompare(b.date))
 }
 
-/** Signal/day counts for a year+month (honest tally — no $/%). */
+/** Signal/day counts for a year+month (honest tally — no $/%). News-hold days are
+ *  counted separately from the Agent's own no-signal days. */
 export function tallyFor(
   year: number,
   month: number,
-): { profit: number; stoploss: number; noSignalDays: number } {
+): { profit: number; stoploss: number; noSignalDays: number; newsDays: number } {
   let profit = 0
   let stoploss = 0
   let noSignalDays = 0
+  let newsDays = 0
   for (const session of entriesFor(year, month)) {
     if (session.signals.length === 0) {
-      noSignalDays += 1
+      if (session.newsHold) newsDays += 1
+      else noSignalDays += 1
       continue
     }
     for (const sig of session.signals) {
@@ -198,7 +257,7 @@ export function tallyFor(
       else stoploss += 1
     }
   }
-  return { profit, stoploss, noSignalDays }
+  return { profit, stoploss, noSignalDays, newsDays }
 }
 
 /** Most recent period present in the log (falls back to today if empty). */

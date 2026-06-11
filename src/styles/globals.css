@@ -55,23 +55,66 @@
 
 @layer components {
   /* Fixed atmospheric depth — a warm glow up top, a cooler one low, over the void.
-     Cheap (pure gradients), sits behind all content. */
+     The glows live on pseudo-element layers that "breathe": very slow drift + scale,
+     transform/opacity only (compositor-cheap, zero JS). This is the one motion every
+     device gets — ParticleField stays desktop-only above it — and the global
+     prefers-reduced-motion rule collapses it back to these static gradients.
+     Layers are oversized (inset -12%) so the drift never reveals a clipped glow edge;
+     gradient anchors are re-derived so the light lands exactly where the static
+     version put it (e.g. gold: 50%/-10% of viewport ≈ 50%/2% of the 124% layer). */
   .atmosphere {
     position: fixed;
     inset: 0;
     z-index: -10;
     pointer-events: none;
-    background:
-      radial-gradient(
-        60rem 40rem at 50% -10%,
-        color-mix(in oklab, var(--color-gold) 12%, transparent),
-        transparent 70%
-      ),
-      radial-gradient(
-        50rem 50rem at 85% 110%,
-        color-mix(in oklab, var(--color-signal) 7%, transparent),
-        transparent 70%
-      );
+    overflow: hidden;
+  }
+
+  .atmosphere::before,
+  .atmosphere::after {
+    content: '';
+    position: absolute;
+    inset: -12%;
+  }
+
+  .atmosphere::before {
+    background: radial-gradient(
+      60rem 40rem at 50% 2%,
+      color-mix(in oklab, var(--color-gold) 12%, transparent),
+      transparent 70%
+    );
+    animation: atmo-warm 26s ease-in-out infinite alternate;
+  }
+
+  .atmosphere::after {
+    background: radial-gradient(
+      50rem 50rem at 78% 98%,
+      color-mix(in oklab, var(--color-signal) 7%, transparent),
+      transparent 70%
+    );
+    animation: atmo-cool 34s ease-in-out infinite alternate;
+  }
+
+  @keyframes atmo-warm {
+    from {
+      transform: translate3d(-2%, -1%, 0) scale(1);
+      opacity: 0.7;
+    }
+    to {
+      transform: translate3d(2%, 1.5%, 0) scale(1.12);
+      opacity: 1;
+    }
+  }
+
+  @keyframes atmo-cool {
+    from {
+      transform: translate3d(1.5%, 1%, 0) scale(1.08);
+      opacity: 0.95;
+    }
+    to {
+      transform: translate3d(-2%, -1.5%, 0) scale(1);
+      opacity: 0.6;
+    }
   }
 
   /* Film grain — adds a tactile, premium texture without an image asset. */

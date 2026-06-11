@@ -24,7 +24,7 @@ export function Contact() {
         <div className="grid gap-4 sm:grid-cols-2">
           <Reveal>
             <div className="flex h-full flex-col rounded-2xl border border-ink/10 bg-surface/40 p-6">
-              <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/70 uppercase">
+              <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
                 Telegram
               </p>
               <p className="mt-2 text-ink">{links.telegramHandle}</p>
@@ -43,7 +43,7 @@ export function Contact() {
 
           <Reveal delay={0.1}>
             <div className="flex h-full flex-col rounded-2xl border border-ink/10 bg-surface/40 p-6">
-              <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/70 uppercase">
+              <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
                 Email
               </p>
               <p className="mt-2 break-all text-ink">{links.email}</p>
@@ -61,7 +61,7 @@ export function Contact() {
 
         <Reveal>
           <div className="mt-6 rounded-2xl border border-ink/10 bg-void/40 p-6">
-            <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/70 uppercase">
+            <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
               A message that says it all
             </p>
             <p className="mt-3 leading-relaxed text-muted italic">“{message}”</p>
@@ -69,7 +69,7 @@ export function Contact() {
               Want the guided version that pre-fills which plan you're after?{' '}
             </p>
             <div className="mt-3">
-              <ClaimButton>Open the claim panel</ClaimButton>
+              <ClaimButton>Open the contact panel</ClaimButton>
             </div>
           </div>
         </Reveal>

@@ -26,11 +26,19 @@ export function AiAgentDayModal({
       <h2 id="ai-session-title" className="mt-3 font-display text-3xl font-light text-ink">
         {hasSignals
           ? `${session.signals.length} signal${session.signals.length > 1 ? 's' : ''}`
-          : 'No signal'}
+          : session.newsHold
+            ? 'No trade'
+            : 'No signal'}
       </h2>
 
+      {session.newsHold && (
+        <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-warn/50 bg-warn/10 px-3 py-1 font-mono text-[0.65rem] tracking-[0.15em] text-warn uppercase">
+          <span aria-hidden>🚨</span> High-impact news · no trade
+        </p>
+      )}
+
       <div className="mt-4 border-l-2 border-gold/40 pl-3">
-        <p className="font-mono text-[0.6rem] tracking-[0.2em] text-muted/70 uppercase">
+        <p className="font-mono text-[0.6rem] tracking-[0.2em] text-muted/80 uppercase">
           Market read
         </p>
         <p className="mt-1 min-h-[3.5rem] text-sm leading-relaxed text-muted">
@@ -61,13 +69,13 @@ export function AiAgentDayModal({
 
               <dl className="mt-3 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-ink/10 bg-ink/10">
                 <div className="bg-surface/60 px-4 py-2.5">
-                  <dt className="font-mono text-[0.55rem] tracking-[0.2em] text-muted/70 uppercase">
+                  <dt className="font-mono text-[0.55rem] tracking-[0.2em] text-muted/80 uppercase">
                     Entry
                   </dt>
                   <dd className="mt-0.5 font-mono text-sm text-ink">{sig.entry}</dd>
                 </div>
                 <div className="bg-surface/60 px-4 py-2.5">
-                  <dt className="font-mono text-[0.55rem] tracking-[0.2em] text-muted/70 uppercase">
+                  <dt className="font-mono text-[0.55rem] tracking-[0.2em] text-muted/80 uppercase">
                     Stop loss
                   </dt>
                   <dd className="mt-0.5 font-mono text-sm text-ink">{sig.stopLoss}</dd>

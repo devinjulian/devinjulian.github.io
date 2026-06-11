@@ -4,12 +4,12 @@ import { links } from '../data'
 export function buildMessage(item?: string): string {
   return item
     ? `Hi ATC — I'd like the ${item}. Can you walk me through the next step?`
-    : `Hi ATC — I'm interested in claiming a spot. Can you walk me through the next step?`
+    : `Hi ATC — I'm interested in your algorithms. Can you walk me through the next step?`
 }
 
 /** mailto: with the chosen bundle/EA pre-filled into subject + body. */
 export function emailHref(item?: string): string {
-  const subject = item ? `Claiming: ${item}` : 'Claiming a spot'
+  const subject = item ? `Interested in: ${item}` : 'Getting started'
   const body = buildMessage(item)
   return `mailto:${links.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
 }
