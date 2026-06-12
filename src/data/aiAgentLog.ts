@@ -207,6 +207,28 @@ export const aiAgentLog: AiAgentSession[] = [
     signals: [],
     newsHold: true,
   },
+  {
+    date: '2026-06-12',
+    marketInsight:
+      'No high-impact crypto news on the calendar — no CPI, FOMC or NFP, no major Binance listing and no exploits — with Fear & Greed pinned at 12 (Extreme Fear) while BTC, SOL and XRP all ticked quietly green. A silent-recovery tape. One name cleared the full-confidence bar: SOL, the day’s momentum leader across the top 5, set up for a long scalp. Two spot-only names were noted watch-only, not part of the ticket — XMR after its privacy-upgrade pop and BACKPACK on mid-cap accumulation.',
+    signals: [
+      {
+        asset: 'SOL/USDT',
+        direction: 'Long',
+        entry: '66.76',
+        stopLoss: '65.30',
+        takeProfit: 'TP1 67.50 · TP2 68.40',
+        leverage: '3x',
+        result: 'Hit TP2 (+1.1R)',
+        outcome: 'profit',
+        reason:
+          'SOL was the day’s momentum leader across the top 5, up ~2.4%. Open interest up 2.33% with funding only mildly positive (0.002%) — bullish but not overextended. 24h short liquidations of just $640K against $3.35M of longs left shorts still leaning in, primed to be squeezed once price pushed off the solid $66 intraday support, with Fear & Greed at 12 adding squeeze fuel.',
+        chart: '/ai-agent/2026-06-12-sol.jpg',
+        chartAlt:
+          'SOL/USDT 15m chart — long from 66.76 with stop at 65.30; price rallies up through the 67.50 and 68.40 targets to ~68.66.',
+      },
+    ],
+  },
 ]
 
 const ymOf = (date: string): { year: number; month: number } => {
