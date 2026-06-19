@@ -229,6 +229,99 @@ export const aiAgentLog: AiAgentSession[] = [
       },
     ],
   },
+  {
+    date: '2026-06-15',
+    marketInsight:
+      'No high-impact news today. Fed rate steady at 3.62%, the Iran peace deal already priced in from the day before — clean conditions for scalping. The risk-on narrative still lingered in altcoin momentum. One name cleared full confidence: HYPE, riding a short-squeeze setup with negative funding and rising OI.',
+    signals: [
+      {
+        asset: 'HYPE/USDT',
+        direction: 'Long',
+        entry: '65.95',
+        stopLoss: '64.20',
+        takeProfit: '67.69',
+        leverage: '3x',
+        result: 'Hit TP (+1.0R)',
+        outcome: 'profit',
+        reason:
+          'US-Iran peace deal risk-on narrative still flowing — HYPE surged 9.4% in 24h on $976M volume with OI up 11%. Binance funding rate deeply negative at -0.8%, meaning heavy short positioning primed for a squeeze. Long/short ratio at just 1.13 against an average of 1.19 — bearish crowd leaning in, contrarian fuel for the move. Entry on the M5 intraday support retest after a breakdown candle.',
+        chart: '/ai-agent/2026-06-15-hype.jpg',
+        chartAlt:
+          'HYPE/USDT 15m chart — long from 65.95 with stop at 64.20; price squeezes up through the 67.69 target zone to ~67.93.',
+      },
+    ],
+  },
+  {
+    date: '2026-06-16',
+    marketInsight:
+      'High-impact news day: BOJ hiked rates to 1% — the highest since 1995 — while T. Rowe Price\'s ETF approval triggered active rotation across 15 crypto assets, and BTC\'s Puell Multiple sat at 0.51 (a historical bottom level). Net assessment: institutional catalysts positive, macro mild. Trading recommended with caution on BOJ risk-sentiment spillover. Two names cleared full confidence — UNI on a brutal fundamental re-rating, and AERO on fresh capital inflows.',
+    signals: [
+      {
+        asset: 'UNI/USDT',
+        direction: 'Long',
+        entry: '2.946',
+        stopLoss: '2.680',
+        takeProfit: '3.209',
+        leverage: '3x',
+        result: 'Hit TP (+1.0R)',
+        outcome: 'profit',
+        reason:
+          'Catalyst-driven: StanChart initiated coverage with a $6.50 PT for H2 2026 (~140% upside), BlackRock and Fidelity already positioned, and UNI\'s price-to-fee ratio at just 2.6x versus Hyperliquid\'s 10.5x — deeply undervalued. Volume up 13% in 24h, OI up 16.7% on Binance, funding rate capped at the 0.01% maximum — bulls paying maximum premium, a sign of strong conviction.',
+        chart: '/ai-agent/2026-06-16-uni.jpg',
+        chartAlt:
+          'UNI/USDT 15m chart — long from 2.946 with stop at 2.680; price rallies through the ascending channel into the 3.209 target zone to ~3.25.',
+      },
+      {
+        asset: 'AERO/USDT',
+        direction: 'Long',
+        entry: '0.450',
+        stopLoss: '0.421',
+        takeProfit: '0.480',
+        leverage: '3x',
+        result: 'Hit TP (+1.0R)',
+        outcome: 'profit',
+        reason:
+          'AERO pumping 14.7% on $30.8M volume with OI up 32% in 24h — fresh capital flowing in. Fundamentals strong: $3.8M/month distributed to veAERO holders, trading volume equal to one-third of Uniswap. Dual catalyst: liquidity migration to Arc-compatible pools before July 6 deadline, plus MiCA USDT delisting on July 1 funnelling traffic toward AERO.',
+        chart: '/ai-agent/2026-06-16-aero.jpg',
+        chartAlt:
+          'AERO/USDT 15m chart — long from 0.450 with stop at 0.421; price pushes through the ascending channel and tags the 0.480 target zone before pulling back.',
+      },
+    ],
+  },
+  {
+    date: '2026-06-17',
+    marketInsight:
+      'No high-impact news. The biggest headlines from yesterday — Coinbase launching 13 products and Bitwise staking HYPE — weren\'t strong enough to move the market. Clean conditions. One name cleared the confidence bar: PENDLE, showing strong technical momentum and aggressive funding. The trade was taken but did not hold — price reversed and hit the stop.',
+    signals: [
+      {
+        asset: 'PENDLE/USDT',
+        direction: 'Long',
+        entry: '1.455',
+        stopLoss: '1.410',
+        takeProfit: '1.560',
+        leverage: '2.5x',
+        result: 'Hit SL (-1R)',
+        outcome: 'stoploss',
+        reason:
+          'PENDLE up 5% on the day with RSI at 71 (strong but not yet extreme), MACD histogram positive, and Bollinger Band broken upper with widening bandwidth — momentum intact. Binance funding rate at the 1% cap, meaning longs were paying heavy premium, yet OI rose 5% in 24h: when OI climbs alongside max funding, it signals smart money believes the trend isn\'t over. Three White Soldiers appeared three times in the prior two days. The setup was valid but price reversed sharply and hit the stop.',
+        chart: '/ai-agent/2026-06-17-pendle.jpg',
+        chartAlt:
+          'PENDLE/USDT 15m chart — long from 1.455 with stop at 1.410; price consolidates near entry then breaks down sharply through the stop-loss level to ~1.383.',
+      },
+    ],
+  },
+  {
+    date: '2026-06-18',
+    marketInsight:
+      'Three names were on the radar — ENA with institutional inflow and whale on-chain accumulation, AT with a wild volume-to-cap ratio but already past the entry limit and overbought, and VELVET showing a bottom reversal pattern but no breakout confirmation above $0.40. Each had a thesis, but none cleared every filter cleanly enough. Discipline over FOMO — no entry taken.',
+    signals: [],
+  },
+  {
+    date: '2026-06-19',
+    marketInsight:
+      'A heavy tape — $361M in long liquidations still unwinding, Iran geopolitics unresolved, and BTC dominance climbing to 56% draining altcoin flows. SOL had bearish structure but was already deeply oversold, risking a snapback bounce. ENA showed whale accumulation and a multi-touch support, but the broader environment was hostile. HYPE was too far from its ATH to short with any edge. Nothing cleared the bar — the honest call was to stand aside.',
+    signals: [],
+  },
 ]
 
 const ymOf = (date: string): { year: number; month: number } => {
