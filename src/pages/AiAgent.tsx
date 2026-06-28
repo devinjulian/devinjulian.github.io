@@ -73,7 +73,7 @@ export function AiAgent() {
                 How it works
               </Button>
             </div>
-            <SignalPricing className="mt-10 max-w-2xl" />
+            <SignalPricing className="mt-10 max-w-4xl" />
           </Reveal>
         </Section>
 
