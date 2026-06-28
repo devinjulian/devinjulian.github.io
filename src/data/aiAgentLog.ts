@@ -322,6 +322,54 @@ export const aiAgentLog: AiAgentSession[] = [
       'A heavy tape — $361M in long liquidations still unwinding, Iran geopolitics unresolved, and BTC dominance climbing to 56% draining altcoin flows. SOL had bearish structure but was already deeply oversold, risking a snapback bounce. ENA showed whale accumulation and a multi-touch support, but the broader environment was hostile. HYPE was too far from its ATH to short with any edge. Nothing cleared the bar — the honest call was to stand aside.',
     signals: [],
   },
+  {
+    date: '2026-06-22',
+    marketInsight:
+      'High-impact news kept the Agent on the sidelines. The msUSD stablecoin depegged from $1 to $0.09 — trapping $18M in Morpho vaults — the Bank of England announced a £40B cap on sterling stablecoins, and US-Iran tensions escalated. Fear & Greed at 21 (Extreme Fear), market cap $2.28T, BTC dominance 56%. Trading conditions were viable for BTC/ETH but stablecoin-adjacent plays and small-cap scalps carried outsized event risk. No trade taken.',
+    signals: [],
+    newsHold: true,
+  },
+  {
+    date: '2026-06-23',
+    marketInsight:
+      'No high-impact news on the calendar — clean conditions for scalping. SOL stood out as the strongest candidate by a wide margin: funding rates were deeply negative across exchanges (Binance -0.018%, Bybit -0.03%) — classic short-squeeze fuel — while price held firm at the $68.50-$69.00 support zone with wick rejections on M15, M5 reversal candles, and a volume spike on M1. One full-confidence setup was taken.',
+    signals: [
+      {
+        asset: 'SOL/USDT',
+        direction: 'Long',
+        entry: '68.88',
+        stopLoss: '68.18',
+        takeProfit: 'TP1 69.58 · TP2 70.18 · TP3 70.90',
+        leverage: '2-3x',
+        result: 'Hit TP2 (+1.9R)',
+        outcome: 'profit',
+        reason:
+          'Funding rate deeply negative on Binance (-0.018%) and Bybit (-0.03%) — shorts paying longs every 8 hours, a textbook squeeze setup. Price sitting right on the $68.50-$69.00 support with lower-wick rejections across three timeframes: M15 support hold, M5 reversal candle, M1 volume spike. Long/short ratio at 3.04x confirmed crowd positioning but the negative funding meant it was shorts footing the bill.',
+        chart: '/ai-agent/2026-06-23-sol.jpg',
+        chartAlt:
+          'SOL/USDT M1 chart — long from 68.88 with stop at 68.18; price rallies through TP1 at 69.58, TP2 at 70.18, and tags TP3 at 70.90.',
+      },
+    ],
+  },
+  {
+    date: '2026-06-24',
+    marketInsight:
+      'No new signal issued — the Agent maintained the previous day\'s SOL long position, which was still active and performing within the thesis. With no fresh catalyst to invalidate the setup and price trending above entry, the disciplined call was to hold rather than chase a new trade. No additional entry taken.',
+    signals: [],
+  },
+  {
+    date: '2026-06-25',
+    marketInsight:
+      'BTC at a 21-month low, Fear & Greed at 13 (Extreme Fear), market cap down 2.36% on the day, and MicroStrategy selling BTC for the first time since 2022 — heavy structural pressure. Two names surfaced with momentum — SLX (+47.5%) and SYN (+29.3%) — but both carried disqualifying red flags: SLX had a 2.55% funding rate and 95% OI surge (classic top-heavy trap), SYN was RSI 73 with Stochastic pinned at 100 (exhausted). Pumps in a crash tape are distribution, not trend. Nothing cleared the confidence bar.',
+    signals: [],
+  },
+  {
+    date: '2026-06-26',
+    marketInsight:
+      'Multiple high-impact events converged: US PCE came in sticky at 4.1% headline / 3.4% core (hawkish for the Fed), Binance announced EU service suspension over MiCA compliance, BTC flash-crashed to $59K, and all ETH whales sat in unrealized loss for the first time since 2019. Fear & Greed hit 12. SOL was the sole green name in the top 10 and had a valid Morning Star + Hammer reversal, but entry at $70.17 with support at $64.58 gave a maximum R:R of ~1:1.7 — well below the 1:3 minimum. No trade taken.',
+    signals: [],
+    newsHold: true,
+  },
 ]
 
 const ymOf = (date: string): { year: number; month: number } => {
