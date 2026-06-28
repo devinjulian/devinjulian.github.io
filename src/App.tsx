@@ -11,7 +11,6 @@ const Products = lazy(() => import('./pages/Products').then((m) => ({ default: m
 const ProductDetail = lazy(() =>
   import('./pages/ProductDetail').then((m) => ({ default: m.ProductDetail })),
 )
-const PolyBot = lazy(() => import('./pages/PolyBot').then((m) => ({ default: m.PolyBot })))
 const AiAgent = lazy(() => import('./pages/AiAgent').then((m) => ({ default: m.AiAgent })))
 const About = lazy(() => import('./pages/About').then((m) => ({ default: m.About })))
 const HowItWorks = lazy(() => import('./pages/HowItWorks').then((m) => ({ default: m.HowItWorks })))
@@ -37,8 +36,6 @@ export function App() {
               <Route path="/forex/:id" element={<ProductDetail />} />
               <Route path="/crypto-futures-signals" element={<AiAgent />} />
               <Route path="/ai-agent" element={<Navigate to="/crypto-futures-signals" replace />} />
-              <Route path="/polymarket" element={<PolyBot />} />
-              <Route path="/polybot" element={<Navigate to="/polymarket" replace />} />
               {/* legacy → new (Founding Members retired 2026-06-11 — pricing lives on /forex) */}
               <Route path="/founding-members" element={<Navigate to="/forex" replace />} />
               <Route path="/pricing" element={<Navigate to="/forex" replace />} />

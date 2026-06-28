@@ -14,11 +14,7 @@
     },
     "/crypto-futures-signals": {
       "title": "Crypto Futures Signals — AI Trading Agent",
-      "description": "Live AI crypto futures signals: daily Buy/Sell calls with entry, stop and target — every result logged in a free public record. One subscription, all-access (crypto + Polymarket)."
-    },
-    "/polymarket": {
-      "title": "Polymarket Signals — AI event signals (crypto · macro · politics)",
-      "description": "Live AI Polymarket signals on crypto, macro and market-moving political events. Decision-support you execute yourself, with results logged in the open."
+      "description": "Live AI crypto futures signals: daily Buy/Sell calls with entry, stop and target — every result logged in a free public record."
     },
     "/about": {
       "title": "About — the trading lab",

@@ -38,9 +38,6 @@ export function Footer() {
             <Link to="/crypto-futures-signals" className={itemClass}>
               Crypto Futures Signals
             </Link>
-            <Link to="/polymarket" className={itemClass}>
-              Polymarket Signals
-            </Link>
             <Link to="/about" className={itemClass}>
               About
             </Link>

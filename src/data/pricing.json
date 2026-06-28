@@ -50,12 +50,12 @@
     }
   ],
   "subscription": {
-    "monthly": "$10",
-    "monthlyAmount": 10,
-    "yearly": "$99",
-    "yearlyAmount": 99,
+    "monthly": "$62",
+    "monthlyAmount": 62,
+    "yearly": "$620",
+    "yearlyAmount": 620,
     "yearlyNote": "2 months free · ~17% off",
-    "allAccessNote": "One subscription, both signals — Crypto Futures and Polymarket. Live signals are delivered in a private channel; you place every trade yourself.",
+    "allAccessNote": "One subscription, full access. Live signals are delivered in a private channel; you place every trade yourself.",
     "channel": "private Telegram channel",
     "payment": "crypto, verified manually"
   }

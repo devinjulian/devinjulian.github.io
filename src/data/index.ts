@@ -28,10 +28,6 @@ export const RISK_DISCLAIMER =
 export const AI_AGENT_DISCLAIMER =
   'The AI Trading Agent issues decision-support signals — not financial advice. You place every trade yourself on your own account; nothing is executed for you. Results are published as R-multiples with the risk (stop-loss and target) always shown, and reflect a young public track record; past performance does not guarantee future results, and crypto trading carries a substantial risk of loss. Live signals are available by paid subscription; the public results log is free.'
 
-/** Required wherever Polymarket Signals appear (PRD §8). */
-export const POLYMARKET_DISCLAIMER =
-  'Polymarket Signals are decision-support, executed by you on your own Polymarket account — not financial advice, and not automated by us. Results are shown as outcomes / R-multiples with risk shown, never as profit promises. Prediction-market and crypto trading carry a substantial risk of loss; past results do not guarantee future results.'
-
 export const getEA = (id: string): EA | undefined => eas.find((e) => e.id === id)
 
 export * from './types'

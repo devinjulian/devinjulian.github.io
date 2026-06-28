@@ -75,7 +75,7 @@ export const faqGroups: FAQGroup[] = [
     items: [
       {
         q: 'What are the signal subscriptions?',
-        a: 'The lab runs two live signal streams — Crypto Futures and Polymarket — powered by the AI Trading Agent. One subscription ($10/month or $99/year) gives access to both, delivered in a private channel. You place every trade yourself; results are shown as R-multiples with risk, never as profit promises.',
+        a: 'The lab runs a live signal stream — Crypto Futures — powered by the AI Trading Agent. One subscription ($62/month or $620/year) gives full access, delivered in a private channel. You place every trade yourself; results are shown as R-multiples with risk, never as profit promises.',
       },
       {
         q: 'What is the AI Trading Agent?',

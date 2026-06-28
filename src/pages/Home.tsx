@@ -89,7 +89,7 @@ export function Home() {
               <strong className="font-semibold text-ink">Forex trinity</strong> — three EAs you own
               outright — and the newest frontier, the{' '}
               <strong className="font-semibold text-ink">AI Trading Agent</strong>, now live and
-              issuing <strong className="font-semibold text-ink">Crypto Futures and Polymarket signals</strong>:
+              issuing <strong className="font-semibold text-ink">Crypto Futures signals</strong>:
               an AI that does an entire research desk's work before every call, every session. The
               daily logs are public — taken or skipped, wins and losses alike — so you can watch it
               work before you pay for anything.

@@ -63,7 +63,7 @@ export function AiAgent() {
             <p className="max-w-2xl text-lg leading-relaxed text-muted">
               See how the Agent reaches a decision, watch the record build in the open, then get the
               live calls the moment they're issued. The daily log here is free; live signals go to
-              subscribers in a private channel — one subscription covers crypto and Polymarket.
+              subscribers in a private channel.
             </p>
             <div className="mt-7 flex flex-wrap gap-4">
               <Button variant="primary" href={links.telegram} external>

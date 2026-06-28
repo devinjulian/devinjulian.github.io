@@ -6,7 +6,7 @@ import { Reveal } from '../components/Reveal'
 
 const ROADMAP = [
   { when: 'In testing', what: 'New Forex pairs joining the trinity' },
-  { when: 'Live now', what: 'AI Trading Agent — Crypto Futures & Polymarket signals (private subscription)' },
+  { when: 'Live now', what: 'AI Trading Agent — Crypto Futures signals (private subscription)' },
   { when: 'Next', what: 'Supervised automation — the same brain, execution on your terms' },
 ]
 
