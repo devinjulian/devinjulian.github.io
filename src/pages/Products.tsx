@@ -71,11 +71,18 @@ export function Products() {
               {forexTiers.map((tier) => (
                 <div
                   key={tier.id}
-                  className="flex h-full flex-col rounded-2xl border border-ink/10 bg-surface/40 p-7"
+                  className="relative flex h-full flex-col rounded-2xl border border-ink/10 bg-surface/40 p-7 overflow-hidden"
                 >
-                  <p className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
-                    {tier.name}
-                  </p>
+                  <div className="flex items-start justify-between gap-2">
+                    <p className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
+                      {tier.name}
+                    </p>
+                    {tier.id === 'source-code' && (
+                      <span className="shrink-0 inline-flex items-center rounded-full border border-gold/40 bg-gold/10 px-2 py-0.5 font-mono text-[0.6rem] tracking-[0.1em] text-gold uppercase">
+                        Funding Member
+                      </span>
+                    )}
+                  </div>
                   <p className="mt-4 font-display text-4xl font-light text-ink">
                     {tier.price}
                     <span className="ml-2 font-mono text-[0.65rem] tracking-[0.15em] text-muted/80 uppercase">
