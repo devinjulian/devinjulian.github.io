@@ -370,6 +370,55 @@ export const aiAgentLog: AiAgentSession[] = [
     signals: [],
     newsHold: true,
   },
+  {
+    date: '2026-06-29',
+    marketInsight:
+      'High impact news: None in the next 24 hours. Macro picture is deteriorating for risk assets with BTC ETF outflows hitting $1.8B weekly and the USD Index ripping its strongest monthly performance in ~12 months. Total crypto market cap is $2.14T. This is a risk-off environment and not a market for hero longs.',
+    signals: [
+      {
+        asset: 'BNB/USDT',
+        direction: 'Short',
+        entry: '553.510',
+        stopLoss: '557.167',
+        takeProfit: '549.167',
+        leverage: '75x',
+        result: 'Hit TP (+1.0R)',
+        outcome: 'profit',
+        reason:
+          'Bearish engulfing plus Evening Star rejection at 554 resistance, RSI trending down across all timeframes, and macro headwinds from USD strength and 1.8B weekly BTC ETF outflows align for downside. Entry at the 78% fib retest.',
+        chart: '/BNB 29 JUNI.jpg',
+        chartAlt:
+          'BNB/USDT 1m chart — short from 554.50 with stop above 556.70; targeting liquidity sweeps at 546 and 541.77 lows.',
+      },
+    ],
+  },
+  {
+    date: '2026-06-30',
+    marketInsight:
+      'No high-impact macroeconomic news expected. Fear & Greed index sits at 14 (Extreme Fear). BTC trading below the $60K psychological level. The macro backdrop is uneasy with capital being defensive. SOL showing relative strength vs BTC, but broader risk-off cap limits upside.',
+    signals: [
+      {
+        asset: 'SOL/USDT',
+        direction: 'Short',
+        entry: '74.1300',
+        stopLoss: '75.3567',
+        takeProfit: '73.3567',
+        leverage: '100x',
+        result: 'Hit TP (+1.0R)',
+        outcome: 'profit',
+        reason:
+          'Three Black Crows pattern on M15 after a failed breakout at 75.93 confirms sellers in control. Daily RSI at 44 with negative MACD supports bearish bias. A clean short entry with structural SL.',
+        chart: '/SOL 30 JUNI.jpg',
+        chartAlt:
+          'SOL/USDT 1m chart — short from 74.50 with stop at 75.10; targeting 73.90, 73.30, and 72.50.',
+      },
+    ],
+  },
+  {
+    date: '2026-07-01',
+    marketInsight: 'Memasuki bulan Juli. Menunggu konfirmasi pergerakan harga.',
+    signals: [],
+  },
 ]
 
 const ymOf = (date: string): { year: number; month: number } => {
