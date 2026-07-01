@@ -386,7 +386,7 @@ export const aiAgentLog: AiAgentSession[] = [
         outcome: 'profit',
         reason:
           'Bearish engulfing plus Evening Star rejection at 554 resistance, RSI trending down across all timeframes, and macro headwinds from USD strength and 1.8B weekly BTC ETF outflows align for downside. Entry at the 78% fib retest.',
-        chart: '/BNB 29 JUNI.jpg',
+        chart: '/ai-agent/2026-06-29-bnb.jpg',
         chartAlt:
           'BNB/USDT 1m chart — short from 554.50 with stop above 556.70; targeting liquidity sweeps at 546 and 541.77 lows.',
       },
@@ -408,7 +408,7 @@ export const aiAgentLog: AiAgentSession[] = [
         outcome: 'profit',
         reason:
           'Three Black Crows pattern on M15 after a failed breakout at 75.93 confirms sellers in control. Daily RSI at 44 with negative MACD supports bearish bias. A clean short entry with structural SL.',
-        chart: '/SOL 30 JUNI.jpg',
+        chart: '/ai-agent/2026-06-30-sol.jpg',
         chartAlt:
           'SOL/USDT 1m chart — short from 74.50 with stop at 75.10; targeting 73.90, 73.30, and 72.50.',
       },
@@ -416,8 +416,40 @@ export const aiAgentLog: AiAgentSession[] = [
   },
   {
     date: '2026-07-01',
-    marketInsight: 'Memasuki bulan Juli. Menunggu konfirmasi pergerakan harga.',
-    signals: [],
+    marketInsight:
+      'Took long positions on BNB and XRP as the market still offered buy-on-dip opportunities amid a rotation into relatively stronger altcoins. For BNB, price held near the intraday support structure, offering clearly defined risk. For XRP, price showed a strong response following a pullback.',
+    signals: [
+      {
+        asset: 'XRP/USDT',
+        direction: 'Long',
+        entry: '1.0456',
+        stopLoss: '1.0333',
+        takeProfit: '1.0533',
+        leverage: '75x',
+        result: 'Hit TP (+1.0R)',
+        outcome: 'profit',
+        reason:
+          'Price was pulling back into intraday support with signs of rejection, keeping the rebound opportunity open. Market structure remained bullish on the entry timeframe, offering an attractive risk-reward as the stop loss could be placed tightly below the invalidation level. The long position was taken to capitalize on a continuation move from buyers still defending the level.',
+        chart: '/ai-agent/2026-07-01-xrp.jpg',
+        chartAlt:
+          'XRP/USDT chart — long from 1.0456 with stop at 1.0333; target 1.0533.',
+      },
+      {
+        asset: 'BNB/USDT',
+        direction: 'Long',
+        entry: '550.590',
+        stopLoss: '548.220',
+        takeProfit: '552.220',
+        leverage: '75x',
+        result: 'Hit TP (+1.0R)',
+        outcome: 'profit',
+        reason:
+          'Price was pulling back into intraday support with signs of rejection, keeping the rebound opportunity open. Market structure remained bullish on the entry timeframe, offering an attractive risk-reward as the stop loss could be placed tightly below the invalidation level. The long position was taken to capitalize on a continuation move from buyers still defending the level.',
+        chart: '/ai-agent/2026-07-01-bnb.jpg',
+        chartAlt:
+          'BNB/USDT chart — long from 550.590 with stop at 548.220; target 552.220.',
+      },
+    ],
   },
 ]
 
