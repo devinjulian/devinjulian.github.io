@@ -60,6 +60,8 @@ export function AiAgentDayModal({
                     'shrink-0 rounded-full border px-2.5 py-1 font-mono text-[0.7rem]',
                     sig.outcome === 'profit'
                       ? 'border-signal/40 text-signal'
+                      : sig.outcome === 'active'
+                        ? 'border-gold/40 text-gold'
                       : 'border-warn/40 text-warn',
                   )}
                 >

@@ -10,18 +10,28 @@ type DaySummary =
   | { kind: 'empty' }
   | { kind: 'news' }
   | { kind: 'nosignal' }
-  | { kind: 'signals'; count: number; profit: number; loss: number; net: number | null }
+  | {
+      kind: 'signals'
+      count: number
+      profit: number
+      loss: number
+      active: number
+      net: number | null
+    }
 
 function summarize(session: AiAgentSession | undefined): DaySummary {
   if (!session) return { kind: 'empty' }
   if (session.newsHold) return { kind: 'news' }
   if (session.signals.length === 0) return { kind: 'nosignal' }
   const profit = session.signals.filter((s) => s.outcome === 'profit').length
+  const loss = session.signals.filter((s) => s.outcome === 'stoploss').length
+  const active = session.signals.filter((s) => s.outcome === 'active').length
   return {
     kind: 'signals',
     count: session.signals.length,
     profit,
-    loss: session.signals.length - profit,
+    loss,
+    active,
     net: netR(session),
   }
 }
@@ -63,6 +73,7 @@ function cellTone(s: DaySummary): string {
     case 'nosignal':
       return 'border-ink/15 bg-ink/[0.04]'
     case 'signals':
+      if (s.active > 0 && s.profit === 0 && s.loss === 0) return 'border-gold/50 bg-gold/10'
       return s.net !== null && s.net < 0
         ? 'border-warn/50 bg-warn/10'
         : 'border-signal/45 bg-signal/10'
@@ -75,6 +86,9 @@ function CellHeadline({ s }: { s: DaySummary }) {
   if (s.kind === 'news') return <span className="font-semibold text-gold">No trade</span>
   if (s.kind === 'nosignal') return <span className="text-muted/90">No signal</span>
   if (s.kind === 'signals') {
+    if (s.active > 0 && s.profit === 0 && s.loss === 0) {
+      return <span className="font-semibold text-gold">{s.count} setup</span>
+    }
     if (s.net === null) return <span className="font-semibold text-signal">{s.count} sig</span>
     return (
       <span className={cn('font-semibold', s.net < 0 ? 'text-warn' : 'text-signal')}>
@@ -88,7 +102,7 @@ function CellHeadline({ s }: { s: DaySummary }) {
 /** One dot per signal — green hit target, warn-red stopped out. Dots can't
  *  wrap mid-word like text, so the breakdown stays tidy at any cell width;
  *  the written form lives in the cell's aria-label and the month tally. */
-function SignalDots({ profit, loss }: { profit: number; loss: number }) {
+function SignalDots({ profit, loss, active }: { profit: number; loss: number; active: number }) {
   return (
     <span aria-hidden className="flex max-w-full flex-wrap items-center justify-center gap-[3px]">
       {Array.from({ length: profit }, (_, i) => (
@@ -96,6 +110,9 @@ function SignalDots({ profit, loss }: { profit: number; loss: number }) {
       ))}
       {Array.from({ length: loss }, (_, i) => (
         <span key={`l${i}`} className="h-1 w-1 rounded-full bg-warn sm:h-1.5 sm:w-1.5" />
+      ))}
+      {Array.from({ length: active }, (_, i) => (
+        <span key={`a${i}`} className="h-1 w-1 rounded-full bg-gold sm:h-1.5 sm:w-1.5" />
       ))}
     </span>
   )
@@ -165,6 +182,7 @@ export function SignalCalendar({
   })
   let profit = 0
   let stop = 0
+  let active = 0
   let noSignalDays = 0
   let newsDays = 0
   let monthNet: number | null = 0
@@ -174,7 +192,11 @@ export function SignalCalendar({
       else noSignalDays++
       continue
     }
-    for (const sig of s.signals) (sig.outcome === 'profit' ? profit++ : stop++)
+    for (const sig of s.signals) {
+      if (sig.outcome === 'profit') profit++
+      else if (sig.outcome === 'stoploss') stop++
+      else active++
+    }
     const r = netR(s)
     monthNet = monthNet === null || r === null ? null : monthNet + r
   }
@@ -249,7 +271,11 @@ export function SignalCalendar({
                           <CellHeadline s={summary} />
                         </span>
                         {summary.kind === 'signals' && (
-                          <SignalDots profit={summary.profit} loss={summary.loss} />
+                          <SignalDots
+                            profit={summary.profit}
+                            loss={summary.loss}
+                            active={summary.active}
+                          />
                         )}
                         {summary.kind === 'news' && (
                           <span className="hidden text-[0.55rem] tracking-[0.18em] text-gold/80 uppercase sm:block">
@@ -276,7 +302,7 @@ export function SignalCalendar({
                           summary.kind === 'news'
                             ? `High-impact news, no trade on ${day} ${MONTH_NAMES[month - 1]} ${year} — view details`
                             : summary.kind === 'signals'
-                              ? `View the AI decision for ${day} ${MONTH_NAMES[month - 1]} ${year} — ${summary.count} signal${summary.count > 1 ? 's' : ''}: ${summary.profit} profit${summary.loss > 0 ? `, ${summary.loss} loss` : ''}`
+                              ? `View the AI decision for ${day} ${MONTH_NAMES[month - 1]} ${year} — ${summary.count} signal${summary.count > 1 ? 's' : ''}: ${summary.profit} profit${summary.loss > 0 ? `, ${summary.loss} loss` : ''}${summary.active > 0 ? `, ${summary.active} active` : ''}`
                               : `View the AI decision for ${day} ${MONTH_NAMES[month - 1]} ${year}`
                         }
                         className={cn(
@@ -313,6 +339,12 @@ export function SignalCalendar({
             )}
             <span className="text-signal">{profit} profit</span> ·{' '}
             <span className="text-warn">{stop} loss</span>
+            {active > 0 && (
+              <>
+                {' '}
+                · <span className="text-gold">{active} active</span>
+              </>
+            )}
             {noSignalDays > 0 && (
               <>
                 {' '}
@@ -327,13 +359,14 @@ export function SignalCalendar({
             )}
           </p>
         )}
-        {monthSessions.length > 0 && (hint || profit + stop > 0) && (
+        {monthSessions.length > 0 && (hint || profit + stop + active > 0) && (
           <div className="font-mono text-[0.6rem] leading-relaxed text-muted/80 sm:text-right">
             {hint && <p>{hint}</p>}
-            {profit + stop > 0 && (
+            {profit + stop + active > 0 && (
               <p>
                 Each dot is one signal — <span className="text-signal">green hit target</span>,{' '}
-                <span className="text-warn">red stopped out</span>.
+                <span className="text-warn">red stopped out</span>,{' '}
+                <span className="text-gold">gold active</span>.
               </p>
             )}
           </div>

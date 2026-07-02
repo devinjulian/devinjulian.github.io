@@ -6,7 +6,7 @@
 // NEVER an account/PnL screenshot showing $ or % balance. Self-host it under public/ai-agent/
 // (CSP is img-src 'self'; external/hotlinked images are blocked in production).
 
-export type SignalOutcome = 'profit' | 'stoploss'
+export type SignalOutcome = 'profit' | 'stoploss' | 'active'
 
 export interface AiSignal {
   asset: string // e.g. 'DOGE/USDT'
@@ -451,6 +451,58 @@ export const aiAgentLog: AiAgentSession[] = [
       },
     ],
   },
+  {
+    date: '2026-07-02',
+    marketInsight:
+      'Clean six-hour macro window before the FOMC minutes risk later in the session. Fear & Greed sat in Extreme Fear while BTC dominance stayed elevated, so the Agent focused on selective alt setups with clear structure: TAO and 1INCH for long continuation/reversal opportunities, and MORPHO for a tight short setup.',
+    signals: [
+      {
+        asset: 'TAO/USDT',
+        direction: 'Long',
+        entry: '204.47',
+        stopLoss: '194.47',
+        takeProfit: '218.82',
+        leverage: '20x',
+        result: 'Hit TP (+1.3R)',
+        outcome: 'profit',
+        reason:
+          'TAO was outperforming the broader market despite extreme fear. A bullish reversal bias, morning star pattern, MACD crossover and short-squeeze flow supported a relief-rally thesis, with entry kept inside the consolidation zone instead of chasing.',
+        chart: '/ai-agent/2026-07-02-tao.jpg',
+        chartAlt:
+          'TAO/USDT chart for the July 2 long setup, showing entry near 204.47, stop at 194.47, and target at 218.82.',
+      },
+      {
+        asset: '1INCH/USDT',
+        direction: 'Long',
+        entry: '0.0689',
+        stopLoss: '0.0664',
+        takeProfit: '0.0717',
+        leverage: '20x',
+        result: 'Hit TP (+1.0R)',
+        outcome: 'profit',
+        reason:
+          'The Agent flagged a clean long setup, waiting for a pullback into the 0.0685-0.0690 zone and a confirmed M1 close above 0.0692 before execution. The setup was structured around a tight invalidation level and a defined upside target.',
+        chart: '/ai-agent/2026-07-02-1inch.jpg',
+        chartAlt:
+          '1INCH/USDT chart for the July 2 long setup, showing entry near 0.0689, stop at 0.0664, and target at 0.0717.',
+      },
+      {
+        asset: 'MORPHO/USDT',
+        direction: 'Short',
+        entry: '2.10',
+        stopLoss: '2.13',
+        takeProfit: '2.07',
+        leverage: '20x',
+        result: 'Hit TP (+1.0R)',
+        outcome: 'profit',
+        reason:
+          'MORPHO cleared the Agent confidence bar for a short, combining the stated reversal structure and adoption catalyst context with tight risk placement. The trade plan used a compact stop above 2.13 and target back toward 2.07.',
+        chart: '/ai-agent/2026-07-02-morpho.jpg',
+        chartAlt:
+          'MORPHO/USDT chart for the July 2 short setup, showing entry near 2.10, stop at 2.13, and target at 2.07.',
+      },
+    ],
+  },
 ]
 
 const ymOf = (date: string): { year: number; month: number } => {
@@ -498,7 +550,7 @@ export function tallyFor(
     }
     for (const sig of session.signals) {
       if (sig.outcome === 'profit') profit += 1
-      else stoploss += 1
+      else if (sig.outcome === 'stoploss') stoploss += 1
     }
   }
   return { profit, stoploss, noSignalDays, newsDays }
