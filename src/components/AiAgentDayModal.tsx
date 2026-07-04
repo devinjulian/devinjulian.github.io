@@ -69,29 +69,56 @@ export function AiAgentDayModal({
                 </span>
               </div>
 
-              <dl className="mt-3 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-ink/10 bg-ink/10">
+              <dl className="mt-3 grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-ink/10 bg-ink/10 sm:grid-cols-2">
                 <div className="bg-surface/60 px-4 py-2.5">
                   <dt className="font-mono text-[0.55rem] tracking-[0.2em] text-muted/80 uppercase">
-                    Entry
+                    Entry{sig.stopLoss || sig.takeProfit ? '' : ' zone'}
                   </dt>
                   <dd className="mt-0.5 font-mono text-sm text-ink">{sig.entry}</dd>
                 </div>
-                <div className="bg-surface/60 px-4 py-2.5">
-                  <dt className="font-mono text-[0.55rem] tracking-[0.2em] text-muted/80 uppercase">
-                    Stop loss
-                  </dt>
-                  <dd className="mt-0.5 font-mono text-sm text-ink">{sig.stopLoss}</dd>
-                </div>
+                {sig.stopLoss && (
+                  <div className="bg-surface/60 px-4 py-2.5">
+                    <dt className="font-mono text-[0.55rem] tracking-[0.2em] text-muted/80 uppercase">
+                      Stop loss
+                    </dt>
+                    <dd className="mt-0.5 font-mono text-sm text-ink">{sig.stopLoss}</dd>
+                  </div>
+                )}
+                {sig.riskReward && (
+                  <div className="bg-surface/60 px-4 py-2.5">
+                    <dt className="font-mono text-[0.55rem] tracking-[0.2em] text-muted/80 uppercase">
+                      RR
+                    </dt>
+                    <dd className="mt-0.5 font-mono text-sm text-ink">{sig.riskReward}</dd>
+                  </div>
+                )}
               </dl>
 
-              <p className="mt-2 font-mono text-[0.7rem] text-muted">
-                Targets {sig.takeProfit}
-                {sig.leverage ? ` · Leverage ${sig.leverage}` : ''}
-              </p>
+              {(sig.takeProfit || sig.leverage) && (
+                <p className="mt-2 font-mono text-[0.7rem] text-muted">
+                  {sig.takeProfit ? `Targets ${sig.takeProfit}` : 'Fast scalping setup'}
+                  {sig.leverage ? ` · Leverage ${sig.leverage}` : ''}
+                </p>
+              )}
 
               <p className="mt-3 text-sm leading-relaxed text-muted">{sig.reason}</p>
 
-              {sig.chart && (
+              {sig.video ? (
+                <div className="mt-3 overflow-hidden rounded-lg border border-ink/10 bg-void/60">
+                  <video
+                    src={sig.video}
+                    poster={sig.videoPoster}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="h-44 w-full bg-void object-cover object-center"
+                    aria-label={sig.videoTitle ?? `${sig.asset} ${sig.direction} chart video`}
+                  />
+                  <p className="px-3 py-2 font-mono text-[0.6rem] tracking-[0.15em] text-muted uppercase">
+                    Chart video
+                  </p>
+                </div>
+              ) : sig.chart ? (
                 <button
                   type="button"
                   onClick={() =>
@@ -115,9 +142,26 @@ export function AiAgentDayModal({
                     </span>
                   </span>
                 </button>
-              )}
+              ) : null}
             </div>
           ))}
+        </div>
+      )}
+
+      {session.video && (
+        <div className="mt-5 overflow-hidden rounded-lg border border-ink/10 bg-void/60">
+          <video
+            src={session.video}
+            poster={session.videoPoster}
+            controls
+            playsInline
+            preload="metadata"
+            className="h-56 w-full bg-void object-cover object-center sm:h-72"
+            aria-label={session.videoTitle ?? `${session.date} chart video`}
+          />
+          <p className="px-3 py-2 font-mono text-[0.6rem] tracking-[0.15em] text-muted uppercase">
+            Session video
+          </p>
         </div>
       )}
 

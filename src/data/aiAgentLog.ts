@@ -3,8 +3,9 @@
 // (reward vs. the risk taken), never $ or % profit. Each session is one calendar day and
 // may hold zero, one, or many signals (the Agent's daily report can flag several).
 // CHART PROOF: `chart` is an optional CHART screenshot (price action + SL/TP levels) —
+// `video` is an optional self-hosted video proof/recording for the same chart context.
 // NEVER an account/PnL screenshot showing $ or % balance. Self-host it under public/ai-agent/
-// (CSP is img-src 'self'; external/hotlinked images are blocked in production).
+// (CSP is img-src/media-src 'self'; external/hotlinked media is blocked in production).
 
 export type SignalOutcome = 'profit' | 'stoploss' | 'active'
 
@@ -12,14 +13,18 @@ export interface AiSignal {
   asset: string // e.g. 'DOGE/USDT'
   direction: 'Long' | 'Short'
   entry: string
-  stopLoss: string
-  takeProfit: string // may list multiple targets, e.g. 'TP1 0.0988 · TP2 0.0972'
+  stopLoss?: string
+  takeProfit?: string // may list multiple targets, e.g. 'TP1 0.0988 · TP2 0.0972'
   leverage?: string // e.g. '3x'
+  riskReward?: string // e.g. '1:1' for fast scalps with no published SL/TP
   result: string // R-multiple text, e.g. 'Hit TP2 (+2.3R)'
   outcome: SignalOutcome
   reason: string // why the Agent took it
   chart?: string // optional chart screenshot, e.g. '/ai-agent/2026-06-01-doge.jpg' — CHART ONLY, no $/% PnL
   chartAlt?: string // accessible description of the chart
+  video?: string // optional chart video, e.g. '/ai-agent/2026-07-04-btc.mp4' — self-hosted only
+  videoPoster?: string // optional poster image shown before playback
+  videoTitle?: string // accessible title/label for the video
 }
 
 export interface AiAgentSession {
@@ -27,6 +32,9 @@ export interface AiAgentSession {
   marketInsight: string // concise read of the session (typewriter in the modal); for a
   // no-signal / no-trade day this explains why the Agent stood aside
   signals: AiSignal[] // empty array = no-signal day
+  video?: string // optional shared video proof for the whole session
+  videoPoster?: string // optional poster image shown before playback
+  videoTitle?: string // accessible title/label for the shared video
   // True when the Agent deliberately stood down for the day because of high-impact
   // news (NOT its own no-setup judgement). Always paired with signals: [] — these
   // days have NO outcome and must never be counted as profit/stop. The calendar
@@ -502,6 +510,37 @@ export const aiAgentLog: AiAgentSession[] = [
           'MORPHO/USDT chart for the July 2 short setup, showing entry near 2.10, stop at 2.13, and target at 2.07.',
       },
     ],
+  },
+  {
+    date: '2026-07-03',
+    marketInsight:
+      'Clean macro window after the July 2 US jobs data, with BTC dominance elevated and broad crypto liquidity improving into a post-jobs-data relief rally. The Agent treated BTC and ETH as fast scalping opportunities: both had bullish structure, supportive flow, and squeeze potential, but no separate SL/TP levels were published for these executions. Logged as RR 1:1 fast scalps with entry zones only.',
+    signals: [
+      {
+        asset: 'BTC/USDT',
+        direction: 'Long',
+        entry: '$61,732',
+        riskReward: '1:1',
+        leverage: '20x',
+        result: 'Fast scalp (+1.0R)',
+        outcome: 'profit',
+        reason:
+          'BTC was riding the post-jobs-data relief rally with bullish EMA alignment, expanding MACD momentum, and a short-squeeze structure as open interest contracted while price rose. Binance long/short positioning was supportive but not extreme, while shorts remained vulnerable after the $62K break. This fast scalp used the published entry zone only and is logged as RR 1:1.',
+      },
+      {
+        asset: 'ETH/USDT',
+        direction: 'Long',
+        entry: '$1,1716',
+        riskReward: '1:1',
+        leverage: '20x',
+        result: 'Fast scalp (+1.0R)',
+        outcome: 'profit',
+        reason:
+          'ETH showed bullish EMA alignment with expanding MACD momentum, supported by institutional tailwinds and the squeeze catalyst around the large Hyperliquid short liquidation zone. The setup was treated as a fast scalp with the published entry zone only and is logged as RR 1:1.',
+      },
+    ],
+    video: '/ai-agent/2026-07-03-btc-eth.mp4',
+    videoTitle: 'BTCUSDT and ETHUSDT fast scalp video for July 3, 2026',
   },
 ]
 

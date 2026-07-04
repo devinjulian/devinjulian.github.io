@@ -19,7 +19,7 @@ within a few days.
 - **Content-Security-Policy** delivered via `<meta http-equiv>` (GitHub Pages can't set HTTP
   response headers). Everything is self-hosted — no third-party CDNs or iframes — so the
   policy is restrictive: `default-src 'self'`, `object-src 'none'`, `base-uri 'self'`,
-  `frame-src 'none'`, and locked-down `img`/`font`/`connect`/`style` sources. It is injected
+  `frame-src 'none'`, and locked-down `img`/`media`/`font`/`connect`/`style` sources. It is injected
   into the built HTML by `scripts/prerender.mjs` (kept out of the dev server so it can't block
   Vite HMR).
 - **`Referrer-Policy: strict-origin-when-cross-origin`** via `<meta name="referrer">`.
