@@ -8,6 +8,7 @@ const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 /** Per-day summary the calendar needs to paint a cell — kind drives the colour. */
 type DaySummary =
   | { kind: 'empty' }
+  | { kind: 'maintenance' }
   | { kind: 'news' }
   | { kind: 'nosignal' }
   | {
@@ -21,6 +22,7 @@ type DaySummary =
 
 function summarize(session: AiAgentSession | undefined): DaySummary {
   if (!session) return { kind: 'empty' }
+  if (session.maintenance) return { kind: 'maintenance' }
   if (session.newsHold) return { kind: 'news' }
   if (session.signals.length === 0) return { kind: 'nosignal' }
   const profit = session.signals.filter((s) => s.outcome === 'profit').length
@@ -68,6 +70,8 @@ function cellTone(s: DaySummary): string {
   switch (s.kind) {
     case 'empty':
       return 'border-transparent bg-ink/[0.03]'
+    case 'maintenance':
+      return 'border-gold/60 bg-gold/[0.07]'
     case 'news':
       return 'border-gold/50 bg-gold/10'
     case 'nosignal':
@@ -83,6 +87,7 @@ function cellTone(s: DaySummary): string {
 /** The headline — the one dominant element of a cell. R values are bold and
  *  coloured by sign; status days get a quiet word instead of a number. */
 function CellHeadline({ s }: { s: DaySummary }) {
+  if (s.kind === 'maintenance') return <span className="font-semibold text-gold" style={{ fontSize: 'inherit' }}>Maintenance</span>
   if (s.kind === 'news') return <span className="font-semibold text-gold">No trade</span>
   if (s.kind === 'nosignal') return <span className="text-muted/90">No signal</span>
   if (s.kind === 'signals') {
@@ -185,10 +190,12 @@ export function SignalCalendar({
   let active = 0
   let noSignalDays = 0
   let newsDays = 0
+  let maintenanceDays = 0
   let monthNet: number | null = 0
   for (const s of monthSessions) {
     if (s.signals.length === 0) {
-      if (s.newsHold) newsDays++
+      if (s.maintenance) maintenanceDays++
+      else if (s.newsHold) newsDays++
       else noSignalDays++
       continue
     }
@@ -259,6 +266,11 @@ export function SignalCalendar({
                       <span className="font-mono text-[0.55rem] text-muted/80 sm:text-[0.65rem]">
                         {day}
                       </span>
+                      {summary.kind === 'maintenance' && (
+                        <span aria-hidden className="text-[0.55rem] sm:text-[0.7rem]">
+                          🛠️
+                        </span>
+                      )}
                       {summary.kind === 'news' && (
                         <span aria-hidden className="text-[0.55rem] sm:text-[0.7rem]">
                           🚨
@@ -290,6 +302,7 @@ export function SignalCalendar({
                 const cellClass = cn(
                   'flex h-full min-h-[3.5rem] w-full flex-col rounded-lg border p-1.5 sm:min-h-[4.75rem] sm:p-2',
                   cellTone(summary),
+                  summary.kind === 'maintenance' && 'maintenance-stripe',
                 )
 
                 return (
@@ -299,11 +312,13 @@ export function SignalCalendar({
                         type="button"
                         onClick={() => onView(session)}
                         aria-label={
-                          summary.kind === 'news'
-                            ? `High-impact news, no trade on ${day} ${MONTH_NAMES[month - 1]} ${year} — view details`
-                            : summary.kind === 'signals'
-                              ? `View the AI decision for ${day} ${MONTH_NAMES[month - 1]} ${year} — ${summary.count} signal${summary.count > 1 ? 's' : ''}: ${summary.profit} profit${summary.loss > 0 ? `, ${summary.loss} loss` : ''}${summary.active > 0 ? `, ${summary.active} active` : ''}`
-                              : `View the AI decision for ${day} ${MONTH_NAMES[month - 1]} ${year}`
+                          summary.kind === 'maintenance'
+                            ? `Scheduled maintenance on ${day} ${MONTH_NAMES[month - 1]} ${year} — view details`
+                            : summary.kind === 'news'
+                              ? `High-impact news, no trade on ${day} ${MONTH_NAMES[month - 1]} ${year} — view details`
+                              : summary.kind === 'signals'
+                                ? `View the AI decision for ${day} ${MONTH_NAMES[month - 1]} ${year} — ${summary.count} signal${summary.count > 1 ? 's' : ''}: ${summary.profit} profit${summary.loss > 0 ? `, ${summary.loss} loss` : ''}${summary.active > 0 ? `, ${summary.active} active` : ''}`
+                                : `View the AI decision for ${day} ${MONTH_NAMES[month - 1]} ${year}`
                         }
                         className={cn(
                           cellClass,
@@ -355,6 +370,12 @@ export function SignalCalendar({
               <>
                 {' '}
                 · <span className="text-warn">{newsDays} news hold</span>
+              </>
+            )}
+            {maintenanceDays > 0 && (
+              <>
+                {' '}
+                · <span className="text-gold">{maintenanceDays} maintenance</span>
               </>
             )}
           </p>

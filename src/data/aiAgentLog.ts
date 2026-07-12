@@ -40,6 +40,9 @@ export interface AiAgentSession {
   // days have NO outcome and must never be counted as profit/stop. The calendar
   // tints them distinctly and labels them "No trade"; `marketInsight` carries the news.
   newsHold?: boolean
+  // True when the system is under scheduled maintenance — no signals are issued and
+  // the day is displayed with a distinctive yellow "Maintenance" stripe on the calendar.
+  maintenance?: boolean
 }
 
 /** True only while the table shows illustrative placeholders. Real data → false. */
@@ -542,6 +545,36 @@ export const aiAgentLog: AiAgentSession[] = [
     video: '/ai-agent/2026-07-03-btc-eth.mp4',
     videoTitle: 'BTCUSDT and ETHUSDT fast scalp video for July 3, 2026',
   },
+  {
+    date: '2026-07-06',
+    marketInsight: 'Scheduled system maintenance — no signals issued during this period.',
+    signals: [],
+    maintenance: true,
+  },
+  {
+    date: '2026-07-07',
+    marketInsight: 'Scheduled system maintenance — no signals issued during this period.',
+    signals: [],
+    maintenance: true,
+  },
+  {
+    date: '2026-07-08',
+    marketInsight: 'Scheduled system maintenance — no signals issued during this period.',
+    signals: [],
+    maintenance: true,
+  },
+  {
+    date: '2026-07-09',
+    marketInsight: 'Scheduled system maintenance — no signals issued during this period.',
+    signals: [],
+    maintenance: true,
+  },
+  {
+    date: '2026-07-10',
+    marketInsight: 'Scheduled system maintenance — no signals issued during this period.',
+    signals: [],
+    maintenance: true,
+  },
 ]
 
 const ymOf = (date: string): { year: number; month: number } => {
@@ -576,14 +609,16 @@ export function entriesFor(year: number, month: number): AiAgentSession[] {
 export function tallyFor(
   year: number,
   month: number,
-): { profit: number; stoploss: number; noSignalDays: number; newsDays: number } {
+): { profit: number; stoploss: number; noSignalDays: number; newsDays: number; maintenanceDays: number } {
   let profit = 0
   let stoploss = 0
   let noSignalDays = 0
   let newsDays = 0
+  let maintenanceDays = 0
   for (const session of entriesFor(year, month)) {
     if (session.signals.length === 0) {
-      if (session.newsHold) newsDays += 1
+      if (session.maintenance) maintenanceDays += 1
+      else if (session.newsHold) newsDays += 1
       else noSignalDays += 1
       continue
     }
@@ -592,7 +627,7 @@ export function tallyFor(
       else if (sig.outcome === 'stoploss') stoploss += 1
     }
   }
-  return { profit, stoploss, noSignalDays, newsDays }
+  return { profit, stoploss, noSignalDays, newsDays, maintenanceDays }
 }
 
 /** Most recent period present in the log (falls back to today if empty). */
