@@ -43,6 +43,10 @@ export interface AiAgentSession {
   // True when the system is under scheduled maintenance — no signals are issued and
   // the day is displayed with a distinctive yellow "Maintenance" stripe on the calendar.
   maintenance?: boolean
+  // True while the Agent is offline for a scheduled upgrade / training cycle — no
+  // signals are issued and the day gets a violet "Upgrade" stripe on the calendar.
+  // Always paired with signals: [] — never counted as profit/stop.
+  upgrade?: boolean
 }
 
 /** True only while the table shows illustrative placeholders. Real data → false. */
@@ -575,6 +579,13 @@ export const aiAgentLog: AiAgentSession[] = [
     signals: [],
     maintenance: true,
   },
+  ...['13', '14', '15', '16', '17', '20', '21', '22', '23', '24'].map((day) => ({
+    date: `2026-07-${day}`,
+    marketInsight:
+      "Agent upgrade in progress — the Agent is offline while it goes through further development and a fresh training cycle. That work can't run alongside live signal generation, so rather than issue calls from a system mid-upgrade, we stand down and log every paused day in the open — the same standard each trade is held to. Live signals resume 27 July.",
+    signals: [],
+    upgrade: true,
+  })),
 ]
 
 const ymOf = (date: string): { year: number; month: number } => {
@@ -609,15 +620,17 @@ export function entriesFor(year: number, month: number): AiAgentSession[] {
 export function tallyFor(
   year: number,
   month: number,
-): { profit: number; stoploss: number; noSignalDays: number; newsDays: number; maintenanceDays: number } {
+): { profit: number; stoploss: number; noSignalDays: number; newsDays: number; maintenanceDays: number; upgradeDays: number } {
   let profit = 0
   let stoploss = 0
   let noSignalDays = 0
   let newsDays = 0
   let maintenanceDays = 0
+  let upgradeDays = 0
   for (const session of entriesFor(year, month)) {
     if (session.signals.length === 0) {
-      if (session.maintenance) maintenanceDays += 1
+      if (session.upgrade) upgradeDays += 1
+      else if (session.maintenance) maintenanceDays += 1
       else if (session.newsHold) newsDays += 1
       else noSignalDays += 1
       continue
@@ -627,7 +640,7 @@ export function tallyFor(
       else if (sig.outcome === 'stoploss') stoploss += 1
     }
   }
-  return { profit, stoploss, noSignalDays, newsDays, maintenanceDays }
+  return { profit, stoploss, noSignalDays, newsDays, maintenanceDays, upgradeDays }
 }
 
 /** Most recent period present in the log (falls back to today if empty). */

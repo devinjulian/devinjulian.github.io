@@ -26,12 +26,20 @@ export function AiAgentDayModal({
       <h2 id="ai-session-title" className="mt-3 font-display text-3xl font-light text-ink">
         {hasSignals
           ? `${session.signals.length} signal${session.signals.length > 1 ? 's' : ''}`
-          : session.maintenance
-            ? 'Maintenance'
-            : session.newsHold
-              ? 'No trade'
-              : 'No signal'}
+          : session.upgrade
+            ? 'Agent upgrade'
+            : session.maintenance
+              ? 'Maintenance'
+              : session.newsHold
+                ? 'No trade'
+                : 'No signal'}
       </h2>
+
+      {session.upgrade && (
+        <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-upgrade/50 bg-upgrade/10 px-3 py-1 font-mono text-[0.65rem] tracking-[0.15em] text-upgrade uppercase">
+          <span aria-hidden>🧠</span> Agent upgrade · no signals
+        </p>
+      )}
 
       {session.maintenance && (
         <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-gold/50 bg-gold/10 px-3 py-1 font-mono text-[0.65rem] tracking-[0.15em] text-gold uppercase">

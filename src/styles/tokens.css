@@ -12,6 +12,7 @@
   --color-gold-deep: #b5852e; /* hover / gradients */
   --color-signal: #5bb89e; /* positive data / growth */
   --color-warn: #c9744b; /* drawdown / risk emphasis — honest, not alarming */
+  --color-upgrade: #9a8cd8; /* agent upgrade / training periods — cool AI accent */
 
   /* Type — display serif, modern body, mono for all measured data */
   --font-display: 'Fraunces Variable', Georgia, serif;
