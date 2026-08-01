@@ -27,6 +27,7 @@ export function AiAgentResults() {
           sessions={aiAgentLog}
           caption="AI Trading Agent daily results log — one cell per day showing the session's net R-multiple, a dash for no-signal days."
           hint="Tap a highlighted day for the full AI decision"
+          emptyNote="New month — the first logged session will appear here."
           onView={setActive}
         />
       </div>

@@ -77,7 +77,7 @@ export function AiAgentDayModal({
                     sig.outcome === 'profit'
                       ? 'border-signal/40 text-signal'
                       : sig.outcome === 'active'
-                        ? 'border-gold/40 text-gold'
+                        ? 'border-signal/40 text-signal'
                       : 'border-warn/40 text-warn',
                   )}
                 >

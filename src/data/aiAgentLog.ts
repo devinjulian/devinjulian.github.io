@@ -2,9 +2,9 @@
 // COMPLIANCE: real, owner-provided data only — never fabricate. Results are R-multiples
 // (reward vs. the risk taken), never $ or % profit. Each session is one calendar day and
 // may hold zero, one, or many signals (the Agent's daily report can flag several).
-// CHART PROOF: `chart` is an optional CHART screenshot (price action + SL/TP levels) —
-// `video` is an optional self-hosted video proof/recording for the same chart context.
-// NEVER an account/PnL screenshot showing $ or % balance. Self-host it under public/ai-agent/
+// PROOF MEDIA: `chart` is an optional owner-provided screenshot of the trade — a chart
+// with price action + SL/TP levels, or the broker's own position card — and `video` is an
+// optional self-hosted recording for the same context. Self-host it under public/ai-agent/
 // (CSP is img-src/media-src 'self'; external/hotlinked media is blocked in production).
 
 export type SignalOutcome = 'profit' | 'stoploss' | 'active'
@@ -586,6 +586,52 @@ export const aiAgentLog: AiAgentSession[] = [
     signals: [],
     upgrade: true,
   })),
+  {
+    date: '2026-07-27',
+    marketInsight:
+      'First session back after the upgrade cycle. No high-impact USD event was clearly flagged in the 24h window — only US Durable Goods Orders sat on the calendar without a confirmed release time. BTC dominance held heavy at 56.5% with total market cap up 0.75%, a slow risk-on drift rather than an alt bid. ETH was the cleanest name on the board: up 1.43% on Binance futures, funding slightly negative at -0.000215, open interest $4.48B and rising 2.72% — real participation, not a dead-cat bounce. But price was pinned inside a compressed range around the hourly Bollinger middle at 1877 with the upper band at 1913.61 and ATR only 14.12, and 24h liquidations already showed $3.83M of longs flushed against $0.92M of shorts. The long needed a 1-minute close above 1882 to be valid; without it, no 10/10 setup existed on ETHUSDT and nothing else on the watchlist (DEXE, PENGU, XRP, BTC) was clean enough to replace it. No entry taken — the Agent waits for a confirmed break above 1882 or a deeper pullback into 1852-1840.',
+    signals: [],
+  },
+  {
+    date: '2026-07-28',
+    marketInsight:
+      'A risk-off tape with the derivatives picture missing. Fear & Greed dropped to 28, BTC dominance sat at 56.38%, and total crypto market cap fell 2.73% — the direction was clear, the confirmation was not. Exchange-native Binance futures inputs (funding, open interest, liquidation clusters) could not be verified for the session, so the Agent refused to stamp entries on unconfirmed data. The technical scan alone showed BTC down 2.62% with RSI 36.52, ETH down 3.83% with a bearish engulfing / evening star cluster, SOL down 3.68% with RSI 34.41, HYPE down 8.13% and deeply oversold at RSI 27.95, and COTI up 53.67% but overbought at RSI 76.43. Only SOL and BTC carried even a half-serious short narrative, and both failed the strict futures screen. No forced watchlist, no entry taken.',
+    signals: [],
+  },
+  {
+    date: '2026-07-29',
+    marketInsight:
+      'Live Binance microstructure was still unavailable, so the Agent would not fake precision on entries. The best available read on the board was a SOL short — the cleanest lower-timeframe bearish structure of the candidates scanned, with price under the 5/9/21 EMAs and an evening star, bearish marubozu and gravestone doji cluster, RSI at 37.10, a negative MACD histogram and $1.78B of 24h volume. The problem was the math and the missing confirmation: entry 73.32, stop 74.15, target 72.46 works out to just 1.04:1, and with no funding read the Agent could not rule out short crowding. That capped conviction at 6/10 — below the bar. No entry taken.',
+    signals: [],
+  },
+  {
+    date: '2026-07-30',
+    marketInsight:
+      'A heavy macro window — US PCE inflation, Q2 GDP and weekly jobless claims all landed in the July 30 session, so volatility risk was high and the standing rule is to stay out one hour either side of the print. BTC dominance was 56.70% with total market cap up 0.80% and Fear & Greed at 27, leaving the tape BTC-led rather than meme-led. DOGE was the name under review and it was a clean no-trade: spot at 0.07016 sat below the whole fast EMA stack (EMA 5 at 0.07208, EMA 9 at 0.07472, EMA 21 at 0.08648), RSI was 23.08 and stochastic 7.21 / 9.39, while funding stayed hot at +0.008535 and open interest fell 2.17% to $188.95M — leverage being cleaned out, not accumulated. With M5 ATR at 0.00653, the 1.5x noise buffer of 0.00980 pushed the stop too far from real structure and the RR math broke below 1:1. Oversold is not the same as tradable. No entry taken.',
+    signals: [],
+  },
+  {
+    date: '2026-07-31',
+    marketInsight:
+      'BTC was weak but not cleanly broken — price at 63,043, down 2.46% on the day, with the 24h range between 65,164 and 62,473. The flow told the real story: Binance perp open interest at $6.95B and rising 0.87% on $11.35B of 24h futures volume is fresh positioning, not dead chop, while funding stayed positive at 0.009293 and short liquidations of $33.41M against $8.42M of longs showed the market still paying to stay long into a tape that kept failing higher ground. RSI at 33.79 was near oversold but not a reversal signal, price sat below the 5, 9 and 21 EMA/SMA with Bollinger Bands compressed against the lower band, support clustered at 62,985-62,473 and resistance at 64,009-65,033. Bearish below 64K, but not a chase-short into the hole — the Agent took the failed-reclaim short, the higher-confidence side of the map at 8/10, and left the mean-reversion long alone.',
+    signals: [
+      {
+        asset: 'BTC/USDT',
+        direction: 'Short',
+        entry: '63,198.9',
+        stopLoss: 'Breakeven 63,160 (initial 63,620)',
+        riskReward: '1:1',
+        leverage: '100x',
+        result: 'Position still open — stop at breakeven',
+        outcome: 'active',
+        reason:
+          'The session plan called for a short on a failed reclaim of the 63.3K area, with invalidation above 63,620 and the first target back into the 62.8K pocket — the 8/10 side of the map against a 6/10 mean-reversion long. Hot funding, a bearish EMA/SMA stack and compression against the lower Bollinger band backed the short, while the 62,985-62,473 support band defined how far it could reasonably run. The trade is managed at RR 1:1 and the stop has already been pulled down to breakeven at 63,160, so the position carries no risk while it works.',
+        chart: '/ai-agent/2026-07-31-btc.png',
+        chartAlt:
+          'Binance Futures position card for the July 31 BTC/USDT short — entry 63,198.9 at 100x, position still open with the stop moved to breakeven at 63,160.',
+      },
+    ],
+  },
 ]
 
 const ymOf = (date: string): { year: number; month: number } => {

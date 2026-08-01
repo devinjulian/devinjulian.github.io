@@ -81,7 +81,7 @@ function cellTone(s: DaySummary): string {
     case 'nosignal':
       return 'border-ink/15 bg-ink/[0.04]'
     case 'signals':
-      if (s.active > 0 && s.profit === 0 && s.loss === 0) return 'border-gold/50 bg-gold/10'
+      if (s.active > 0 && s.profit === 0 && s.loss === 0) return 'border-signal/45 bg-signal/10'
       return s.net !== null && s.net < 0
         ? 'border-warn/50 bg-warn/10'
         : 'border-signal/45 bg-signal/10'
@@ -97,7 +97,7 @@ function CellHeadline({ s }: { s: DaySummary }) {
   if (s.kind === 'nosignal') return <span className="text-muted/90">No signal</span>
   if (s.kind === 'signals') {
     if (s.active > 0 && s.profit === 0 && s.loss === 0) {
-      return <span className="font-semibold text-gold">{s.count} setup</span>
+      return <span className="font-semibold text-signal">{s.count} setup</span>
     }
     if (s.net === null) return <span className="font-semibold text-signal">{s.count} sig</span>
     return (
@@ -122,7 +122,10 @@ function SignalDots({ profit, loss, active }: { profit: number; loss: number; ac
         <span key={`l${i}`} className="h-1 w-1 rounded-full bg-warn sm:h-1.5 sm:w-1.5" />
       ))}
       {Array.from({ length: active }, (_, i) => (
-        <span key={`a${i}`} className="h-1 w-1 rounded-full bg-gold sm:h-1.5 sm:w-1.5" />
+        <span
+          key={`a${i}`}
+          className="h-1 w-1 rounded-full border border-signal bg-signal/30 sm:h-1.5 sm:w-1.5"
+        />
       ))}
     </span>
   )
@@ -151,16 +154,16 @@ export function SignalCalendar({
   const byDate = useMemo(() => new Map(sessions.map((s) => [s.date, s])), [sessions])
 
   const { minP, maxP } = useMemo(() => {
-    if (sessions.length === 0) {
-      const n = new Date()
-      const p = periodKey(n.getFullYear(), n.getMonth() + 1)
-      return { minP: p, maxP: p }
-    }
+    const n = new Date()
+    const nowP = periodKey(n.getFullYear(), n.getMonth() + 1)
+    if (sessions.length === 0) return { minP: nowP, maxP: nowP }
     const keys = sessions.map((s) => {
       const [y, m] = s.date.split('-').map(Number)
       return periodKey(y, m)
     })
-    return { minP: Math.min(...keys), maxP: Math.max(...keys) }
+    // The log runs up to the current month, so a new month opens its own table the
+    // day it starts rather than waiting for the first entry to be logged.
+    return { minP: Math.min(...keys), maxP: Math.max(nowP, ...keys) }
   }, [sessions])
 
   const [period, setPeriod] = useState(maxP)
@@ -372,7 +375,7 @@ export function SignalCalendar({
             {active > 0 && (
               <>
                 {' '}
-                · <span className="text-gold">{active} active</span>
+                · <span className="text-signal">{active} active</span>
               </>
             )}
             {noSignalDays > 0 && (
@@ -408,7 +411,7 @@ export function SignalCalendar({
               <p>
                 Each dot is one signal — <span className="text-signal">green hit target</span>,{' '}
                 <span className="text-warn">red stopped out</span>,{' '}
-                <span className="text-gold">gold active</span>.
+                <span className="text-signal">hollow green still open</span>.
               </p>
             )}
           </div>
