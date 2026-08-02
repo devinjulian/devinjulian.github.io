@@ -7,11 +7,11 @@
       "priceAmount": 99,
       "tagline": "Trade with our partner broker.",
       "features": [
-        "Every EA available — plus updates & new products",
-        "License — each EA can be moved across 3 trading accounts",
+        "Every EA available — plus updates & new releases, free for life",
+        "License — swap each EA to a new trading account up to 3 times",
         "Lifetime — pay once, no renewals",
         "MT5 builds",
-        "Free: 1 EA — AI Trading Agent BOT (still in development)"
+        "Free: the AI Trading Agent BOT when it launches (in development)"
       ],
       "requiresIB": true,
       "ibNote": "Requires a trading account under one of our partner IB brokers",
@@ -24,11 +24,11 @@
       "priceAmount": 999,
       "tagline": "Use any broker you want.",
       "features": [
-        "Every EA available — plus updates & new products",
-        "License — each EA can be moved across 3 trading accounts",
+        "Every EA available — plus updates & new releases, free for life",
+        "License — swap each EA to a new trading account up to 3 times",
         "Lifetime — pay once, no renewals",
         "MT5 builds",
-        "Free: 1 EA — AI Trading Agent BOT (still in development)"
+        "Free: the AI Trading Agent BOT when it launches (in development)"
       ],
       "requiresIB": false,
       "ibNote": null,
@@ -41,9 +41,9 @@
       "priceAmount": 2499,
       "tagline": "Own all of the source code, with unlimited access to the AI Trading Agent.",
       "features": [
-        "Every full source code available",
+        "Every full source code available (.mq5)",
         "Lifetime access to the AI Trading Agent SIGNALS (live now)",
-        "Lifetime access to the AI Trading Agent BOT (still in development)"
+        "Lifetime access to the AI Trading Agent BOT (in development)"
       ],
       "requiresIB": false,
       "ibNote": null,
@@ -54,7 +54,7 @@
     "monthly": "$20",
     "monthlyAmount": 20,
     "features": [
-      "Every signal is shared at the NY Open session — 12:00 UTC",
+      "Every signal is shared at the New York open — 12:00 UTC (13:00 UTC Nov–Mar)",
       "Daily brief market insight",
       "Live Buy/Sell signals"
     ],

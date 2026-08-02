@@ -7,7 +7,7 @@ import { SignalPricing } from '../components/SignalPricing'
 import { Button } from '../components/Button'
 import { RiskDisclaimer } from '../components/RiskDisclaimer'
 import { Reveal } from '../components/Reveal'
-import { links } from '../data'
+import { links, AI_AGENT_DISCLAIMER } from '../data'
 
 export function AiAgent() {
   const [aboutOpen, setAboutOpen] = useState(false)
@@ -61,7 +61,15 @@ export function AiAgent() {
           </Reveal>
         </section>
 
-        <section className="mt-14 border-t border-ink/10 py-10 sm:mt-20">
+        {/* Fine print lives at the foot of the page, out of the selling flow — the Agent
+            disclaimer is required wherever the Agent is presented (PRD §8). */}
+        <section className="mt-14 space-y-4 border-t border-ink/10 py-10 sm:mt-20">
+          <p className="max-w-3xl text-xs leading-relaxed text-muted">
+            <span className="font-mono tracking-[0.2em] text-muted uppercase">
+              AI Trading Agent —{' '}
+            </span>
+            {AI_AGENT_DISCLAIMER}
+          </p>
           <RiskDisclaimer className="max-w-3xl" />
         </section>
       </Container>

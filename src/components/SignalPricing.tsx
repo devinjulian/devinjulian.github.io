@@ -82,6 +82,17 @@ export function SignalPricing({ className }: { className?: string }) {
           </div>
         </div>
       )}
+
+      {/* The membership's real edge over the monthly plan, stated plainly — otherwise it
+          only ever surfaces as one bullet inside the card. */}
+      {membershipTier && (
+        <p className="border-l-2 border-gold/40 pl-4 text-sm leading-relaxed text-muted xl:col-span-2">
+          Subscribing monthly gets you the signals for as long as you keep paying. The{' '}
+          <strong className="font-semibold text-ink">Exclusive Membership</strong> is the
+          one-time route: these same signals for life, and the AI Trading Agent BOT the moment
+          it is finished.
+        </p>
+      )}
     </div>
   )
 }

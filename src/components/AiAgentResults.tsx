@@ -32,6 +32,13 @@ export function AiAgentResults() {
         />
       </div>
 
+      {/* Weekend cells are always empty by design — said out loud so the gaps don't read
+          as missing entries. */}
+      <p className="mt-4 font-mono text-[0.7rem] leading-relaxed tracking-wide text-muted/80">
+        The Agent works Monday to Friday — it does not analyse or issue signals on Saturdays
+        and Sundays, so weekend cells stay empty.
+      </p>
+
       <AiAgentDayModal session={active} onClose={() => setActive(null)} />
     </div>
   )

@@ -16,11 +16,11 @@ export const faqGroups: FAQGroup[] = [
     items: [
       {
         q: 'What do I need to run an ATC algorithm?',
-        a: 'A MetaTrader 4 or MetaTrader 5 account with a broker, the EA file plus your license, and — for hands-off, around-the-clock running — a VPS is recommended so trades keep executing even when your own computer is off.',
+        a: 'A MetaTrader 5 account with a broker, the EA file plus your license, and — for hands-off, around-the-clock running — a VPS is recommended so trades keep executing even when your own computer is off.',
       },
       {
-        q: 'MetaTrader 4 or MetaTrader 5?',
-        a: 'Both. Every EA ships for MT4 and MT5, so you can run it on whichever platform your broker supports.',
+        q: 'Which MetaTrader platform do I need?',
+        a: 'MetaTrader 5. Every EA ships as an MT5 build — MT4 is no longer supported, so make sure your broker offers an MT5 account.',
       },
       {
         q: 'Do I need "set files"?',
@@ -41,15 +41,19 @@ export const faqGroups: FAQGroup[] = [
       },
       {
         q: 'How do licenses work?',
-        a: 'Every tier includes all three EAs. The Partner (IB) and any-broker licenses each cover three trading account numbers of your choosing — lifetime, pay once. The Exclusive Membership tier delivers the full .mq5 source of all three instead, with no per-account limit.',
+        a: 'Every tier includes every EA available. On the Partner (IB) and Any Broker tiers, each EA is licensed to your trading account number and can be swapped to a new account up to three times — lifetime, pay once. The Exclusive Membership tier delivers the full .mq5 source instead, with no account lock at all.',
+      },
+      {
+        q: 'Do I get future EAs and updates?',
+        a: 'Yes. Every tier includes every EA available today plus updates and new products as they are released — free, for life. When the catalogue grows, it grows for everyone who is already in.',
       },
       {
         q: 'What is an IB broker, and why is the Partner (IB) price lower?',
-        a: 'The Partner (IB) price is lower because it is tied to registering under one of our recommended introducing-broker (IB) partners — RoboForex, Exness, or Tickmill. We state this openly: it is how that entry price stays possible. The any-broker price works with any broker you choose.',
+        a: 'The Partner (IB) price is lower because it is tied to registering under one of our recommended introducing-broker (IB) partners — RoboForex, Exness, or Tickmill. We state this openly: it is how that entry price stays possible. The Any Broker price works with any broker you choose.',
       },
       {
         q: 'Can I buy just one EA?',
-        a: 'No — the three EAs are sold together at every tier. Correlation is the reason: EURUSD, GBPUSD and gold do not bleed at the same time, so running the trinity together is what smooths the combined equity curve. One bundle, one decision: the license that fits you.',
+        a: 'No — the EAs are sold together as one bundle at every tier. Correlation is the reason: EURUSD, GBPUSD and gold do not bleed at the same time, so running them together is what smooths the combined equity curve. One bundle, one decision: the license that fits you.',
       },
     ],
   },
@@ -76,6 +80,10 @@ export const faqGroups: FAQGroup[] = [
       {
         q: 'What are the signal subscriptions?',
         a: 'The lab runs a live signal stream — Crypto Futures — powered by the AI Trading Agent. One subscription ($20/month) gives full access, delivered in a private channel. You place every trade yourself; results are shown as R-multiples with risk, never as profit promises.',
+      },
+      {
+        q: 'Do the Forex EAs use the AI Trading Agent?',
+        a: 'No. The Forex EAs are rule-based systems that run on their own inside MetaTrader — there is no AI in them. The AI Trading Agent is a separate system: today it publishes a daily market brief and crypto Buy/Sell signals that are executed manually, and it is being tested manually on Forex. The automated version — the AI Trading Agent BOT — is still in development, and it is included free with every Forex license once it launches.',
       },
       {
         q: 'What is the AI Trading Agent?',

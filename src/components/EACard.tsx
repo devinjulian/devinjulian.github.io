@@ -51,15 +51,19 @@ export function EACard({ ea }: { ea: EA }) {
         <p className="mt-3 font-mono text-[0.6rem] tracking-wide text-muted/80">{caption}</p>
       )}
 
+      {/* Myfxbook stays the trust anchor beside the quoted metrics (PRD §10), kept small —
+          the card's CTA points at the EA's own MT5 backtest reports. */}
       <p className="mt-3 font-mono text-[0.65rem] tracking-wide text-muted/80">
-        {backtest.period} · {backtest.method}
+        {backtest.period} · {backtest.method} ·{' '}
+        <MyfxbookLink>Verified on Myfxbook</MyfxbookLink>
       </p>
 
-      {/* Myfxbook stays the trust anchor beside the quoted metrics (PRD §10) — it now
-          carries the card's only call-to-action label. */}
-      <p className="mt-auto pt-6 font-mono text-[0.7rem] tracking-[0.15em] uppercase">
-        <MyfxbookLink>Explore Backtest Data</MyfxbookLink>
-      </p>
+      <Link
+        to={`/forex/${ea.id}`}
+        className="mt-auto inline-flex items-center gap-1.5 pt-6 font-mono text-[0.7rem] tracking-[0.15em] text-gold uppercase transition-all group-hover:gap-2.5"
+      >
+        Explore Backtest Data <span aria-hidden>→</span>
+      </Link>
     </article>
   )
 }

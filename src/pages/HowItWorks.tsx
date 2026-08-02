@@ -24,7 +24,7 @@ const STEPS = [
   {
     n: '04',
     title: 'Receive your EA and license',
-    body: 'You get all three EAs for MetaTrader 4 and 5, plus a license covering three trading account numbers — lifetime. The Exclusive Membership tier receives the full .mq5 source instead, with no account lock.',
+    body: 'You get every EA as a MetaTrader 5 build, plus a license you can swap to a new trading account up to three times per EA — lifetime. The Exclusive Membership tier receives the full .mq5 source instead, with no account lock.',
   },
   {
     n: '05',
@@ -72,7 +72,7 @@ export function HowItWorks() {
               What you'll need
             </p>
             <ul className="mt-4 grid gap-2 text-muted sm:grid-cols-2">
-              <li>A MetaTrader 4 or 5 account with a broker</li>
+              <li>A MetaTrader 5 account with a broker</li>
               <li>Your ATC license (included with your plan)</li>
               <li>A VPS for 24/7 running (recommended)</li>
               <li>Starting capital sized to the EA and your risk (we'll advise)</li>

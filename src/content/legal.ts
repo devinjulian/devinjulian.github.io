@@ -15,7 +15,7 @@ export interface LegalDoc {
   sections: LegalSection[]
 }
 
-const UPDATED = '2026-06-01'
+const UPDATED = '2026-08-03'
 
 export const riskDisclosure: LegalDoc = {
   slug: 'risk-disclosure',
@@ -75,8 +75,10 @@ export const terms: LegalDoc = {
     {
       heading: 'What a license grants',
       paragraphs: [
-        'A purchase grants you a license to use the Expert Advisor (EA) software on the number of trading account numbers stated in your plan — the Partner (IB) and any-broker tiers each cover three trading account numbers, for the lifetime of the product. Plans that include source code (the source-code tier) grant you the .mq5 source for your own use.',
-        'Lifetime updates, where stated, mean updates to the software you purchased for as long as the lab maintains it.',
+        'A purchase grants you a license to use the Expert Advisor (EA) software as stated in your plan. On the Partner (IB) and Any Broker tiers, each EA is licensed to one live trading account number at a time and may be swapped to a new account number up to three times, for the lifetime of the product. The Exclusive Membership tier grants you the .mq5 source for your own use, with no account lock.',
+        'Every tier includes each EA available at the time of purchase, together with updates and new EA releases as they are published, at no further cost, for as long as the lab maintains them.',
+        'The Exclusive Membership tier also includes lifetime access to the AI Trading Agent signals, and to the AI Trading Agent BOT once that software is released. The BOT is still in development; no release date is promised.',
+        'The EA software is supplied as MetaTrader 5 builds. MetaTrader 4 is no longer supported.',
       ],
     },
     {
@@ -88,7 +90,7 @@ export const terms: LegalDoc = {
     {
       heading: 'Brokers and Partner plans',
       paragraphs: [
-        'Partner (IB) pricing requires registering a trading account under one of our recommended introducing brokers (RoboForex, Exness, or Tickmill). The any-broker and source-code tiers work with any broker.',
+        'Partner (IB) pricing requires registering a trading account under one of our recommended introducing brokers (RoboForex, Exness, or Tickmill). The Any Broker and Exclusive Membership tiers work with any broker.',
       ],
     },
     {
@@ -162,13 +164,13 @@ export const refunds: LegalDoc = {
     {
       heading: 'Digital products',
       paragraphs: [
-        'Our products are digital, and some tiers include source code delivered instantly. Because of this, sales are generally final once the files or source have been delivered. If a product is not functioning as described, contact us and we will work with you to resolve it.',
+        'Our products are digital, and the Exclusive Membership tier includes source code delivered instantly. Because of this, sales are generally final once the files or source have been delivered. If a product is not functioning as described, contact us and we will work with you to resolve it.',
       ],
     },
     {
       heading: 'Lifetime access',
       paragraphs: [
-        'Licenses are lifetime: you pay once for the tier you chose, and plans that include lifetime updates continue to receive updates to the software you purchased for as long as the lab maintains it.',
+        'Licenses are lifetime: you pay once for the tier you chose, and you continue to receive updates and new EA releases at no further cost, for as long as the lab maintains them. The signal subscription is separate and is billed monthly; the Exclusive Membership tier includes that access for life instead.',
       ],
     },
     {

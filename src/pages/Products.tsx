@@ -17,7 +17,7 @@ export function Products() {
         kicker="Forex Bots"
         title={
           <>
-            Three engines running. <em className="text-gold">Your evenings back.</em>
+            You stop watching. <em className="text-gold">They don't.</em>
           </>
         }
         subtitle="Our Forex algorithms — each a specialist in the anatomy of its pair. Open any one to see its mechanism, full stats, and verified MT5 backtests."
@@ -60,8 +60,9 @@ export function Products() {
               One bundle, all EAs. <em className="text-gold">Choose how you own it.</em>
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
-              Every tier includes Omnicor, Cenith and Golden together — the EAs are not sold
-              separately. The only decision is the license that fits you.
+              Every tier includes every EA we have — Omnicor, Cenith and Golden today, plus
+              every new release and update after that, free for life. The EAs are not sold
+              separately; the only decision is the license that fits you.
             </p>
           </Reveal>
 
