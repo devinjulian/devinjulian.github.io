@@ -1,7 +1,6 @@
 import { Container } from '../components/Container'
 import { Section } from '../components/Section'
 import { SectionLabel } from '../components/SectionLabel'
-import { ClaimButton } from '../components/ClaimButton'
 import { Button } from '../components/Button'
 import { EquityCurve } from '../components/EquityCurve'
 import { HeroCanvas } from '../components/HeroCanvas'
@@ -11,8 +10,10 @@ import { Reveal } from '../components/Reveal'
 export function Home() {
   return (
     <>
-      {/* Hero — full-bleed cinematic equity canvas behind lower-left copy. */}
-      <section className="relative flex min-h-[92vh] items-end overflow-hidden pb-16 sm:pb-24">
+      {/* Hero — full-bleed cinematic equity canvas behind the copy. Mobile keeps the copy
+          bottom-anchored; from sm up it sits just under the header instead of being pushed
+          to the fold. */}
+      <section className="relative flex min-h-[92vh] items-end overflow-hidden pb-16 sm:items-start sm:pt-20 sm:pb-24">
         <HeroCanvas />
         <Container className="relative z-10">
           <div className="max-w-4xl">
@@ -35,7 +36,6 @@ export function Home() {
             </Reveal>
             <Reveal mode="mount" delay={0.3} className="mt-10">
               <div className="flex flex-wrap items-center gap-4">
-                <ClaimButton />
                 <Button variant="ghost" to="/forex">
                   Forex Bots
                 </Button>
@@ -143,7 +143,6 @@ export function Home() {
                 don't have to.
               </p>
               <div className="mt-9 flex flex-wrap justify-center gap-4">
-                <ClaimButton />
                 <Button variant="ghost" to="/forex">
                   Forex pricing
                 </Button>

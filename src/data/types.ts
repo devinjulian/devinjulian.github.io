@@ -66,9 +66,8 @@ export interface ForexTier {
 export interface Subscription {
   monthly: string
   monthlyAmount: number
-  yearly: string
-  yearlyAmount: number
-  yearlyNote: string
+  /** What the monthly subscription includes, shown as bullets under the price. */
+  features: string[]
   allAccessNote: string
   channel: string
   payment: string

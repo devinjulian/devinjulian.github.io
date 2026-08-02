@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { cn } from '../lib/cn'
 import { Wordmark } from './Wordmark'
-import { ClaimButton } from './ClaimButton'
 import { Menu, Close } from './icons'
 
 const LINKS = [
@@ -35,10 +34,6 @@ export function Nav() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
-          <ClaimButton size="sm" />
-        </div>
-
         <button
           type="button"
           className="grid h-10 w-10 place-items-center text-ink md:hidden"
@@ -69,9 +64,6 @@ export function Nav() {
                 {l.label}
               </NavLink>
             ))}
-            <div className="pt-3" onClick={() => setOpen(false)}>
-              <ClaimButton size="sm" className="w-full" />
-            </div>
           </nav>
         </div>
       )}

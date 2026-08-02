@@ -17,7 +17,7 @@ export function Products() {
         kicker="Forex Bots"
         title={
           <>
-            Three specialists. <em className="text-gold">One smoother curve.</em>
+            Three engines running. <em className="text-gold">Your evenings back.</em>
           </>
         }
         subtitle="Our Forex algorithms — each a specialist in the anatomy of its pair. Open any one to see its mechanism, full stats, and verified MT5 backtests."
@@ -45,7 +45,6 @@ export function Products() {
               which is the entire point of owning all three.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
-              <ClaimButton>Own all three</ClaimButton>
               <Button variant="ghost" href={links.myfxbook} external>
                 See the track record
               </Button>
@@ -58,7 +57,7 @@ export function Products() {
           <Reveal>
             <SectionLabel>Pricing</SectionLabel>
             <h2 className="mt-7 max-w-2xl font-display text-3xl leading-tight font-light text-ink sm:text-4xl">
-              One bundle, all three EAs. <em className="text-gold">Choose how you own it.</em>
+              One bundle, all EAs. <em className="text-gold">Choose how you own it.</em>
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
               Every tier includes Omnicor, Cenith and Golden together — the EAs are not sold
@@ -73,16 +72,9 @@ export function Products() {
                   key={tier.id}
                   className="relative flex h-full flex-col rounded-2xl border border-ink/10 bg-surface/40 p-7 overflow-hidden"
                 >
-                  <div className="flex items-start justify-between gap-2">
-                    <p className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
-                      {tier.name}
-                    </p>
-                    {tier.id === 'source-code' && (
-                      <span className="shrink-0 inline-flex items-center rounded-full border border-gold/40 bg-gold/10 px-2 py-0.5 font-mono text-[0.6rem] tracking-[0.1em] text-gold uppercase">
-                        Funding Member
-                      </span>
-                    )}
-                  </div>
+                  <p className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
+                    {tier.name}
+                  </p>
                   <p className="mt-4 font-display text-4xl font-light text-ink">
                     {tier.price}
                     <span className="ml-2 font-mono text-[0.65rem] tracking-[0.15em] text-muted/80 uppercase">
@@ -143,8 +135,8 @@ export function Products() {
 
             <p className="mt-6 border-l-2 border-gold/40 pl-4 text-sm leading-relaxed text-muted">
               A license covers three trading account numbers of your choosing, for life — pay
-              once, no renewals. The source-code tier has no account lock: you receive the
-              .mq5 files themselves.
+              once, no renewals. The Exclusive Membership tier has no account lock: you receive
+              the .mq5 files themselves.
             </p>
           </Reveal>
         </section>

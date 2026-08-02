@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Container } from '../components/Container'
-import { Section } from '../components/Section'
 import { PageHero } from '../components/PageHero'
 import { AiAgentResults } from '../components/AiAgentResults'
 import { AiAgentAbout } from '../components/AiAgentAbout'
@@ -33,16 +32,10 @@ export function AiAgent() {
           </p>
         </Reveal>
 
-        {/* The signal log is the focus of this page — first under the hero. */}
-        <Section label="The signal log" className="mt-8">
+        {/* The signal log is the focus of this page — first under the hero. The section
+            label and its lead-in copy were dropped so the record itself leads. */}
+        <section className="mt-8">
           <Reveal>
-            <p className="max-w-2xl text-lg leading-relaxed text-muted">
-              The record, in the open — every session is logged below, taken or skipped, with the
-              reasoning behind it. Some days the strongest call is to stand aside. Results are shown
-              as R-multiples (reward versus the risk taken), never as profit promises.
-            </p>
-          </Reveal>
-          <Reveal className="mt-5">
             <p className="max-w-2xl border-l-2 border-gold/40 pl-3 text-sm leading-relaxed text-muted/90 italic">
               How this log works: each decision is recorded at the session it's made — before the
               outcome is known — with the full reasoning behind it.
@@ -51,21 +44,12 @@ export function AiAgent() {
           <Reveal className="mt-8">
             <AiAgentResults />
           </Reveal>
-        </Section>
+        </section>
 
-        {/* Deeper context + conversion live at the bottom, out of the table's way. */}
-        <Section
-          label="Going deeper"
-          side="right"
-          className="mt-14 border-t border-ink/10 pt-14 sm:mt-20 sm:pt-20"
-        >
+        {/* Conversion block at the bottom, out of the table's way. */}
+        <section className="mt-14 border-t border-ink/10 pt-14 sm:mt-20 sm:pt-20">
           <Reveal>
-            <p className="max-w-2xl text-lg leading-relaxed text-muted">
-              See how the Agent reaches a decision, watch the record build in the open, then get the
-              live calls the moment they're issued. The daily log here is free; live signals go to
-              subscribers in a private channel.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4">
               <Button variant="primary" href={links.telegram} external>
                 Follow on Telegram
               </Button>
@@ -75,7 +59,7 @@ export function AiAgent() {
             </div>
             <SignalPricing className="mt-10 max-w-4xl" />
           </Reveal>
-        </Section>
+        </section>
 
         <section className="mt-14 border-t border-ink/10 py-10 sm:mt-20">
           <RiskDisclaimer className="max-w-3xl" />

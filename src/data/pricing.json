@@ -5,12 +5,13 @@
       "name": "Partner (IB)",
       "price": "$99",
       "priceAmount": 99,
-      "tagline": "The entry price — made possible by our partner brokers.",
+      "tagline": "Trade with our partner broker.",
       "features": [
-        "All three EAs — Omnicor, Cenith & Golden",
-        "License for 3 trading account numbers",
+        "Every EA available — plus updates & new products",
+        "License — each EA can be moved across 3 trading accounts",
         "Lifetime — pay once, no renewals",
-        "MT4 & MT5 builds"
+        "MT5 builds",
+        "Free: 1 EA — AI Trading Agent BOT (still in development)"
       ],
       "requiresIB": true,
       "ibNote": "Requires a trading account under one of our partner IB brokers",
@@ -21,27 +22,28 @@
       "name": "Any Broker",
       "price": "$999",
       "priceAmount": 999,
-      "tagline": "The same bundle, on whatever broker you already trust.",
+      "tagline": "Use any broker you want.",
       "features": [
-        "All three EAs — Omnicor, Cenith & Golden",
-        "License for 3 trading account numbers",
+        "Every EA available — plus updates & new products",
+        "License — each EA can be moved across 3 trading accounts",
         "Lifetime — pay once, no renewals",
-        "MT4 & MT5 builds · works with any broker"
+        "MT5 builds",
+        "Free: 1 EA — AI Trading Agent BOT (still in development)"
       ],
       "requiresIB": false,
       "ibNote": null,
       "order": 2
     },
     {
-      "id": "source-code",
-      "name": "Source Code",
+      "id": "exclusive-membership",
+      "name": "Exclusive Membership",
       "price": "$2,499",
       "priceAmount": 2499,
-      "tagline": "Own the engines themselves — the full .mq5 source of all three.",
+      "tagline": "Own all of the source code, with unlimited access to the AI Trading Agent.",
       "features": [
-        "Full Source Code - Omnicor, Cenith & Golden (.mq5)",
-        "Lifetime access to AI Trading Agent",
-        "Yours permanently"
+        "Every full source code available",
+        "Lifetime access to the AI Trading Agent SIGNALS (live now)",
+        "Lifetime access to the AI Trading Agent BOT (still in development)"
       ],
       "requiresIB": false,
       "ibNote": null,
@@ -49,11 +51,13 @@
     }
   ],
   "subscription": {
-    "monthly": "$62",
-    "monthlyAmount": 62,
-    "yearly": "$620",
-    "yearlyAmount": 620,
-    "yearlyNote": "2 months free · ~17% off",
+    "monthly": "$20",
+    "monthlyAmount": 20,
+    "features": [
+      "Every signal is shared at the NY Open session — 12:00 UTC",
+      "Daily brief market insight",
+      "Live Buy/Sell signals"
+    ],
     "allAccessNote": "One subscription, full access. Live signals are delivered in a private channel; you place every trade yourself.",
     "channel": "private Telegram channel",
     "payment": "crypto, verified manually"

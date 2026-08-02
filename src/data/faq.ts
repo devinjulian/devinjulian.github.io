@@ -41,7 +41,7 @@ export const faqGroups: FAQGroup[] = [
       },
       {
         q: 'How do licenses work?',
-        a: 'Every tier includes all three EAs. The Partner (IB) and any-broker licenses each cover three trading account numbers of your choosing — lifetime, pay once. The source-code tier delivers the full .mq5 source of all three instead, with no per-account limit.',
+        a: 'Every tier includes all three EAs. The Partner (IB) and any-broker licenses each cover three trading account numbers of your choosing — lifetime, pay once. The Exclusive Membership tier delivers the full .mq5 source of all three instead, with no per-account limit.',
       },
       {
         q: 'What is an IB broker, and why is the Partner (IB) price lower?',
@@ -75,7 +75,7 @@ export const faqGroups: FAQGroup[] = [
     items: [
       {
         q: 'What are the signal subscriptions?',
-        a: 'The lab runs a live signal stream — Crypto Futures — powered by the AI Trading Agent. One subscription ($62/month or $620/year) gives full access, delivered in a private channel. You place every trade yourself; results are shown as R-multiples with risk, never as profit promises.',
+        a: 'The lab runs a live signal stream — Crypto Futures — powered by the AI Trading Agent. One subscription ($20/month) gives full access, delivered in a private channel. You place every trade yourself; results are shown as R-multiples with risk, never as profit promises.',
       },
       {
         q: 'What is the AI Trading Agent?',
