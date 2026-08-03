@@ -3,8 +3,8 @@
     {
       "id": "partner-ib",
       "name": "Partner (IB)",
-      "price": "$99",
-      "priceAmount": 99,
+      "price": "$149",
+      "priceAmount": 149,
       "tagline": "Trade with our partner broker.",
       "features": [
         "Every EA available — plus updates & new releases, free for life",
@@ -20,8 +20,8 @@
     {
       "id": "any-broker",
       "name": "Any Broker",
-      "price": "$999",
-      "priceAmount": 999,
+      "price": "$499",
+      "priceAmount": 499,
       "tagline": "Use any broker you want.",
       "features": [
         "Every EA available — plus updates & new releases, free for life",
