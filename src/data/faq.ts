@@ -79,7 +79,7 @@ export const faqGroups: FAQGroup[] = [
     items: [
       {
         q: 'What are the signal subscriptions?',
-        a: 'The lab runs a live signal stream — Crypto Futures — powered by the AI Trading Agent. One subscription ($49/month) gives full access, delivered in a private channel. You place every trade yourself; results are shown as R-multiples with risk, never as profit promises.',
+        a: 'The lab runs a live signal stream — Crypto Futures — powered by the AI Trading Agent. One subscription ($32/month, paid in Telegram Stars) gives full access, delivered in a private channel. The price is fixed — it does not rise as new markets are added. You place every trade yourself; results are shown as R-multiples with risk, never as profit promises.',
       },
       {
         q: 'Do the Forex EAs use the AI Trading Agent?',

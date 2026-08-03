@@ -51,8 +51,8 @@
     }
   ],
   "subscription": {
-    "monthly": "$49",
-    "monthlyAmount": 49,
+    "monthly": "$32",
+    "monthlyAmount": 32,
     "features": [
       "Every signal is shared at the New York open — 12:00 UTC (13:00 UTC Nov–Mar)",
       "Daily brief market insight",
@@ -60,8 +60,8 @@
     ],
     "allAccessNote": "One subscription, full access. Live signals are delivered in a private channel; you place every trade yourself.",
     "channel": "private Telegram channel",
-    "payment": "crypto, verified manually",
-    "foundingNote": "Founding rate — this price is locked for life for members who join now, even when it rises for new subscribers. It covers the signals; the AI Trading Agent BOT will be a separate subscription."
+    "payment": "Telegram Stars",
+    "fixedNote": "One price, fixed. No annual lock-in, no tiers, and no price rises when new markets are added — what you pay in month one is what you pay in year three."
   },
   "membershipLadder": {
     "note": "Manually maintained — see PRD §14.1. slotsLeft must always be true.",

@@ -33,13 +33,12 @@ export function SignalPricing({ className }: { className?: string }) {
             ))}
           </ul>
         </div>
-        {/* Grandfathered price — scoped to signals only (PRD §14). */}
-        <p className="mt-5 rounded-lg border border-gold/25 bg-gold/5 px-4 py-3 text-sm leading-relaxed text-muted">
-          {s.foundingNote}
-        </p>
-        <p className="mt-4 border-l-2 border-gold/40 pl-3 text-sm leading-relaxed text-muted">
+        {/* Deliberately calm — the slot ladder below carries the urgency on this page, and
+            stacking two pressure devices reads as a hard sell. */}
+        <p className="mt-5 border-l-2 border-gold/40 pl-3 text-sm leading-relaxed text-muted">
           {s.allAccessNote}
         </p>
+        <p className="mt-4 text-sm leading-relaxed text-muted">{s.fixedNote}</p>
         <p className="mt-3 font-mono text-[0.7rem] text-muted/80">
           Delivered in a {s.channel} · payment {s.payment}.
         </p>

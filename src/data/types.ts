@@ -68,8 +68,10 @@ export interface Subscription {
   monthlyAmount: number
   /** What the monthly subscription includes, shown as bullets under the price. */
   features: string[]
-  /** Grandfathered-price promise. Scoped to signals only — never extend it to the BOT. */
-  foundingNote: string
+  /** The price is deliberately fixed: subscribers pay via Telegram Stars, which only sells
+   *  in fixed bundles, and a per-price payment link cannot be retired cleanly. Keep
+   *  `monthly` on an exact Stars bundle amount. */
+  fixedNote: string
   allAccessNote: string
   channel: string
   payment: string
