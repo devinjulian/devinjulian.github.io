@@ -11,7 +11,7 @@
         "License — swap each EA to a new trading account up to 3 times",
         "Lifetime — pay once, no renewals",
         "MT5 builds",
-        "Free: the AI Trading Agent BOT when it launches (in development)"
+        "3 months of the AI Trading Agent BOT free at launch (in development)"
       ],
       "requiresIB": true,
       "ibNote": "Requires a trading account under one of our partner IB brokers",
@@ -28,7 +28,7 @@
         "License — swap each EA to a new trading account up to 10 times",
         "Lifetime — pay once, no renewals",
         "MT5 builds",
-        "Free: the AI Trading Agent BOT when it launches (in development)"
+        "3 months of the AI Trading Agent BOT free at launch (in development)"
       ],
       "requiresIB": false,
       "ibNote": null,
@@ -60,6 +60,34 @@
     ],
     "allAccessNote": "One subscription, full access. Live signals are delivered in a private channel; you place every trade yourself.",
     "channel": "private Telegram channel",
-    "payment": "crypto, verified manually"
+    "payment": "crypto, verified manually",
+    "foundingNote": "Founding rate — this price is locked for life for members who join now, even when it rises for new subscribers. It covers the signals; the AI Trading Agent BOT will be a separate subscription."
+  },
+  "membershipLadder": {
+    "note": "Manually maintained — see PRD §14.1. slotsLeft must always be true.",
+    "closesAfterFinal": true,
+    "stages": [
+      {
+        "price": "$2,499",
+        "priceAmount": 2499,
+        "slots": 4,
+        "slotsLeft": 4,
+        "state": "open"
+      },
+      {
+        "price": "$4,999",
+        "priceAmount": 4999,
+        "slots": 10,
+        "slotsLeft": 10,
+        "state": "upcoming"
+      },
+      {
+        "price": "$9,999",
+        "priceAmount": 9999,
+        "slots": 25,
+        "slotsLeft": 25,
+        "state": "upcoming"
+      }
+    ]
   }
 }

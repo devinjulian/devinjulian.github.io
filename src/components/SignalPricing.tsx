@@ -1,5 +1,6 @@
 import { subscription, forexTiers } from '../data'
 import { ClaimButton } from './ClaimButton'
+import { MembershipLadder } from './MembershipLadder'
 import { cn } from '../lib/cn'
 
 /** All-access signal subscription price block + Exclusive Membership option. Same on both
@@ -32,7 +33,11 @@ export function SignalPricing({ className }: { className?: string }) {
             ))}
           </ul>
         </div>
-        <p className="mt-5 border-l-2 border-gold/40 pl-3 text-sm leading-relaxed text-muted">
+        {/* Grandfathered price — scoped to signals only (PRD §14). */}
+        <p className="mt-5 rounded-lg border border-gold/25 bg-gold/5 px-4 py-3 text-sm leading-relaxed text-muted">
+          {s.foundingNote}
+        </p>
+        <p className="mt-4 border-l-2 border-gold/40 pl-3 text-sm leading-relaxed text-muted">
           {s.allAccessNote}
         </p>
         <p className="mt-3 font-mono text-[0.7rem] text-muted/80">
@@ -86,12 +91,15 @@ export function SignalPricing({ className }: { className?: string }) {
       {/* The membership's real edge over the monthly plan, stated plainly — otherwise it
           only ever surfaces as one bullet inside the card. */}
       {membershipTier && (
-        <p className="border-l-2 border-gold/40 pl-4 text-sm leading-relaxed text-muted xl:col-span-2">
-          Subscribing monthly gets you the signals for as long as you keep paying. The{' '}
-          <strong className="font-semibold text-ink">Exclusive Membership</strong> is the
-          one-time route: these same signals for life, and the AI Trading Agent BOT the moment
-          it is finished.
-        </p>
+        <div className="xl:col-span-2">
+          <p className="border-l-2 border-gold/40 pl-4 text-sm leading-relaxed text-muted">
+            Subscribing monthly gets you the signals for as long as you keep paying. The{' '}
+            <strong className="font-semibold text-ink">Exclusive Membership</strong> is the
+            one-time route: these same signals for life, and the AI Trading Agent BOT the
+            moment it is finished.
+          </p>
+          <MembershipLadder className="mt-6 rounded-xl border border-gold/25 bg-surface/30 p-6" />
+        </div>
       )}
     </div>
   )

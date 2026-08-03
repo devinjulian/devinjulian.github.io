@@ -3,7 +3,15 @@ import pricingData from './pricing.json'
 import brokersData from './brokers.json'
 import linksData from './links.json'
 import seoMeta from './seoMeta.json'
-import type { BacktestMeta, EA, ForexTier, Broker, Links, Subscription } from './types'
+import type {
+  BacktestMeta,
+  EA,
+  ForexTier,
+  Broker,
+  Links,
+  Subscription,
+  MembershipLadder,
+} from './types'
 
 // Canonical site identity — single source of truth (shared with scripts/prerender.mjs).
 export const SITE = seoMeta.site
@@ -15,6 +23,7 @@ export const eas = easData.eas as unknown as EA[]
 
 export const forexTiers = pricingData.forexTiers as ForexTier[]
 export const subscription = pricingData.subscription as Subscription
+export const membershipLadder = pricingData.membershipLadder as MembershipLadder
 
 export const brokers = brokersData as Broker[]
 export const links = linksData as Links

@@ -83,7 +83,7 @@ export const faqGroups: FAQGroup[] = [
       },
       {
         q: 'Do the Forex EAs use the AI Trading Agent?',
-        a: 'No. The Forex EAs are rule-based systems that run on their own inside MetaTrader — there is no AI in them. The AI Trading Agent is a separate system: today it publishes a daily market brief and crypto Buy/Sell signals that are executed manually, and it is being tested manually on Forex. The automated version — the AI Trading Agent BOT — is still in development, and it is included free with every Forex license once it launches.',
+        a: 'No. The Forex EAs are rule-based systems that run on their own inside MetaTrader — there is no AI in them. The AI Trading Agent is a separate system: today it publishes a daily market brief and crypto Buy/Sell signals that are executed manually, and it is being tested manually on Forex. The automated version — the AI Trading Agent BOT — is still in development. Every Forex license includes three months of the BOT free once it launches; after that it continues as a separate monthly subscription.',
       },
       {
         q: 'What is the AI Trading Agent?',

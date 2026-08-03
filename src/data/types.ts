@@ -68,9 +68,28 @@ export interface Subscription {
   monthlyAmount: number
   /** What the monthly subscription includes, shown as bullets under the price. */
   features: string[]
+  /** Grandfathered-price promise. Scoped to signals only — never extend it to the BOT. */
+  foundingNote: string
   allAccessNote: string
   channel: string
   payment: string
+}
+
+/** One rung of the Exclusive Membership slot ladder (PRD §14.1). `slotsLeft` is
+ *  maintained by hand and must always be true — a stale count is worse than none. */
+export interface MembershipStage {
+  price: string
+  priceAmount: number
+  slots: number
+  slotsLeft: number
+  state: 'open' | 'upcoming' | 'soldOut'
+}
+
+export interface MembershipLadder {
+  note: string
+  /** When true, the tier closes permanently once the final stage sells out. */
+  closesAfterFinal: boolean
+  stages: MembershipStage[]
 }
 
 export interface Broker {

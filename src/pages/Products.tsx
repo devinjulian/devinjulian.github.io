@@ -6,6 +6,7 @@ import { PageHero } from '../components/PageHero'
 import { EACard } from '../components/EACard'
 import { Button } from '../components/Button'
 import { ClaimButton } from '../components/ClaimButton'
+import { MembershipLadder } from '../components/MembershipLadder'
 import { RiskDisclaimer } from '../components/RiskDisclaimer'
 import { Reveal } from '../components/Reveal'
 
@@ -110,6 +111,10 @@ export function Products() {
                 </div>
               ))}
             </div>
+
+            {/* Full width rather than inside the tier card — the ladder is wide content and
+                would otherwise blow out the card heights across the three columns. */}
+            <MembershipLadder className="mt-8 rounded-xl border border-gold/25 bg-surface/30 p-6" />
 
             {/* IB brokers — stated plainly, not hidden */}
             <div className="mt-8 rounded-xl border border-ink/10 bg-surface/30 p-6">
