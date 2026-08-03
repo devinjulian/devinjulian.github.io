@@ -41,7 +41,7 @@ export const faqGroups: FAQGroup[] = [
       },
       {
         q: 'How do licenses work?',
-        a: 'Every tier includes every EA available. On the Partner (IB) and Any Broker tiers, each EA is licensed to your trading account number and can be swapped to a new account up to three times — lifetime, pay once. The Exclusive Membership tier delivers the full .mq5 source instead, with no account lock at all.',
+        a: 'Every tier includes every EA available. Each EA runs on one live trading account number at a time, and you can swap it to a new account as your setup changes — up to three times per EA on Partner (IB), and up to ten times per EA on Any Broker. Both are lifetime, pay once. The Exclusive Membership tier delivers the full .mq5 source instead, with no account lock at all.',
       },
       {
         q: 'Do I get future EAs and updates?',

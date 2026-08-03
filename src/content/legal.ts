@@ -75,7 +75,7 @@ export const terms: LegalDoc = {
     {
       heading: 'What a license grants',
       paragraphs: [
-        'A purchase grants you a license to use the Expert Advisor (EA) software as stated in your plan. On the Partner (IB) and Any Broker tiers, each EA is licensed to one live trading account number at a time and may be swapped to a new account number up to three times, for the lifetime of the product. The Exclusive Membership tier grants you the .mq5 source for your own use, with no account lock.',
+        'A purchase grants you a license to use the Expert Advisor (EA) software as stated in your plan. On the Partner (IB) and Any Broker tiers, each EA is licensed to one live trading account number at a time and may be swapped to a new account number — up to three times per EA on Partner (IB), and up to ten times per EA on Any Broker — for the lifetime of the product. The Exclusive Membership tier grants you the .mq5 source for your own use, with no account lock.',
         'Every tier includes each EA available at the time of purchase, together with updates and new EA releases as they are published, at no further cost, for as long as the lab maintains them.',
         'The Exclusive Membership tier also includes lifetime access to the AI Trading Agent signals, and to the AI Trading Agent BOT once that software is released. The BOT is still in development; no release date is promised.',
         'The EA software is supplied as MetaTrader 5 builds. MetaTrader 4 is no longer supported.',

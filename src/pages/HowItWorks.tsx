@@ -24,7 +24,7 @@ const STEPS = [
   {
     n: '04',
     title: 'Receive your EA and license',
-    body: 'You get every EA as a MetaTrader 5 build, plus a license you can swap to a new trading account up to three times per EA — lifetime. The Exclusive Membership tier receives the full .mq5 source instead, with no account lock.',
+    body: 'You get every EA as a MetaTrader 5 build, plus a license you can swap to a new trading account as your setup changes — three times per EA on Partner (IB), ten times per EA on Any Broker, lifetime. The Exclusive Membership tier receives the full .mq5 source instead, with no account lock.',
   },
   {
     n: '05',
