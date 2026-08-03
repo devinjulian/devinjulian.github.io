@@ -6,8 +6,14 @@ import { EquityCurve } from '../components/EquityCurve'
 import { HeroCanvas } from '../components/HeroCanvas'
 import { Reviews } from '../components/Reviews'
 import { Reveal } from '../components/Reveal'
+import { forexTiers, subscription, membershipLadder } from '../data'
 
 export function Home() {
+  // Prices and the slot count come from data so the homepage can never drift from the
+  // pricing pages (PRD §14.1 — the count must always be true).
+  const forexEntry = forexTiers[0]
+  const openSlot = membershipLadder.stages.find((s) => s.state === 'open')
+
   return (
     <>
       {/* Hero — full-bleed cinematic equity canvas behind the copy. Mobile keeps the copy
@@ -29,25 +35,23 @@ export function Home() {
             </Reveal>
             <Reveal mode="mount" delay={0.15} className="mt-8 max-w-xl">
               <p className="text-lg leading-relaxed text-muted">
-                We build algorithms that compound wealth while you sleep — so the hours
-                you'd spend staring at charts go back to the one account that never
-                refills: <em className="text-ink">your life</em>.
+                Algorithms that trade while you sleep — and give back the one account that
+                never refills: <em className="text-ink">your life</em>.
               </p>
             </Reveal>
             <Reveal mode="mount" delay={0.3} className="mt-10">
               <div className="flex flex-wrap items-center gap-4">
+                <Button to="/crypto-futures-signals">See it work — free</Button>
                 <Button variant="ghost" to="/forex">
                   Forex Bots
                 </Button>
-                <Button variant="ghost" to="/crypto-futures-signals">
-                  AI Signals
-                </Button>
               </div>
             </Reveal>
+            {/* The only proof signal on this page, so it carries more weight than fine print. */}
             <Reveal mode="mount" delay={0.42} className="mt-8">
-              <p className="font-mono text-[0.7rem] tracking-wide text-muted/80">
-                Forex verified on Myfxbook · AI signal log published daily, free · every result
-                shown with its risk
+              <p className="font-mono text-xs tracking-wide text-muted">
+                Verified on Myfxbook · wins and losses both published · from $149 one-time or
+                $32/month
               </p>
             </Reveal>
           </div>
@@ -82,17 +86,14 @@ export function Home() {
         <Section index="02" label="The Lab" side="right" className="py-24 sm:py-32">
           <Reveal>
             <h2 className="font-display text-4xl leading-tight font-light text-ink sm:text-5xl">
-              This isn't a product you shelve. <em className="text-gold">It's a lab.</em>
+              You're not buying a file.{' '}
+              <em className="text-gold">You're buying everything that comes next.</em>
             </h2>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted">
-              Algo Trading Center runs three machines: the{' '}
-              <strong className="font-semibold text-ink">Forex trinity</strong> — three EAs you own
-              outright — and the newest frontier, the{' '}
-              <strong className="font-semibold text-ink">AI Trading Agent</strong>, now live and
-              issuing <strong className="font-semibold text-ink">Crypto Futures signals</strong>:
-              an AI that does an entire research desk's work before every call, every session. The
-              daily logs are public — taken or skipped, wins and losses alike — so you can watch it
-              work before you pay for anything.
+              Three <strong className="font-semibold text-ink">Forex EAs</strong> you own
+              outright. An <strong className="font-semibold text-ink">AI Trading Agent</strong>,
+              live now, every session logged in public. Every release after that is yours too —
+              free, for life.
             </p>
           </Reveal>
         </Section>
@@ -111,12 +112,12 @@ export function Home() {
               Reclaim Your Time
             </SectionLabel>
             <h2 className="mt-7 font-display text-4xl leading-tight font-light text-balance text-ink sm:text-6xl">
-              You can always make more money. <em className="text-gold">You cannot make more time.</em>
+              Every month you wait is a month you spend watching.{' '}
+              <em className="text-gold">You don't get it back.</em>
             </h2>
             <p className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-muted">
-              The wealthiest people you know aren't the ones with the most money. They're
-              the ones who stopped trading their hours for it. Automation is how you cross
-              that line — on the next candle, while you're somewhere else entirely.
+              The wealthiest people you know stopped trading hours for money. Automation is how
+              you cross that line — while you're somewhere else entirely.
             </p>
           </Reveal>
         </Container>
@@ -138,14 +139,17 @@ export function Home() {
                 Own the machine. <em className="text-gold">Keep your hours.</em>
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-muted">
-                Own the Forex trinity outright with one lifetime license, or plug into the live
-                AI signal desk by subscription — either way, the machine works the hours so you
-                don't have to.
+                {forexEntry.price} one-time for the Forex bundle. {subscription.monthly}/month
+                for AI signals. No renewals either way.
               </p>
+              {openSlot && (
+                <p className="mt-5 font-mono text-[0.7rem] tracking-[0.15em] text-gold uppercase">
+                  Exclusive Membership — {openSlot.slotsLeft} of {openSlot.slots} slots left at{' '}
+                  {openSlot.price}
+                </p>
+              )}
               <div className="mt-9 flex flex-wrap justify-center gap-4">
-                <Button variant="ghost" to="/forex">
-                  Forex pricing
-                </Button>
+                <Button to="/forex">Forex pricing</Button>
                 <Button variant="ghost" to="/crypto-futures-signals">
                   Signal pricing
                 </Button>
