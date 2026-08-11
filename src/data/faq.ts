@@ -7,53 +7,57 @@ export interface FAQGroup {
   items: FAQItem[]
 }
 
-/** Pre-sale FAQ. Answers are grounded in PRD §8 / src/data. Where a fact isn't decided
- *  yet (e.g. refunds), the answer is deliberately soft and points to direct contact —
- *  nothing is invented. */
+/** Pre-sale FAQ. Answers are grounded in PRD §8 / src/data and kept to one or two
+ *  sentences — this is a sales page, not documentation. Where a fact isn't decided yet
+ *  (e.g. refunds), the answer points to direct contact rather than inventing one. */
 export const faqGroups: FAQGroup[] = [
   {
     title: 'Getting started',
     items: [
       {
-        q: 'What do I need to run an ATC algorithm?',
-        a: 'A MetaTrader 5 account with a broker, the EA file plus your license, and — for hands-off, around-the-clock running — a VPS is recommended so trades keep executing even when your own computer is off.',
+        q: 'What do I need to run the machines?',
+        a: 'An MT5 account with a broker that allows grid trading at 1:500–1:1000 leverage, and a VPS so they keep running when your computer is off.',
       },
       {
-        q: 'Which MetaTrader platform do I need?',
-        a: 'MetaTrader 5. Every EA ships as an MT5 build — MT4 is no longer supported, so make sure your broker offers an MT5 account.',
+        q: 'How much capital do I need?',
+        a: '$10,000 on a standard account — the strategy was built at a 0.1 minimum lot and needs that behind it. Starting smaller? Use a cent account from $100: same machines, same strategy, one-hundredth of the scale.',
       },
       {
-        q: 'Do I need "set files"?',
-        a: 'Omnicor and Cenith are plug-and-play with no set files. Golden requires two set files — one per timeframe — and they are provided with the EA.',
+        q: 'Which platform?',
+        a: 'MetaTrader 5 only. MT4 is no longer supported.',
       },
       {
-        q: 'How much capital do I need to start?',
-        a: 'It depends on the EA, your broker leverage, and the risk settings you choose. The backtests use $10,000–$100,000 starting balances as references, not requirements — we will help you size it sensibly when you message us.',
+        q: 'Do I need set files?',
+        a: 'Omnicor and Cenith are plug-and-play. Golden ships with two set files, one per timeframe.',
       },
     ],
   },
   {
-    title: 'Buying & licenses',
+    title: 'Plans & billing',
     items: [
       {
-        q: 'How do I buy?',
-        a: 'There is no on-site checkout. You message us on Telegram or by email naming the license tier or the signal subscription you want, and we walk you through the next step from there.',
+        q: 'What does a plan cost?',
+        a: '$32 a month with one of our partner brokers, or $53 a month on any broker you choose. Both run all three machines.',
       },
       {
-        q: 'How do licenses work?',
-        a: 'Every tier includes every EA available. Each EA runs on one live trading account number at a time, and you can swap it to a new account as your setup changes — up to three times per EA on Partner (IB), and up to ten times per EA on Any Broker. Both are lifetime, pay once. The Exclusive Membership tier delivers the full .mq5 source instead, with no account lock at all.',
+        q: 'Can I cancel?',
+        a: 'Any month. There is no contract and no minimum term.',
       },
       {
-        q: 'Do I get future EAs and updates?',
-        a: 'Yes. Every tier includes every EA available today plus updates and new products as they are released — free, for life. When the catalogue grows, it grows for everyone who is already in.',
+        q: 'Why is the Partner (IB) rate lower?',
+        a: 'It is tied to opening an account under one of our introducing brokers — RoboForex, Exness or Tickmill. We state it openly: that partnership is what makes the lower rate possible.',
       },
       {
-        q: 'What is an IB broker, and why is the Partner (IB) price lower?',
-        a: 'The Partner (IB) price is lower because it is tied to registering under one of our recommended introducing-broker (IB) partners — RoboForex, Exness, or Tickmill. We state this openly: it is how that entry price stays possible. The Any Broker price works with any broker you choose.',
+        q: 'Can I get just one EA?',
+        a: 'No. All three run together on every plan — EURUSD, GBPUSD and gold do not lose at the same time, and that is what smooths the combined curve.',
       },
       {
-        q: 'Can I buy just one EA?',
-        a: 'No — the EAs are sold together as one bundle at every tier. Correlation is the reason: EURUSD, GBPUSD and gold do not bleed at the same time, so running them together is what smooths the combined equity curve. One bundle, one decision: the license that fits you.',
+        q: 'What is the Exclusive Membership?',
+        a: 'A one-time alternative to paying monthly: the full .mq5 source code, lifetime access, every future release included. It is a closed programme with a fixed number of slots — when the last one goes, it is gone.',
+      },
+      {
+        q: 'How do I pay?',
+        a: 'There is no on-site checkout. Message us on Telegram or by email and we arrange it directly.',
       },
     ],
   },
@@ -62,32 +66,28 @@ export const faqGroups: FAQGroup[] = [
     items: [
       {
         q: 'Are the results guaranteed?',
-        a: 'No. Past performance does not guarantee future results, and trading involves substantial risk of loss. The figures shown are backtests (2021–2026, Monte Carlo method); live results vary with broker conditions, spread, slippage, and the settings you choose.',
+        a: 'No. The figures shown are backtests (2021–2026, Monte Carlo), and trading carries a substantial risk of loss. Live results vary with broker conditions, spread, slippage and your settings.',
       },
       {
-        q: 'Can I verify the results myself?',
-        a: 'Yes. A live, third-party track record is published on Myfxbook, and every EA’s full MT5 backtest report is available on its Forex page. The AI Trading Agent’s decisions are logged session by session — wins, losses, and no-trade days alike — on the Crypto Futures Signals page.',
+        q: 'Can I verify them myself?',
+        a: 'Yes. A third-party track record is published on Myfxbook, and every EA’s full MT5 backtest report sits on its own page.',
       },
       {
-        q: 'What is the Monte Carlo method, and what period do the backtests cover?',
-        a: 'All figures come from 5-year backtests covering 2021–2026, stress-tested with a Monte Carlo method that resamples trade sequences to gauge robustness rather than relying on a single run.',
+        q: 'What is the drawdown?',
+        a: 'Stated on every card, next to the return: 53.70% on Omnicor, 25.79% on Cenith, 44.76% on Golden. These are grid systems — the path to the return runs through those drops.',
       },
     ],
   },
   {
-    title: 'The signals & what’s next',
+    title: 'The AI Trading Agent',
     items: [
       {
-        q: 'What are the signal subscriptions?',
-        a: 'The lab runs a live signal stream — Crypto Futures — powered by the AI Trading Agent. One subscription ($32/month, paid in Telegram Stars) gives full access, delivered in a private channel. The price is fixed — it does not rise as new markets are added. You place every trade yourself; results are shown as R-multiples with risk, never as profit promises.',
-      },
-      {
-        q: 'Do the Forex EAs use the AI Trading Agent?',
-        a: 'No. The Forex EAs are rule-based systems that run on their own inside MetaTrader — there is no AI in them. The AI Trading Agent is a separate system: today it publishes a daily market brief and crypto Buy/Sell signals that are executed manually, and it is being tested manually on Forex. The automated version — the AI Trading Agent BOT — is still in development. Every Forex license includes three months of the BOT free once it launches; after that it continues as a separate monthly subscription.',
-      },
-      {
         q: 'What is the AI Trading Agent?',
-        a: 'It is the lab’s newest system — a live AI that does an entire research desk’s work before every call, then issues it as one clean crypto Buy/Sell signal with the stop and target attached. You can follow the session-by-session record on the Crypto Futures Signals page. Live signals are available by subscription (delivered in a private channel); the public log is free. It is decision-support, not financial advice — you place every trade yourself, and no performance guarantees are made.',
+        a: 'Our research system. It reads the economic calendar, the releases and the market context a rule-based EA cannot see, and records what it concludes every session — publicly, wins and losses alike.',
+      },
+      {
+        q: 'Can I read its record?',
+        a: 'Yes, free and without signing up. Every session is on the Proof page, logged the day it happens.',
       },
     ],
   },

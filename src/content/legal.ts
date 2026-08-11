@@ -15,7 +15,7 @@ export interface LegalDoc {
   sections: LegalSection[]
 }
 
-const UPDATED = '2026-08-03'
+const UPDATED = '2026-08-12'
 
 export const riskDisclosure: LegalDoc = {
   slug: 'risk-disclosure',
@@ -73,11 +73,13 @@ export const terms: LegalDoc = {
       ],
     },
     {
-      heading: 'What a license grants',
+      heading: 'What a plan grants',
       paragraphs: [
-        'A purchase grants you a license to use the Expert Advisor (EA) software as stated in your plan. On the Partner (IB) and Any Broker tiers, each EA is licensed to one live trading account number at a time and may be swapped to a new account number — up to three times per EA on Partner (IB), and up to ten times per EA on Any Broker — for the lifetime of the product. The Exclusive Membership tier grants you the .mq5 source for your own use, with no account lock.',
-        'Every tier includes each EA available at the time of purchase, together with updates and new EA releases as they are published, at no further cost, for as long as the lab maintains them. This covers the Expert Advisor line only; the AI Trading Agent and the AI Trading Agent BOT are separate products with their own terms.',
-        'The Partner (IB) and Any Broker tiers include three months of access to the AI Trading Agent BOT free of charge once that software is released; after that period it continues as a separate paid subscription. The Exclusive Membership tier instead includes lifetime access to the AI Trading Agent signals and to the BOT. The BOT is still in development and no release date is promised.',
+        'A monthly plan grants you a licence to run the Expert Advisor (EA) software on one live trading account for as long as the plan is active. The licence is not transferable, and access ends when the plan ends.',
+        'Plans are billed monthly with no minimum term. You may stop at any time, and access continues to the end of the period already paid for.',
+        'Every plan includes all three EAs, together with updates and new releases as they are published, at no further cost while the plan is active.',
+        'The Exclusive Membership is a separate one-time purchase. It grants the .mq5 source code for your own use, with no account lock and no ongoing fee. It is limited to a fixed number of places and closes permanently once they are taken.',
+        'Members who bought a lifetime licence before 12 August 2026 keep it on the terms they bought it under; the move to monthly plans does not affect them.',
         'The EA software is supplied as MetaTrader 5 builds. MetaTrader 4 is no longer supported.',
       ],
     },
@@ -90,7 +92,8 @@ export const terms: LegalDoc = {
     {
       heading: 'Brokers and Partner plans',
       paragraphs: [
-        'Partner (IB) pricing requires registering a trading account under one of our recommended introducing brokers (RoboForex, Exness, or Tickmill). The Any Broker and Exclusive Membership tiers work with any broker.',
+        'The Partner (IB) rate requires registering a trading account under one of our recommended introducing brokers (RoboForex, Exness, or Tickmill). The Any Broker plan and the Exclusive Membership work with any broker.',
+        'Your broker must permit grid trading and offer leverage between 1:500 and 1:1000. The EAs cannot run correctly otherwise.',
       ],
     },
     {
@@ -164,13 +167,14 @@ export const refunds: LegalDoc = {
     {
       heading: 'Digital products',
       paragraphs: [
-        'Our products are digital, and the Exclusive Membership tier includes source code delivered instantly. Because of this, sales are generally final once the files or source have been delivered. If a product is not functioning as described, contact us and we will work with you to resolve it.',
+        'Our products are digital, and the Exclusive Membership includes source code delivered instantly. Because of this, a membership sale is final once the source has been delivered. If a product is not functioning as described, contact us and we will work with you to resolve it.',
       ],
     },
     {
-      heading: 'Lifetime access',
+      heading: 'Monthly plans',
       paragraphs: [
-        'Licenses are lifetime: you pay once for the tier you chose, and you continue to receive updates and new EA releases at no further cost, for as long as the lab maintains them. The signal subscription is separate and is billed monthly; the Exclusive Membership tier includes that access for life instead.',
+        'Plans are billed monthly with no minimum term. Stopping is simply a matter of telling us — access runs to the end of the period you have already paid for, and there is nothing further to cancel.',
+        'Part-months are not refunded. If something is wrong on our side, contact us and we will put it right rather than leave you out of pocket.',
       ],
     },
     {

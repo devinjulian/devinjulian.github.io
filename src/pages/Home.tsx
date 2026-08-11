@@ -86,14 +86,13 @@ export function Home() {
         <Section index="02" label="The Lab" side="right" className="py-24 sm:py-32">
           <Reveal>
             <h2 className="font-display text-4xl leading-tight font-light text-ink sm:text-5xl">
-              You're not buying a file.{' '}
-              <em className="text-gold">You're buying everything that comes next.</em>
+              One plan. <em className="text-gold">Everything the lab builds.</em>
             </h2>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted">
-              Three <strong className="font-semibold text-ink">Forex EAs</strong> you own
-              outright. An <strong className="font-semibold text-ink">AI Trading Agent</strong>,
-              live now, every session logged in public. Every release after that is yours too —
-              free, for life.
+              Three <strong className="font-semibold text-ink">Forex machines</strong> on one
+              plan. An <strong className="font-semibold text-ink">AI Trading Agent</strong>{' '}
+              reading the calendar behind them, logging every session in public. Every release
+              after that is included.
             </p>
           </Reveal>
         </Section>

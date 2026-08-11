@@ -45,7 +45,7 @@ export function ProductDetail() {
           '@context': 'https://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Forex Bots', item: `${SITE}/forex` },
+            { '@type': 'ListItem', position: 1, name: 'The Machines', item: `${SITE}/forex` },
             {
               '@type': 'ListItem',
               position: 2,

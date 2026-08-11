@@ -37,9 +37,11 @@ export const RISK_DISCLAIMER =
   'Past performance does not guarantee future results. Trading involves substantial risk of loss. Results shown are from backtests on historical data; live results will vary based on broker conditions, spread, slippage, and chosen parameters.'
 
 
-/** Required wherever the AI Trading Agent / Crypto Futures Signals appear (PRD §8). */
+/** Required wherever the AI Trading Agent and its record appear (PRD §8). Final clause
+ *  corrected 2026-08-12: the paid signal subscription was retired, so the log is simply
+ *  free — the old wording described a product that no longer exists. */
 export const AI_AGENT_DISCLAIMER =
-  'The AI Trading Agent issues decision-support signals — not financial advice. You place every trade yourself on your own account; nothing is executed for you. Results are published as R-multiples with the risk (stop-loss and target) always shown, and reflect a young public track record; past performance does not guarantee future results, and crypto trading carries a substantial risk of loss. Live signals are available by paid subscription; the public results log is free.'
+  'The AI Trading Agent is a research system, not financial advice. Its record is published for transparency; nothing on this page is executed for you, and no outcome is promised. Results are shown as R-multiples with the risk (stop-loss and target) always stated, and reflect a young public track record; past performance does not guarantee future results, and trading carries a substantial risk of loss. The results log is free to read and always will be.'
 
 export const getEA = (id: string): EA | undefined => eas.find((e) => e.id === id)
 

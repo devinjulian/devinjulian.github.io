@@ -10,27 +10,27 @@ const STEPS = [
   {
     n: '01',
     title: 'Pick your rate',
-    body: 'Two plans, both running all three machines. Partner (IB) is the lower rate because it sits with one of our partner brokers. Any Broker costs more and asks nothing of you.',
+    body: 'Two plans, both running all three machines. Partner (IB) is the lower rate; Any Broker asks nothing of you.',
   },
   {
     n: '02',
     title: 'Message us',
-    body: 'There is no checkout to fill in. You send a message, we answer personally, and we sort the details between us — including which account size actually suits you.',
+    body: 'No checkout to fill in. Send a message, we answer personally and sort the details — including the account size that suits you.',
   },
   {
     n: '03',
     title: 'Set up the account',
-    body: 'A broker that permits grid trading, at 1:500–1:1000 leverage. Standard account if you are starting at $10,000. Cent account if you are starting smaller — the same machines, one-hundredth of the scale.',
+    body: 'A grid-friendly broker at 1:500–1:1000. Standard account from $10,000, or a cent account from $100.',
   },
   {
     n: '04',
     title: 'Install once',
-    body: 'Drop each EA onto its chart and timeframe. Omnicor and Cenith are plug-and-play; Golden ships with two set files, one per timeframe. This is the last time you touch it.',
+    body: 'Each EA onto its chart and timeframe. Omnicor and Cenith are plug-and-play; Golden ships with two set files.',
   },
   {
     n: '05',
     title: 'Close the laptop',
-    body: 'A VPS keeps everything running while your machine is off. From here the market is no longer your problem to sit in front of. That is the entire point.',
+    body: 'A VPS keeps them running while your machine is off. That is the last thing you have to do.',
   },
 ]
 
@@ -50,20 +50,12 @@ export function HowItWorks() {
       />
 
       <Container size="narrow">
-        {/* The emotional core — this is Devin's own story, and it is the whole argument. */}
+        {/* One line of the founder's own argument — the rest of the page is mechanics. */}
         <Reveal>
-          <section className="space-y-5 pb-12 text-lg leading-relaxed text-muted">
-            <p>
-              I traded by hand for years. I know the specific tiredness of it — the second
-              coffee at midnight, the chart you have looked at forty times that has nothing
-              left to tell you, the setup you waited six hours for that never came.
-            </p>
-            <p>
-              And I know the worse part: none of those hours are on your statement. The
-              market pays for positions, not for attendance.{' '}
-              <em className="text-ink">You were the only one keeping score of your time.</em>
-            </p>
-          </section>
+          <p className="pb-10 text-lg leading-relaxed text-muted">
+            I traded by hand for years, so I know the part nobody prices in:{' '}
+            <em className="text-ink">the market pays for positions, not for attendance.</em>
+          </p>
         </Reveal>
 
         <Reveal>
