@@ -1,17 +1,16 @@
 {
-  "forexTiers": [
+  "eaPlans": [
     {
       "id": "partner-ib",
       "name": "Partner (IB)",
-      "price": "$149",
-      "priceAmount": 149,
-      "tagline": "Trade with our partner broker.",
+      "price": "$32",
+      "priceAmount": 32,
+      "tagline": "The entry rate — made possible by our partner brokers.",
       "features": [
-        "Every EA available — plus updates & new releases, free for life",
-        "License — swap each EA to a new trading account up to 3 times",
-        "Lifetime — pay once, no renewals",
-        "MT5 builds",
-        "3 months of the AI Trading Agent BOT free at launch (in development)"
+        "All three EAs — Omnicor, Cenith & Golden",
+        "Five years of verified backtests behind them",
+        "Every update and new release included",
+        "Cancel any month — no contract, no lock-in"
       ],
       "requiresIB": true,
       "ibNote": "Requires a trading account under one of our partner IB brokers",
@@ -20,48 +19,31 @@
     {
       "id": "any-broker",
       "name": "Any Broker",
-      "price": "$499",
-      "priceAmount": 499,
-      "tagline": "Use any broker you want.",
+      "price": "$53",
+      "priceAmount": 53,
+      "tagline": "The same three machines, on whatever broker you already trust.",
       "features": [
-        "Every EA available — plus updates & new releases, free for life",
-        "License — swap each EA to a new trading account up to 10 times",
-        "Lifetime — pay once, no renewals",
-        "MT5 builds",
-        "3 months of the AI Trading Agent BOT free at launch (in development)"
+        "All three EAs — Omnicor, Cenith & Golden",
+        "Five years of verified backtests behind them",
+        "Every update and new release included",
+        "Cancel any month — no contract, no lock-in"
       ],
       "requiresIB": false,
       "ibNote": null,
       "order": 2
-    },
-    {
-      "id": "exclusive-membership",
-      "name": "Exclusive Membership",
-      "price": "$2,499",
-      "priceAmount": 2499,
-      "tagline": "Own all of the source code, with unlimited access to the AI Trading Agent.",
-      "features": [
-        "Every full source code available (.mq5)",
-        "Lifetime access to the AI Trading Agent SIGNALS (live now)",
-        "Lifetime access to the AI Trading Agent BOT (in development)"
-      ],
-      "requiresIB": false,
-      "ibNote": null,
-      "order": 3
     }
   ],
-  "subscription": {
-    "monthly": "$32",
-    "monthlyAmount": 32,
-    "features": [
-      "Every signal is shared at the New York open",
-      "Daily brief market insight",
-      "Live Buy/Sell signals"
-    ],
-    "allAccessNote": "One subscription, full access. Live signals are delivered in a private channel; you place every trade yourself.",
-    "channel": "private Telegram channel",
-    "payment": "Telegram Stars",
-    "fixedNote": "One price, fixed. No annual lock-in, no tiers, and no price rises when new markets are added — what you pay in month one is what you pay in year three."
+  "billing": {
+    "period": "month",
+    "note": "Billed monthly. Stop whenever you like — you are never locked into a term.",
+    "payment": "crypto, verified manually"
+  },
+  "capital": {
+    "standard": "$10,000",
+    "standardNote": "The strategy was built and tested at a 0.1 minimum lot. On a standard account that needs $10,000 behind it to hold its shape.",
+    "centLabel": "Cent account",
+    "centNote": "Running less than $10,000? Use a cent account. Identical EAs, identical strategy, one-hundredth of the scale — so $100 behaves the way $10,000 does on a standard account.",
+    "brokerNote": "Your broker must permit grid trading and offer 1:500–1:1000 leverage. Our partner brokers already do."
   },
   "membershipLadder": {
     "note": "Manually maintained — see PRD §14.1. slotsLeft must always be true.",
@@ -88,6 +70,18 @@
         "slotsLeft": 25,
         "state": "upcoming"
       }
+    ]
+  },
+  "membership": {
+    "id": "exclusive-membership",
+    "name": "Exclusive Membership",
+    "price": "$2,499",
+    "priceAmount": 2499,
+    "tagline": "Own the engines outright — and never pay a monthly fee again.",
+    "features": [
+      "Every full source code available (.mq5)",
+      "Lifetime access — no subscription, ever",
+      "Every future release included, for life"
     ]
   }
 }

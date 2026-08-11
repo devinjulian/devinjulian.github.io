@@ -33,10 +33,10 @@ export function Footer() {
           <nav aria-label="Explore" className="flex flex-col gap-3">
             <p className={colClass}>Explore</p>
             <Link to="/forex" className={itemClass}>
-              Forex Bots
+              The Machines
             </Link>
-            <Link to="/crypto-futures-signals" className={itemClass}>
-              Crypto Futures Signals
+            <Link to="/proof" className={itemClass}>
+              Proof
             </Link>
             <Link to="/about" className={itemClass}>
               About

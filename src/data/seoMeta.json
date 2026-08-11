@@ -10,23 +10,23 @@
     },
     "/forex": {
       "title": "Forex Trading Bots — Omnicor, Cenith, Golden",
-      "description": "Three Forex MT5 expert advisors — EURUSD, GBPUSD and gold — sold as one bundle. Every license includes every EA plus future releases, with verified 2021–2026 backtests."
+      "description": "Three MT5 Forex algorithms run as one bundle, from $32 a month. Verified 2021–2026 backtests, every result shown with its drawdown."
     },
-    "/crypto-futures-signals": {
-      "title": "Crypto Futures Signals — AI Trading Agent",
-      "description": "Live AI crypto futures signals: daily Buy/Sell calls with entry, stop and target — every result logged in a free public record."
+    "/proof": {
+      "title": "The Record — every session, wins and losses",
+      "description": "The AI Trading Agent's public session log. Every decision recorded the day it happens, right or wrong, free to read before you pay anything."
     },
     "/about": {
       "title": "About — the trading lab",
       "description": "How Algo Trading Center went from manual trading to building algorithms that keep working after the laptop closes."
     },
     "/how-it-works": {
-      "title": "How it works — from interested to running",
-      "description": "Requirements and the contact-to-own flow for the Algo Trading Center algorithms."
+      "title": "How it works — from tired to automated",
+      "description": "What the machines do, what you need to run them, and how you go from a question to a system trading your account."
     },
     "/faq": {
       "title": "FAQ",
-      "description": "Common pre-sale questions about the ATC algorithms, licenses, brokers, results, and the signal subscriptions."
+      "description": "Common pre-sale questions about the ATC algorithms, monthly plans, brokers, capital, and results."
     },
     "/contact": {
       "title": "Contact",

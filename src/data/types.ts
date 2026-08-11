@@ -50,10 +50,13 @@ export interface EA {
   backtests?: Backtest[]
 }
 
-/** One way to own the three-EA bundle (every tier includes all three EAs — PRD §8). */
-export interface ForexTier {
+/** One monthly plan for the three-EA bundle. Every plan carries all three EAs — the
+ *  only difference is the broker requirement and the rate (PRD §8). */
+export interface EAPlan {
   id: string
   name: string
+  /** Monthly rate. Kept on an exact Telegram Stars bundle amount so a member never
+   *  has to overbuy Stars — see PRD §8.2. */
   price: string
   priceAmount: number
   tagline: string
@@ -63,18 +66,30 @@ export interface ForexTier {
   order: number
 }
 
-export interface Subscription {
-  monthly: string
-  monthlyAmount: number
-  /** What the monthly subscription includes, shown as bullets under the price. */
-  features: string[]
-  /** The price is deliberately fixed: subscribers pay via Telegram Stars, which only sells
-   *  in fixed bundles, and a per-price payment link cannot be retired cleanly. Keep
-   *  `monthly` on an exact Stars bundle amount. */
-  fixedNote: string
-  allAccessNote: string
-  channel: string
+export interface Billing {
+  period: string
+  note: string
   payment: string
+}
+
+/** What a member needs behind the EA. The cent-account route is the low-risk way in —
+ *  same EAs, same strategy, one-hundredth of the scale. */
+export interface Capital {
+  standard: string
+  standardNote: string
+  centLabel: string
+  centNote: string
+  brokerNote: string
+}
+
+/** The one-time alternative to subscribing: source code, owned outright. */
+export interface Membership {
+  id: string
+  name: string
+  price: string
+  priceAmount: number
+  tagline: string
+  features: string[]
 }
 
 /** One rung of the Exclusive Membership slot ladder (PRD §14.1). `slotsLeft` is

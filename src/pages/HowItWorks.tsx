@@ -1,3 +1,4 @@
+import { eaPlans, billing, capital, links } from '../data'
 import { Container } from '../components/Container'
 import { PageHero } from '../components/PageHero'
 import { Button } from '../components/Button'
@@ -8,86 +9,123 @@ import { Reveal } from '../components/Reveal'
 const STEPS = [
   {
     n: '01',
-    title: 'Pick your path',
-    body: 'Every license includes all three EAs — the only choice is the tier: Partner (IB), Any Broker, or Exclusive Membership. Pricing lives on the Forex page. Not sure which fits? Tell us your broker and goals and we will point you the right way.',
+    title: 'Pick your rate',
+    body: 'Two plans, both running all three machines. Partner (IB) is the lower rate because it sits with one of our partner brokers. Any Broker costs more and asks nothing of you.',
   },
   {
     n: '02',
     title: 'Message us',
-    body: 'There is no on-site checkout. You message us on Telegram or by email — pre-filled with what you want — and we confirm the details and arrange payment directly.',
+    body: 'There is no checkout to fill in. You send a message, we answer personally, and we sort the details between us — including which account size actually suits you.',
   },
   {
     n: '03',
-    title: 'Set up your broker',
-    body: 'The Any Broker and Exclusive Membership tiers run with any broker you like. The Partner (IB) tier is registered under one of our recommended introducing brokers (RoboForex, Exness, or Tickmill) — that is what keeps its price low.',
+    title: 'Set up the account',
+    body: 'A broker that permits grid trading, at 1:500–1:1000 leverage. Standard account if you are starting at $10,000. Cent account if you are starting smaller — the same machines, one-hundredth of the scale.',
   },
   {
     n: '04',
-    title: 'Receive your EA and license',
-    body: 'You get every EA as a MetaTrader 5 build, plus a license you can swap to a new trading account as your setup changes — three times per EA on Partner (IB), ten times per EA on Any Broker, lifetime. The Exclusive Membership tier receives the full .mq5 source instead, with no account lock.',
+    title: 'Install once',
+    body: 'Drop each EA onto its chart and timeframe. Omnicor and Cenith are plug-and-play; Golden ships with two set files, one per timeframe. This is the last time you touch it.',
   },
   {
     n: '05',
-    title: 'Install on MetaTrader',
-    body: 'Drop the EA onto the right chart and timeframe. Omnicor and Cenith are plug-and-play; Golden includes two set files, one per timeframe.',
-  },
-  {
-    n: '06',
-    title: 'Let it run',
-    body: 'For hands-off, around-the-clock trading, a VPS is recommended so the EA keeps executing even when your computer is off. You can verify everything against the live Myfxbook record.',
+    title: 'Close the laptop',
+    body: 'A VPS keeps everything running while your machine is off. From here the market is no longer your problem to sit in front of. That is the entire point.',
   },
 ]
 
 export function HowItWorks() {
+  const entry = eaPlans[0]
+
   return (
     <>
       <PageHero
         kicker="How it works"
         title={
           <>
-            From interested to running, <em className="text-gold">in plain steps.</em>
+            You already know the work. <em className="text-gold">Now hand it over.</em>
           </>
         }
-        subtitle="You own the algorithms — you are not renting a black box. Here is exactly how you go from a question to a system trading on your account."
+        subtitle="Five steps between the life where you watch charts and the one where you don't. None of them take longer than an evening."
       />
 
       <Container size="narrow">
-        <ol className="space-y-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10">
-          {STEPS.map((s) => (
-            <Reveal key={s.n}>
-              <li className="flex gap-6 bg-surface/50 px-6 py-7">
+        {/* The emotional core — this is Devin's own story, and it is the whole argument. */}
+        <Reveal>
+          <section className="space-y-5 pb-12 text-lg leading-relaxed text-muted">
+            <p>
+              I traded by hand for years. I know the specific tiredness of it — the second
+              coffee at midnight, the chart you have looked at forty times that has nothing
+              left to tell you, the setup you waited six hours for that never came.
+            </p>
+            <p>
+              And I know the worse part: none of those hours are on your statement. The
+              market pays for positions, not for attendance.{' '}
+              <em className="text-ink">You were the only one keeping score of your time.</em>
+            </p>
+          </section>
+        </Reveal>
+
+        <Reveal>
+          <ol className="space-y-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10">
+            {STEPS.map((s) => (
+              <li key={s.n} className="flex gap-6 bg-surface/50 px-6 py-7">
                 <span className="font-mono text-sm text-gold tabular-nums">{s.n}</span>
                 <div>
                   <h2 className="font-display text-xl font-light text-ink">{s.title}</h2>
                   <p className="mt-2 leading-relaxed text-muted">{s.body}</p>
                 </div>
               </li>
-            </Reveal>
-          ))}
-        </ol>
+            ))}
+          </ol>
+        </Reveal>
 
+        {/* Capital — said plainly, because the wrong account size is the fastest way to a
+            bad experience, and hiding it only produces refund conversations later. */}
         <Reveal>
           <div className="mt-10 rounded-2xl border border-ink/10 bg-surface/40 p-6">
             <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
               What you'll need
             </p>
             <ul className="mt-4 grid gap-2 text-muted sm:grid-cols-2">
-              <li>A MetaTrader 5 account with a broker</li>
-              <li>Your ATC license (included with your plan)</li>
-              <li>A VPS for 24/7 running (recommended)</li>
-              <li>Starting capital sized to the EA and your risk (we'll advise)</li>
+              <li>An MT5 account with a grid-friendly broker</li>
+              <li>{capital.standard} standard — or a cent account from $100</li>
+              <li>Leverage between 1:500 and 1:1000</li>
+              <li>A VPS, so it runs while you don't</li>
             </ul>
+            <p className="mt-5 text-sm leading-relaxed text-muted">{capital.standardNote}</p>
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <div className="mt-10 rounded-2xl border border-gold/30 bg-surface/50 px-7 py-10 text-center">
+            <h2 className="font-display text-3xl leading-tight font-light text-ink">
+              The hours don't come back. <em className="text-gold">The machines start tonight.</em>
+            </h2>
+            <p className="mx-auto mt-4 max-w-md leading-relaxed text-muted">
+              All three, from {entry.price} a {billing.period}. Stop any month you like.
+            </p>
+            <div className="mt-7 flex flex-wrap justify-center gap-4">
+              <ClaimButton item={`${entry.name} — ${entry.price}/${billing.period}`}>
+                Start now
+              </ClaimButton>
+              <Button variant="ghost" to="/proof">
+                Read the record first
+              </Button>
+            </div>
           </div>
         </Reveal>
 
         <Reveal>
           <div className="mt-10 flex flex-wrap gap-4">
-            <ClaimButton />
             <Button variant="ghost" to="/forex">
               See pricing
             </Button>
             <Button variant="ghost" to="/faq">
               Read the FAQ
+            </Button>
+            <Button variant="ghost" href={links.myfxbook} external>
+              Verify on Myfxbook
             </Button>
           </div>
         </Reveal>

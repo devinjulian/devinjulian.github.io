@@ -5,8 +5,9 @@ import { Wordmark } from './Wordmark'
 import { Menu, Close } from './icons'
 
 const LINKS = [
-  { to: '/forex', label: 'Forex Bots' },
-  { to: '/crypto-futures-signals', label: 'Crypto Futures Signals' },
+  { to: '/forex', label: 'The Machines' },
+  { to: '/how-it-works', label: 'How It Works' },
+  { to: '/proof', label: 'Proof' },
   { to: '/about', label: 'About' },
 ]
 

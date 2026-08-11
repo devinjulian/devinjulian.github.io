@@ -6,12 +6,12 @@ import { EquityCurve } from '../components/EquityCurve'
 import { HeroCanvas } from '../components/HeroCanvas'
 import { Reviews } from '../components/Reviews'
 import { Reveal } from '../components/Reveal'
-import { forexTiers, subscription, membershipLadder } from '../data'
+import { eaPlans, billing, membershipLadder } from '../data'
 
 export function Home() {
   // Prices and the slot count come from data so the homepage can never drift from the
   // pricing pages (PRD §14.1 — the count must always be true).
-  const forexEntry = forexTiers[0]
+  const entryPlan = eaPlans[0]
   const openSlot = membershipLadder.stages.find((s) => s.state === 'open')
 
   return (
@@ -41,17 +41,17 @@ export function Home() {
             </Reveal>
             <Reveal mode="mount" delay={0.3} className="mt-10">
               <div className="flex flex-wrap items-center gap-4">
-                <Button to="/crypto-futures-signals">See it work — free</Button>
+                <Button to="/proof">See it work — free</Button>
                 <Button variant="ghost" to="/forex">
-                  Forex Bots
+                  The machines
                 </Button>
               </div>
             </Reveal>
             {/* The only proof signal on this page, so it carries more weight than fine print. */}
             <Reveal mode="mount" delay={0.42} className="mt-8">
               <p className="font-mono text-xs tracking-wide text-muted">
-                Verified on Myfxbook · wins and losses both published · from $149 one-time or
-                $32/month
+                Verified on Myfxbook · wins and losses both published · all three machines
+                from $32 a month
               </p>
             </Reveal>
           </div>
@@ -139,8 +139,8 @@ export function Home() {
                 Own the machine. <em className="text-gold">Keep your hours.</em>
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-muted">
-                {forexEntry.price} one-time for the Forex bundle. {subscription.monthly}/month
-                for AI signals. No renewals either way.
+                All three machines from {entryPlan.price} a {billing.period}. Stop whenever
+                you like — there is no contract to sign.
               </p>
               {openSlot && (
                 <p className="mt-5 font-mono text-[0.7rem] tracking-[0.15em] text-gold uppercase">
@@ -149,9 +149,9 @@ export function Home() {
                 </p>
               )}
               <div className="mt-9 flex flex-wrap justify-center gap-4">
-                <Button to="/forex">Forex pricing</Button>
-                <Button variant="ghost" to="/crypto-futures-signals">
-                  Signal pricing
+                <Button to="/forex">See pricing</Button>
+                <Button variant="ghost" to="/how-it-works">
+                  How it works
                 </Button>
               </div>
             </div>

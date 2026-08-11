@@ -11,7 +11,7 @@ const Products = lazy(() => import('./pages/Products').then((m) => ({ default: m
 const ProductDetail = lazy(() =>
   import('./pages/ProductDetail').then((m) => ({ default: m.ProductDetail })),
 )
-const AiAgent = lazy(() => import('./pages/AiAgent').then((m) => ({ default: m.AiAgent })))
+const Proof = lazy(() => import('./pages/Proof').then((m) => ({ default: m.Proof })))
 const About = lazy(() => import('./pages/About').then((m) => ({ default: m.About })))
 const HowItWorks = lazy(() => import('./pages/HowItWorks').then((m) => ({ default: m.HowItWorks })))
 const Faq = lazy(() => import('./pages/Faq').then((m) => ({ default: m.Faq })))
@@ -34,8 +34,11 @@ export function App() {
               <Route path="/" element={<Home />} />
               <Route path="/forex" element={<Products />} />
               <Route path="/forex/:id" element={<ProductDetail />} />
-              <Route path="/crypto-futures-signals" element={<AiAgent />} />
-              <Route path="/ai-agent" element={<Navigate to="/crypto-futures-signals" replace />} />
+              <Route path="/proof" element={<Proof />} />
+              {/* The paid signal product was retired 2026-08-12; its public record lives on
+                  /proof. Both legacy routes keep their inbound links alive. */}
+              <Route path="/crypto-futures-signals" element={<Navigate to="/proof" replace />} />
+              <Route path="/ai-agent" element={<Navigate to="/proof" replace />} />
               {/* legacy → new (Founding Members retired 2026-06-11 — pricing lives on /forex) */}
               <Route path="/founding-members" element={<Navigate to="/forex" replace />} />
               <Route path="/pricing" element={<Navigate to="/forex" replace />} />

@@ -6,10 +6,12 @@ import seoMeta from './seoMeta.json'
 import type {
   BacktestMeta,
   EA,
-  ForexTier,
+  EAPlan,
+  Billing,
+  Capital,
+  Membership,
   Broker,
   Links,
-  Subscription,
   MembershipLadder,
 } from './types'
 
@@ -21,8 +23,10 @@ export const OG = `${SITE}${seoMeta.ogPath}`
 export const backtest = easData.backtest as BacktestMeta
 export const eas = easData.eas as unknown as EA[]
 
-export const forexTiers = pricingData.forexTiers as ForexTier[]
-export const subscription = pricingData.subscription as Subscription
+export const eaPlans = pricingData.eaPlans as EAPlan[]
+export const billing = pricingData.billing as Billing
+export const capital = pricingData.capital as Capital
+export const membership = pricingData.membership as Membership
 export const membershipLadder = pricingData.membershipLadder as MembershipLadder
 
 export const brokers = brokersData as Broker[]

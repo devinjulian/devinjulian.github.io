@@ -1,4 +1,4 @@
-import { eas, links, forexTiers, brokers } from '../data'
+import { eas, links, eaPlans, billing, capital, membership, membershipLadder, brokers } from '../data'
 import { Container } from '../components/Container'
 import { Section } from '../components/Section'
 import { SectionLabel } from '../components/SectionLabel'
@@ -6,22 +6,24 @@ import { PageHero } from '../components/PageHero'
 import { EACard } from '../components/EACard'
 import { Button } from '../components/Button'
 import { ClaimButton } from '../components/ClaimButton'
-import { MembershipLadder } from '../components/MembershipLadder'
 import { RiskDisclaimer } from '../components/RiskDisclaimer'
 import { Reveal } from '../components/Reveal'
 
-/** Products overview — the three EAs at a glance, each linking to its own detail page. */
+/** The EA product page — three machines, monthly access, and the one-time way out of
+ *  monthly. Everything renders from pricing.json so the page can never drift. */
 export function Products() {
+  const openSlot = membershipLadder.stages.find((s) => s.state === 'open')
+
   return (
     <>
       <PageHero
-        kicker="Forex Bots"
+        kicker="The Machines"
         title={
           <>
             You stop watching. <em className="text-gold">They don't.</em>
           </>
         }
-        subtitle="Our Forex algorithms — each a specialist in the anatomy of its pair. Open any one to see its mechanism, full stats, and verified MT5 backtests."
+        subtitle="Three Forex algorithms, each a specialist in the anatomy of its pair. They take the setups you used to sit up waiting for — and they take them without you."
         size="default"
       />
 
@@ -43,7 +45,7 @@ export function Products() {
               EURUSD, GBPUSD and gold don't bleed at the same time. So when one algorithm
               is underwater, another is usually working. Run the trinity together and the
               combined equity curve smooths into something you can actually live with —
-              which is the entire point of owning all three.
+              which is the entire point of running all three.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <Button variant="ghost" href={links.myfxbook} external>
@@ -53,39 +55,38 @@ export function Products() {
           </Reveal>
         </Section>
 
-        {/* Pricing — one bundle, three ways to own it (v1.7, 2026-06-11) */}
+        {/* Pricing — monthly access, two rates (v2.0, 2026-08-12) */}
         <section className="border-t border-ink/10 py-16 sm:py-20">
           <Reveal>
             <SectionLabel>Pricing</SectionLabel>
             <h2 className="mt-7 max-w-2xl font-display text-3xl leading-tight font-light text-ink sm:text-4xl">
-              One bundle, all EAs. <em className="text-gold">Choose how you own it.</em>
+              All three machines. <em className="text-gold">One monthly rate.</em>
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
-              Every tier includes every EA we have — Omnicor, Cenith and Golden today, plus
-              every new release and update after that, free for life. The EAs are not sold
-              separately; the only decision is the license that fits you.
+              The EAs are never sold separately — every plan runs all three. The only
+              decision is which broker you trade with.
             </p>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="mt-10 grid gap-5 lg:grid-cols-3">
-              {forexTiers.map((tier) => (
+            <div className="mt-10 grid gap-5 lg:grid-cols-2">
+              {eaPlans.map((plan) => (
                 <div
-                  key={tier.id}
-                  className="relative flex h-full flex-col rounded-2xl border border-ink/10 bg-surface/40 p-7 overflow-hidden"
+                  key={plan.id}
+                  className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-ink/10 bg-surface/40 p-7"
                 >
                   <p className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
-                    {tier.name}
+                    {plan.name}
                   </p>
                   <p className="mt-4 font-display text-4xl font-light text-ink">
-                    {tier.price}
+                    {plan.price}
                     <span className="ml-2 font-mono text-[0.65rem] tracking-[0.15em] text-muted/80 uppercase">
-                      one-time
+                      / {billing.period}
                     </span>
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-muted">{tier.tagline}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">{plan.tagline}</p>
                   <ul className="mt-6 flex-1 space-y-2.5 text-sm leading-relaxed text-muted">
-                    {tier.features.map((f) => (
+                    {plan.features.map((f) => (
                       <li key={f} className="flex gap-2.5">
                         <span aria-hidden className="text-gold">
                           ·
@@ -94,32 +95,69 @@ export function Products() {
                       </li>
                     ))}
                   </ul>
-                  {tier.ibNote && (
+                  {plan.ibNote && (
                     <p className="mt-5 text-xs leading-relaxed text-muted/80">
-                      {tier.ibNote} — listed below.
+                      {plan.ibNote} — listed below.
                     </p>
                   )}
                   <div className="mt-6">
                     <ClaimButton
-                      item={`${tier.name} bundle (${tier.price})`}
-                      variant={tier.requiresIB ? 'primary' : 'ghost'}
+                      item={`${plan.name} — ${plan.price}/${billing.period}`}
+                      variant={plan.requiresIB ? 'primary' : 'ghost'}
                       className="w-full"
                     >
-                      Claim {tier.name}
+                      Start {plan.name}
                     </ClaimButton>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Full width rather than inside the tier card — the ladder is wide content and
-                would otherwise blow out the card heights across the three columns. */}
-            <MembershipLadder className="mt-8 rounded-xl border border-gold/25 bg-surface/30 p-6" />
+            <p className="mt-6 border-l-2 border-gold/40 pl-4 text-sm leading-relaxed text-muted">
+              {billing.note} Payment {billing.payment}.
+            </p>
+          </Reveal>
+        </section>
+
+        {/* What it takes to run — stated plainly, because the wrong account size is the
+            fastest way for a member to have a bad experience. */}
+        <section className="border-t border-ink/10 py-16 sm:py-20">
+          <Reveal>
+            <SectionLabel>What you need</SectionLabel>
+            <h2 className="mt-7 max-w-2xl font-display text-3xl leading-tight font-light text-ink sm:text-4xl">
+              Start at {capital.standard} — <em className="text-gold">or start at $100.</em>
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <div className="mt-9 grid gap-5 lg:grid-cols-2">
+              <div className="rounded-2xl border border-ink/10 bg-surface/40 p-7">
+                <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
+                  Standard account
+                </p>
+                <p className="mt-4 font-display text-3xl font-light text-ink">
+                  {capital.standard}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {capital.standardNote}
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-gold/30 bg-surface/40 p-7">
+                <p className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
+                  {capital.centLabel}
+                </p>
+                <p className="mt-4 font-display text-3xl font-light text-ink">from $100</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted">{capital.centNote}</p>
+              </div>
+            </div>
+
+            <p className="mt-6 text-sm leading-relaxed text-muted">{capital.brokerNote}</p>
 
             {/* IB brokers — stated plainly, not hidden */}
             <div className="mt-8 rounded-xl border border-ink/10 bg-surface/30 p-6">
               <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
-                The Partner (IB) price requires one of these brokers
+                The Partner (IB) rate requires one of these brokers
               </p>
               <div className="mt-4 flex flex-wrap gap-3">
                 {brokers.map((br) => (
@@ -138,12 +176,100 @@ export function Products() {
                 ))}
               </div>
             </div>
+          </Reveal>
+        </section>
 
-            <p className="mt-6 border-l-2 border-gold/40 pl-4 text-sm leading-relaxed text-muted">
-              A license covers three trading account numbers of your choosing, for life — pay
-              once, no renewals. The Exclusive Membership tier has no account lock: you receive
-              the .mq5 files themselves.
-            </p>
+        {/* The one-time exit from monthly — finite, and it closes for good. */}
+        <section className="border-t border-ink/10 py-16 sm:py-20">
+          <Reveal>
+            <SectionLabel>Exclusive Membership</SectionLabel>
+            <h2 className="mt-7 max-w-2xl font-display text-3xl leading-tight font-light text-ink sm:text-4xl">
+              Or stop paying monthly. <em className="text-gold">Permanently.</em>
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <div className="mt-9 grid gap-5 lg:grid-cols-[1.1fr_1fr]">
+              <div className="rounded-2xl border border-gold/30 bg-surface/40 p-7">
+                <p className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
+                  {membership.name}
+                </p>
+                <p className="mt-4 font-display text-4xl font-light text-ink">
+                  {membership.price}
+                  <span className="ml-2 font-mono text-[0.65rem] tracking-[0.15em] text-muted/80 uppercase">
+                    one-time
+                  </span>
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-muted">{membership.tagline}</p>
+                <ul className="mt-6 space-y-2.5 text-sm leading-relaxed text-muted">
+                  {membership.features.map((f) => (
+                    <li key={f} className="flex gap-2.5">
+                      <span aria-hidden className="text-gold">
+                        ·
+                      </span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6">
+                  <ClaimButton
+                    item={`${membership.name} (${membership.price})`}
+                    className="w-full"
+                  >
+                    Claim {membership.name}
+                  </ClaimButton>
+                </div>
+              </div>
+
+              {/* The ladder, shown whole — future prices included. Seeing $9,999 beside
+                  $2,499 is the mechanism; hiding it removes the reason to act. */}
+              <div className="rounded-2xl border border-ink/10 bg-surface/30 p-7">
+                <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
+                  The ladder
+                </p>
+                <ul className="mt-5 space-y-4">
+                  {membershipLadder.stages.map((s, i) => (
+                    <li
+                      key={s.price}
+                      className={`flex items-baseline justify-between gap-4 border-b border-ink/10 pb-4 last:border-0 ${
+                        s.state === 'soldOut' ? 'opacity-50' : ''
+                      }`}
+                    >
+                      <span className="font-mono text-[0.65rem] tracking-[0.15em] text-muted/80 uppercase">
+                        Stage {i + 1}
+                      </span>
+                      <span
+                        className={`font-display text-2xl font-light ${
+                          s.state === 'open' ? 'text-gold' : 'text-ink'
+                        } ${s.state === 'soldOut' ? 'line-through' : ''}`}
+                      >
+                        {s.price}
+                      </span>
+                      <span className="font-mono text-[0.65rem] tracking-[0.15em] text-muted uppercase">
+                        {s.state === 'open'
+                          ? `${s.slotsLeft} of ${s.slots} left`
+                          : s.state === 'soldOut'
+                            ? 'Sold out'
+                            : `${s.slots} slots`}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                {membershipLadder.closesAfterFinal && (
+                  <p className="mt-5 text-sm leading-relaxed text-muted">
+                    When the final slot goes, the programme closes for good — and a monthly
+                    plan becomes the only way in.
+                  </p>
+                )}
+              </div>
+            </div>
+
+            {openSlot && (
+              <p className="mt-6 font-mono text-[0.7rem] tracking-[0.15em] text-gold uppercase">
+                {openSlot.slotsLeft} of {openSlot.slots} slots left at {openSlot.price} — the
+                price never comes back down
+              </p>
+            )}
           </Reveal>
         </section>
 
