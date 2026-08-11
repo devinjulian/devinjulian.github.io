@@ -18,7 +18,7 @@ export function EACard({ ea }: { ea: EA }) {
   ]
 
   return (
-    <article className="group flex h-full flex-col rounded-2xl border border-ink/10 bg-surface/40 p-6 transition-[border-color,transform] duration-300 hover:-translate-y-1 hover:border-gold/40">
+    <article className="glass group flex h-full flex-col rounded-3xl p-6 transition-transform duration-300 hover:-translate-y-1">
       <div className="flex items-baseline justify-between">
         <span className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
           {ea.pair} · {ea.timeframes.join(' & ')}

@@ -73,7 +73,7 @@ export function Products() {
               {eaPlans.map((plan) => (
                 <div
                   key={plan.id}
-                  className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-ink/10 bg-surface/40 p-7"
+                  className="glass relative flex h-full flex-col rounded-3xl p-7"
                 >
                   <p className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
                     {plan.name}
@@ -131,7 +131,7 @@ export function Products() {
 
           <Reveal delay={0.1}>
             <div className="mt-9 grid gap-5 lg:grid-cols-2">
-              <div className="rounded-2xl border border-ink/10 bg-surface/40 p-7">
+              <div className="glass rounded-3xl p-7">
                 <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
                   Standard account
                 </p>
@@ -143,7 +143,7 @@ export function Products() {
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-gold/30 bg-surface/40 p-7">
+              <div className="glass glass-gold rounded-3xl p-7">
                 <p className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
                   {capital.centLabel}
                 </p>
@@ -155,7 +155,7 @@ export function Products() {
             <p className="mt-6 text-sm leading-relaxed text-muted">{capital.brokerNote}</p>
 
             {/* IB brokers — stated plainly, not hidden */}
-            <div className="mt-8 rounded-xl border border-ink/10 bg-surface/30 p-6">
+            <div className="glass mt-8 rounded-2xl p-6">
               <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
                 The Partner (IB) rate requires one of these brokers
               </p>
@@ -190,7 +190,7 @@ export function Products() {
 
           <Reveal delay={0.1}>
             <div className="mt-9 grid gap-5 lg:grid-cols-[1.1fr_1fr]">
-              <div className="rounded-2xl border border-gold/30 bg-surface/40 p-7">
+              <div className="glass glass-gold rounded-3xl p-7">
                 <p className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
                   {membership.name}
                 </p>
@@ -223,7 +223,7 @@ export function Products() {
 
               {/* The ladder, shown whole — future prices included. Seeing $9,999 beside
                   $2,499 is the mechanism; hiding it removes the reason to act. */}
-              <div className="rounded-2xl border border-ink/10 bg-surface/30 p-7">
+              <div className="glass rounded-3xl p-7">
                 <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
                   The ladder
                 </p>

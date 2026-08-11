@@ -59,9 +59,9 @@ export function HowItWorks() {
         </Reveal>
 
         <Reveal>
-          <ol className="space-y-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10">
+          <ol className="glass space-y-px overflow-hidden rounded-3xl">
             {STEPS.map((s) => (
-              <li key={s.n} className="flex gap-6 bg-surface/50 px-6 py-7">
+              <li key={s.n} className="flex gap-6 px-6 py-7 shadow-[inset_0_-1px_0_0_rgb(255_255_255/0.06)]">
                 <span className="font-mono text-sm text-gold tabular-nums">{s.n}</span>
                 <div>
                   <h2 className="font-display text-xl font-light text-ink">{s.title}</h2>
@@ -75,7 +75,7 @@ export function HowItWorks() {
         {/* Capital — said plainly, because the wrong account size is the fastest way to a
             bad experience, and hiding it only produces refund conversations later. */}
         <Reveal>
-          <div className="mt-10 rounded-2xl border border-ink/10 bg-surface/40 p-6">
+          <div className="glass mt-10 rounded-3xl p-6">
             <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
               What you'll need
             </p>
@@ -90,7 +90,7 @@ export function HowItWorks() {
         </Reveal>
 
         <Reveal>
-          <div className="mt-10 rounded-2xl border border-gold/30 bg-surface/50 px-7 py-10 text-center">
+          <div className="glass glass-gold mt-10 rounded-3xl px-7 py-10 text-center">
             <h2 className="font-display text-3xl leading-tight font-light text-ink">
               The hours don't come back. <em className="text-gold">The machines start tonight.</em>
             </h2>

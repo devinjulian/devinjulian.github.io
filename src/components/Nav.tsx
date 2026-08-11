@@ -21,7 +21,7 @@ export function Nav() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-ink/10 bg-void/70 backdrop-blur-md">
+    <header className="sticky top-0 z-50 bg-ink/5 shadow-[inset_0_-1px_0_0_rgb(255_255_255/0.07),inset_0_1px_0_0_rgb(255_255_255/0.12)] backdrop-blur-xl backdrop-saturate-150">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6 sm:px-8">
         <Link to="/" aria-label="Algo Trading Center — home" onClick={() => setOpen(false)}>
           <Wordmark />

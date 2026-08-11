@@ -38,7 +38,9 @@ export function Layout() {
       >
         Skip to content
       </a>
-      <div aria-hidden className="atmosphere" />
+      <div aria-hidden className="atmosphere">
+        <div className="atmosphere-mid" />
+      </div>
       <AmbientCanvas />
       <div aria-hidden className="grain" />
       <ScrollManager />

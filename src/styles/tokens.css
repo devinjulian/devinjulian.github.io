@@ -3,11 +3,14 @@
    utility — e.g. --color-gold → var(--color-gold) plus bg-gold / text-gold,
    --font-display → font-display. */
 @theme {
-  /* Color — dark void base, one warm metallic accent, one cool data accent */
-  --color-void: #0a0a0b; /* primary background (the infinite) */
-  --color-surface: #121316; /* cards, raised panels */
+  /* Color — deep blue-grey base, one warm metallic accent, one cool data accent.
+     The base moved off near-black (#0a0a0b) on 2026-08-12: liquid glass refracts what
+     sits behind it, and blurring pure black returns pure black. This hue keeps the
+     canvas dark and expensive while giving the glass layers something to bend. */
+  --color-void: #0d1016; /* primary background */
+  --color-surface: #151a22; /* cards, raised panels */
   --color-ink: #f5f3ec; /* primary text on dark */
-  --color-muted: #a7a294; /* secondary text — nudged up from #9b978c for AA */
+  --color-muted: #a9a89f; /* secondary text — holds AA on the new base */
   --color-gold: #e0b252; /* primary accent — time, wealth, CTA */
   --color-gold-deep: #b5852e; /* hover / gradients */
   --color-signal: #5bb89e; /* positive data / growth */
