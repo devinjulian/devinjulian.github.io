@@ -53,7 +53,7 @@ export const faqGroups: FAQGroup[] = [
       },
       {
         q: 'What is the Exclusive Membership?',
-        a: 'A one-time alternative to paying monthly: the full .mq5 source code, lifetime access, every future release included. It is a closed programme with a fixed number of slots — when the last one goes, it is gone.',
+        a: 'A one-time alternative to monthly: full .mq5 source code, lifetime access, every future release. A fixed number of slots — when the last one goes, it is gone.',
       },
       {
         q: 'How do I pay?',

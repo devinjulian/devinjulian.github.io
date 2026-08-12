@@ -38,9 +38,9 @@ export function About() {
         <Reveal>
           <div className="space-y-5 pb-12 text-lg leading-relaxed text-muted">
             <p>
-              I traded by hand for years, convinced the next indicator was the one. It wasn't.
-              None of them are. The market doesn't hand you an edge for showing up — it bills
-              you for it, in hours you never get back.
+              I traded by hand for years, sure the next indicator was the one. It wasn't. The
+              market doesn't pay you for showing up — it bills you, in hours you never get
+              back.
             </p>
             <p>
               So I stopped hunting and started building. Three years later the algorithms did

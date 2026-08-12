@@ -42,7 +42,7 @@
     "standard": "$10,000",
     "standardNote": "The strategy was built and tested at a 0.1 minimum lot. On a standard account that needs $10,000 behind it to hold its shape.",
     "centLabel": "Cent account",
-    "centNote": "Running less than $10,000? Use a cent account. Identical EAs, identical strategy, one-hundredth of the scale — so $100 behaves the way $10,000 does on a standard account.",
+    "centNote": "Under $10,000? Use a cent account. Same EAs, same strategy, one-hundredth of the scale — $100 behaves the way $10,000 does.",
     "brokerNote": "Your broker must permit grid trading and offer 1:500–1:1000 leverage. Our partner brokers already do."
   },
   "membershipLadder": {

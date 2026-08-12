@@ -42,10 +42,9 @@ export function Products() {
               Correlation is the quiet killer of single-system accounts.
             </h2>
             <p className="mt-7 text-lg leading-relaxed text-muted">
-              EURUSD, GBPUSD and gold don't bleed at the same time. So when one algorithm
-              is underwater, another is usually working. Run the trinity together and the
-              combined equity curve smooths into something you can actually live with —
-              which is the entire point of running all three.
+              EURUSD, GBPUSD and gold don't bleed at the same time. When one is underwater,
+              another is usually working — and the combined curve smooths into something you
+              can live with.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <Button variant="ghost" href={links.myfxbook} external>
