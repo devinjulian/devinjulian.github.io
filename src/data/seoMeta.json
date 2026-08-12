@@ -12,6 +12,10 @@
       "title": "Forex Trading Bots — Omnicor, Cenith, Golden",
       "description": "Three MT5 Forex algorithms run as one bundle, from $32 a month. Verified 2021–2026 backtests, every result shown with its drawdown."
     },
+    "/ai-agent": {
+      "title": "The AI Trading Agent — a second opinion before every trade",
+      "description": "A chart cannot read the news. The EA finds the setup, the AI Trading Agent checks the calendar and the releases, and only then does a position open."
+    },
     "/exclusive": {
       "title": "Exclusive Membership — a fixed number of seats",
       "description": "The one-time alternative to a monthly plan: full .mq5 source code, lifetime access and every future release. A closed programme that ends when the last seat goes."

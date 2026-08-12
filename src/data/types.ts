@@ -111,9 +111,11 @@ export interface Membership {
 export interface MembershipStage {
   price: string
   priceAmount: number
-  slots: number
-  slotsLeft: number
+  /** null on the final rung — that price is permanent and uncapped, not a batch. */
+  slots: number | null
+  slotsLeft: number | null
   state: 'open' | 'upcoming' | 'soldOut'
+  final: boolean
 }
 
 export interface MembershipLadder {

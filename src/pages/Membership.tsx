@@ -13,7 +13,6 @@ import { Reviews } from '../components/Reviews'
 export function Membership() {
   const open = membershipLadder.stages.find((s) => s.state === 'open')
   const final = membershipLadder.stages[membershipLadder.stages.length - 1]
-  const totalSeats = membershipLadder.stages.reduce((n, s) => n + s.slots, 0)
   const entry = eaPlans[0]
   const anyBroker = eaPlans[eaPlans.length - 1]
   // Computed from live prices rather than written down, so the arithmetic can never
@@ -28,10 +27,11 @@ export function Membership() {
         kicker="Exclusive Membership"
         title={
           <>
-            {totalSeats} seats. <em className="text-gold">Then it closes for good.</em>
+            {open ? `${open.slotsLeft} seats at ${open.price}.` : `${final.price}.`}{' '}
+            <em className="text-gold">Then the price climbs.</em>
           </>
         }
-        subtitle="The one-time way out of paying monthly: the source code itself, lifetime access, and every release the lab ever ships. A fixed number of places, and no more after that."
+        subtitle="The one-time way out of paying monthly: the source code itself, lifetime access, and every release the lab ever ships. Each stage sells out into the next, and the price only ever moves one way."
         size="default"
       />
 
@@ -77,19 +77,21 @@ export function Membership() {
                     {s.price}
                   </span>
                   <span className="text-right font-mono text-[0.65rem] tracking-[0.15em] text-muted uppercase">
-                    {s.state === 'open'
-                      ? `${s.slotsLeft} of ${s.slots} left`
-                      : s.state === 'soldOut'
-                        ? 'Sold out'
-                        : `${s.slots} seats`}
+                    {s.final
+                      ? 'Final price'
+                      : s.state === 'open'
+                        ? `${s.slotsLeft} ${s.slotsLeft === 1 ? 'seat' : 'seats'} left`
+                        : s.state === 'soldOut'
+                          ? 'Sold out'
+                          : `${s.slots} seats`}
                   </span>
                 </li>
               ))}
             </ul>
 
             <p className="mt-7 text-sm leading-relaxed text-muted">
-              The price never comes back down. When the last of the {totalSeats} seats goes,
-              the programme closes permanently and a monthly plan becomes the only way in.
+              The price never comes back down. When this stage sells out the next one opens,
+              and {final.price} is where it settles for good.
             </p>
 
             <div className="mt-8">

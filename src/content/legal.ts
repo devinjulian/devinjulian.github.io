@@ -86,7 +86,8 @@ export const terms: LegalDoc = {
     {
       heading: 'Restrictions',
       paragraphs: [
-        'You may not resell, redistribute, sublicense, publish, or share the EA files, license keys, or source code with third parties, and you may not remove or circumvent any licensing or protection mechanism. Licenses are for your own trading use.',
+        'On a monthly plan, you may not resell, redistribute, sublicense, publish, or share the EA files or your licence key with third parties, and you may not remove or circumvent any licensing mechanism. A plan licence is for your own trading use only.',
+        'The Exclusive Membership is different. Members own the source code outright and may resell or redistribute it as they see fit, on their own terms. Algo Trading Center gives no warranty, support, or licence coverage to anyone who obtains the software that way — our obligations run only to the member who bought the seat.',
       ],
     },
     {

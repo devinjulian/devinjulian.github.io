@@ -57,11 +57,11 @@ export const faqGroups: FAQGroup[] = [
       },
       {
         q: 'What is the Exclusive Membership?',
-        a: 'A one-time alternative to monthly: full .mq5 source code, lifetime access, unlimited accounts and every future release. 35 seats exist in total — when the last one goes, the programme closes for good.',
+        a: 'A one-time alternative to monthly: full .mq5 source code, lifetime access, unlimited accounts and every future release. It runs in stages — $2,499 now, then $4,999, and $9,999 is where the price settles for good.',
       },
       {
         q: 'How do I pay?',
-        a: 'In USDT. There is no on-site checkout — message us on Telegram or by email and we send the wallet details in that conversation. We never publish them on this site.',
+        a: 'In USDT — TRC20, ERC20 or BEP20. There is no on-site checkout: message us on Telegram or by email and we send the wallet details in that conversation. We never publish them on this site.',
       },
       {
         q: 'What happens after I pay?',
@@ -91,12 +91,21 @@ export const faqGroups: FAQGroup[] = [
     ],
   },
   {
-    title: 'The lab',
+    title: 'The AI Trading Agent',
     items: [
       {
-        q: 'What is the AI Trading Agent?',
-        a: 'Our in-house research system. It reads the economic calendar, the releases and the market context a rule-based EA cannot see. It is not sold separately and it is not something you install.',
+        q: 'What does the AI Trading Agent do?',
+        a: 'The EA reads the chart. The Agent reads everything the chart cannot — the economic calendar, the releases, the wider market context — and answers whether this is a safe moment to be in.',
       },
+      {
+        q: 'Do I pay extra for it?',
+        a: 'No. It is part of every plan and every membership, at no additional cost.',
+      },
+    ],
+  },
+  {
+    title: 'The lab',
+    items: [
       {
         q: 'What are you building next?',
         a: 'More pairs, and deeper research tooling behind the machines you already run. Everything the lab ships is included while your plan is active — you never pay again for a new release.',

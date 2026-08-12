@@ -291,29 +291,28 @@ export function Products() {
                       >
                         {s.price}
                       </span>
-                      <span className="font-mono text-[0.65rem] tracking-[0.15em] text-muted uppercase">
-                        {s.state === 'open'
-                          ? `${s.slotsLeft} of ${s.slots} left`
-                          : s.state === 'soldOut'
-                            ? 'Sold out'
-                            : `${s.slots} slots`}
+                      <span className="text-right font-mono text-[0.65rem] tracking-[0.15em] text-muted uppercase">
+                        {s.final
+                          ? 'Final price'
+                          : s.state === 'open'
+                            ? `${s.slotsLeft} ${s.slotsLeft === 1 ? 'seat' : 'seats'} left`
+                            : s.state === 'soldOut'
+                              ? 'Sold out'
+                              : `${s.slots} seats`}
                       </span>
                     </li>
                   ))}
                 </ul>
-                {membershipLadder.closesAfterFinal && (
-                  <p className="mt-5 text-sm leading-relaxed text-muted">
-                    When the final slot goes, the programme closes for good — and a monthly
-                    plan becomes the only way in.
-                  </p>
-                )}
+                <p className="mt-5 text-sm leading-relaxed text-muted">
+                  Each stage sells out into the next. The price only ever moves one way.
+                </p>
               </div>
             </div>
 
             {openSlot && (
               <p className="mt-6 font-mono text-[0.7rem] tracking-[0.15em] text-gold uppercase">
-                {openSlot.slotsLeft} of {openSlot.slots} slots left at {openSlot.price} — the
-                price never comes back down
+                Only {openSlot.slotsLeft} seats left at {openSlot.price} — the price never
+                comes back down
               </p>
             )}
           </Reveal>

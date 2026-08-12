@@ -11,6 +11,7 @@ const Products = lazy(() => import('./pages/Products').then((m) => ({ default: m
 const ProductDetail = lazy(() =>
   import('./pages/ProductDetail').then((m) => ({ default: m.ProductDetail })),
 )
+const AiAgent = lazy(() => import('./pages/AiAgent').then((m) => ({ default: m.AiAgent })))
 const Membership = lazy(() => import('./pages/Membership').then((m) => ({ default: m.Membership })))
 const About = lazy(() => import('./pages/About').then((m) => ({ default: m.About })))
 const HowItWorks = lazy(() => import('./pages/HowItWorks').then((m) => ({ default: m.HowItWorks })))
@@ -41,7 +42,7 @@ export function App() {
                   rather than a 404 — pointed straight at /forex, never chained. */}
               <Route path="/proof" element={<Navigate to="/forex" replace />} />
               <Route path="/crypto-futures-signals" element={<Navigate to="/forex" replace />} />
-              <Route path="/ai-agent" element={<Navigate to="/forex" replace />} />
+              <Route path="/ai-agent" element={<AiAgent />} />
               {/* legacy → new (Founding Members retired 2026-06-11 — pricing lives on /forex) */}
               <Route path="/founding-members" element={<Navigate to="/forex" replace />} />
               <Route path="/pricing" element={<Navigate to="/forex" replace />} />

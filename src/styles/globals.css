@@ -230,6 +230,49 @@
     }
   }
 
+  /* Decision-flow connectors. A gradient sweeps along the line to suggest a request
+     travelling between the two systems — background-position only, so it animates on the
+     compositor and costs nothing. Horizontal on lg, vertical below it. */
+  .flow-line {
+    background-image: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--color-gold) 70%, transparent),
+      transparent
+    );
+    background-size: 220% 100%;
+    animation: flow-sweep 2.6s linear infinite;
+  }
+
+  .flow-line-v {
+    background-image: linear-gradient(
+      180deg,
+      transparent,
+      color-mix(in oklab, var(--color-gold) 70%, transparent),
+      transparent
+    );
+    background-size: 100% 220%;
+    animation: flow-sweep-v 2.6s linear infinite;
+  }
+
+  @keyframes flow-sweep {
+    from {
+      background-position: 220% 0;
+    }
+    to {
+      background-position: -220% 0;
+    }
+  }
+
+  @keyframes flow-sweep-v {
+    from {
+      background-position: 0 220%;
+    }
+    to {
+      background-position: 0 -220%;
+    }
+  }
+
   /* Film grain — adds a tactile, premium texture without an image asset. */
   .grain {
     position: fixed;

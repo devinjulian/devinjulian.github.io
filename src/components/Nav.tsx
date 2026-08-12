@@ -6,6 +6,7 @@ import { Menu, Close } from './icons'
 
 const LINKS = [
   { to: '/forex', label: 'The Machines' },
+  { to: '/ai-agent', label: 'AI Agent' },
   { to: '/how-it-works', label: 'How It Works' },
   { to: '/exclusive', label: 'Exclusive' },
   { to: '/about', label: 'About' },
