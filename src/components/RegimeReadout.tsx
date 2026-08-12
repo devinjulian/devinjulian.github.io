@@ -28,6 +28,48 @@ const AXES = [
 
 const BUDGET = 40
 
+/** Home-page teaser. Same axes and the same number, stripped to what fits in one glance —
+ *  the full instrument panel lives on /ai-agent. Shares AXES/BUDGET above so the two can
+ *  never disagree. */
+export function RegimeReadoutCompact() {
+  return (
+    <div className="glass glass-gold rounded-3xl p-6 sm:p-8">
+      <ul className="space-y-4">
+        {AXES.map((a) => (
+          <li key={a.k} className="grid grid-cols-[6.5rem_1fr_auto] items-center gap-4">
+            <span className="font-mono text-[0.65rem] tracking-[0.15em] text-muted uppercase">
+              {a.k}
+            </span>
+            <span className="h-1.5 overflow-hidden rounded-full bg-ink/10">
+              <span
+                className="block h-full rounded-full bg-gradient-to-r from-gold-deep to-gold"
+                style={{ width: `${a.pct}%` }}
+              />
+            </span>
+            <span className="text-right font-mono text-[0.65rem] tracking-[0.15em] text-gold uppercase">
+              {a.state}
+            </span>
+          </li>
+        ))}
+      </ul>
+
+      <div className="mt-6 flex items-baseline justify-between gap-4 border-t border-ink/10 pt-5">
+        <span className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
+          Risk budget
+        </span>
+        <span className="font-display text-4xl font-light text-ink">
+          {BUDGET}
+          <span className="text-xl text-muted">%</span>
+        </span>
+      </div>
+      <p className="mt-3 text-sm leading-relaxed text-muted">
+        Exposure scaled down while the dollar runs — lot size, grid depth and how many
+        baskets may run at once.
+      </p>
+    </div>
+  )
+}
+
 export function RegimeReadout() {
   // Arc geometry for the budget dial — a half circle, drawn once and dashed to the value.
   const R = 68

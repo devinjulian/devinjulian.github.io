@@ -6,6 +6,7 @@ import { EquityCurve } from '../components/EquityCurve'
 import { HeroCanvas } from '../components/HeroCanvas'
 import { Reviews } from '../components/Reviews'
 import { Reveal } from '../components/Reveal'
+import { RegimeReadoutCompact } from '../components/RegimeReadout'
 import { eaPlans, billing, membershipLadder } from '../data'
 
 export function Home() {
@@ -81,18 +82,29 @@ export function Home() {
         </Section>
       </Container>
 
-      {/* 02 — The Lab */}
+      {/* 02 — The Agent. The strongest differentiator on the site, and until now it lived
+          only behind a nav link. The teaser carries the same axes and the same number as
+          the full panel on /ai-agent. */}
       <Container>
-        <Section index="02" label="The Lab" side="right" className="py-24 sm:py-32">
+        <Section index="02" label="The Agent" side="right" className="py-24 sm:py-32">
           <Reveal>
             <h2 className="font-display text-4xl leading-tight font-light text-ink sm:text-5xl">
-              One plan. <em className="text-gold">Everything the lab builds.</em>
+              Most robots only see price.{' '}
+              <em className="text-gold">Ours sees the regime.</em>
             </h2>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted">
-              Three <strong className="font-semibold text-ink">Forex machines</strong> on one
-              plan, built and tested over five years. Every update and every new release the
-              lab ships is included while your plan runs.
+              What kills a grid isn't a news spike — it's a market that keeps going while the
+              grid keeps averaging into it. So a second system watches the conditions, and
+              scales the exposure before the depth becomes the problem.
             </p>
+          </Reveal>
+          <Reveal delay={0.1} className="mt-9 max-w-xl">
+            <RegimeReadoutCompact />
+          </Reveal>
+          <Reveal delay={0.15} className="mt-7">
+            <Button variant="ghost" to="/ai-agent">
+              How it decides
+            </Button>
           </Reveal>
         </Section>
       </Container>
@@ -137,8 +149,8 @@ export function Home() {
                 Own the machine. <em className="text-gold">Keep your hours.</em>
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-muted">
-                All three machines from {entryPlan.price} a {billing.period}. Stop whenever
-                you like — there is no contract to sign.
+                All three machines from {entryPlan.price} a {billing.period}, and every new
+                release the lab ships. Stop whenever you like — there is no contract.
               </p>
               {openSlot && (
                 <p className="mt-5 font-mono text-[0.7rem] tracking-[0.15em] text-gold uppercase">

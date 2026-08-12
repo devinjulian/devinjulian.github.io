@@ -51,8 +51,12 @@ export function Reviews() {
               <h2 className="mt-4 font-display text-3xl leading-tight font-light text-ink sm:text-4xl">
                 The people who stopped <em className="text-gold">watching the screen.</em>
               </h2>
+              {/* Several of these were written while the Agent was still being built, and
+                  say so. Dating them keeps the words untouched and removes what would
+                  otherwise read as a contradiction with the AI Agent page. */}
               <p className="mt-3 text-sm text-muted">
-                Real messages from our Telegram community, shared with their permission.
+                Real messages from our Telegram community, shared with their permission — some
+                written while the AI Trading Agent was still in the workshop.
               </p>
             </div>
             <div className="hidden shrink-0 gap-2 sm:flex">
