@@ -6,6 +6,7 @@ import { Button } from '../components/Button'
 import { ClaimButton } from '../components/ClaimButton'
 import { RiskDisclaimer } from '../components/RiskDisclaimer'
 import { Reveal } from '../components/Reveal'
+import { Reviews } from '../components/Reviews'
 
 /** The high-ticket page. A $2,499–$9,999 product cannot be sold from a card on a pricing
  *  grid — it needs room to justify itself, and the ladder needs to be visible whole. */
@@ -175,9 +176,17 @@ export function Membership() {
               <Button variant="ghost" to="/how-it-works">
                 How it works
               </Button>
+              <Button variant="ghost" to="/faq">
+                Read the FAQ
+              </Button>
             </div>
           </div>
         </Reveal>
+      </Container>
+
+      <Reviews />
+
+      <Container>
 
         <section className="mt-12 border-t border-ink/10 py-10">
           <RiskDisclaimer className="max-w-3xl" />

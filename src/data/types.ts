@@ -66,6 +66,15 @@ export interface EAPlan {
   order: number
 }
 
+/** What happens between paying and trading. Stated because a site with no checkout
+ *  asks the buyer to transfer funds to a stranger with no idea what follows. */
+export interface Onboarding {
+  headline: string
+  steps: { k: string; v: string }[]
+  note: string
+  setup: string
+}
+
 export interface Billing {
   period: string
   note: string

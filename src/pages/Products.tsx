@@ -1,4 +1,14 @@
-import { eas, links, eaPlans, billing, capital, membership, membershipLadder, brokers } from '../data'
+import {
+  eas,
+  links,
+  eaPlans,
+  billing,
+  onboarding,
+  capital,
+  membership,
+  membershipLadder,
+  brokers,
+} from '../data'
 import { Container } from '../components/Container'
 import { Section } from '../components/Section'
 import { SectionLabel } from '../components/SectionLabel'
@@ -8,6 +18,7 @@ import { Button } from '../components/Button'
 import { ClaimButton } from '../components/ClaimButton'
 import { RiskDisclaimer } from '../components/RiskDisclaimer'
 import { Reveal } from '../components/Reveal'
+import { Reviews } from '../components/Reviews'
 
 /** The EA product page — three machines, monthly access, and the one-time way out of
  *  monthly. Everything renders from pricing.json so the page can never drift. */
@@ -178,6 +189,42 @@ export function Products() {
           </Reveal>
         </section>
 
+        {/* No checkout means the buyer is transferring funds to a stranger with no idea
+            what follows. Saying it removes the largest silent objection on the page. */}
+        <section className="border-t border-ink/10 py-16 sm:py-20">
+          <Reveal>
+            <SectionLabel>After you pay</SectionLabel>
+            <h2 className="mt-7 max-w-2xl font-display text-3xl leading-tight font-light text-ink sm:text-4xl">
+              {onboarding.headline.split(' ').slice(0, 1).join(' ')}{' '}
+              <em className="text-gold">
+                {onboarding.headline.split(' ').slice(1).join(' ')}
+              </em>
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <ol className="glass mt-9 divide-y divide-ink/10 overflow-hidden rounded-3xl">
+              {onboarding.steps.map((s, i) => (
+                <li key={s.k} className="flex gap-5 px-6 py-5">
+                  <span className="font-mono text-sm text-gold tabular-nums">
+                    0{i + 1}
+                  </span>
+                  <div className="flex flex-col gap-1 sm:flex-row sm:gap-6">
+                    <span className="font-mono text-[0.7rem] tracking-[0.2em] text-ink uppercase sm:w-40 sm:shrink-0">
+                      {s.k}
+                    </span>
+                    <span className="text-muted">{s.v}</span>
+                  </div>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-6 border-l-2 border-gold/40 pl-4 text-sm leading-relaxed text-muted">
+              {onboarding.note}
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-muted">{onboarding.setup}</p>
+          </Reveal>
+        </section>
+
         {/* The one-time exit from monthly — finite, and it closes for good. */}
         <section className="border-t border-ink/10 py-16 sm:py-20">
           <Reveal>
@@ -272,6 +319,23 @@ export function Products() {
           </Reveal>
         </section>
 
+        <section className="border-t border-ink/10 pt-16 sm:pt-20">
+          <Reveal>
+            <div className="flex flex-wrap gap-4">
+              <Button variant="ghost" to="/faq">
+                Read the FAQ
+              </Button>
+              <Button variant="ghost" to="/how-it-works">
+                How it works
+              </Button>
+            </div>
+          </Reveal>
+        </section>
+      </Container>
+
+      <Reviews />
+
+      <Container>
         <section className="border-t border-ink/10 py-10">
           <RiskDisclaimer className="max-w-3xl" />
         </section>

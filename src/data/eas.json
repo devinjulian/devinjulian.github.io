@@ -11,8 +11,13 @@
       "name": "Omnicor",
       "title": "The Wealth Compounder",
       "pair": "EURUSD",
-      "timeframes": ["M30", "H1"],
-      "platforms": ["MT5"],
+      "timeframes": [
+        "M30",
+        "H1"
+      ],
+      "platforms": [
+        "MT5"
+      ],
       "setFiles": false,
       "setFilesNote": "No set files — plug-and-play",
       "mechanism": "Auto-Lot scaling",
@@ -51,8 +56,12 @@
       "name": "Cenith",
       "title": "The Conservative Shield",
       "pair": "GBPUSD",
-      "timeframes": ["M5"],
-      "platforms": ["MT5"],
+      "timeframes": [
+        "M5"
+      ],
+      "platforms": [
+        "MT5"
+      ],
       "setFiles": false,
       "setFilesNote": "No set files — strict M5 default",
       "mechanism": "Exhaustion-filter adaptive grid",
@@ -87,10 +96,15 @@
       "name": "Golden",
       "title": "The Beast Tamer",
       "pair": "XAUUSD",
-      "timeframes": ["M5", "M30"],
-      "platforms": ["MT5"],
-      "setFiles": true,
-      "setFilesNote": "Set files required — two, one per timeframe",
+      "timeframes": [
+        "M5",
+        "M30"
+      ],
+      "platforms": [
+        "MT5"
+      ],
+      "setFiles": false,
+      "setFilesNote": "Runs on default settings — set files only if you want the SL/TP strategy",
       "mechanism": "Independent Basket Trailing",
       "tagline": "Engineered for the chaos gold makes its home.",
       "order": 3,

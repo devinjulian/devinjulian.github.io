@@ -75,8 +75,8 @@ export const terms: LegalDoc = {
     {
       heading: 'What a plan grants',
       paragraphs: [
-        'A monthly plan grants you a licence to run the Expert Advisor (EA) software on one live trading account for as long as the plan is active. The licence is not transferable, and access ends when the plan ends.',
-        'Plans are billed monthly with no minimum term. You may stop at any time, and access continues to the end of the period already paid for.',
+        'A monthly plan grants you a licence to run the Expert Advisor (EA) software on one live trading account, identified by a licence key issued to that account number, for as long as the plan is active. The licence is not transferable, and access ends when the plan ends.',
+        'Plans are billed monthly in USDT with no minimum term. There is nothing to cancel: to stop, simply do not pay for the following month. Access continues to the end of the period already paid for.',
         'Every plan includes all three EAs, together with updates and new releases as they are published, at no further cost while the plan is active.',
         'The Exclusive Membership is a separate one-time purchase. It grants the .mq5 source code for your own use, with no account lock and no ongoing fee. It is limited to a fixed number of places and closes permanently once they are taken.',
         'Members who bought a lifetime licence before 12 August 2026 keep it on the terms they bought it under; the move to monthly plans does not affect them.',
@@ -161,7 +161,7 @@ export const refunds: LegalDoc = {
     {
       heading: 'How purchasing works',
       paragraphs: [
-        'There is no on-site checkout or card capture. You buy by messaging us directly on Telegram or by email, and we arrange delivery from there.',
+        'There is no on-site checkout or card capture. You buy by messaging us directly on Telegram or by email, and we arrange payment and delivery from there. Payment is in USDT; wallet details are given in that conversation and never published on this site.',
       ],
     },
     {
@@ -173,7 +173,7 @@ export const refunds: LegalDoc = {
     {
       heading: 'Monthly plans',
       paragraphs: [
-        'Plans are billed monthly with no minimum term. Stopping is simply a matter of telling us — access runs to the end of the period you have already paid for, and there is nothing further to cancel.',
+        'Plans are billed monthly in USDT with no minimum term. To stop, simply do not pay for the following month — there is no cancellation to request. Access runs to the end of the period you have already paid for.',
         'Part-months are not refunded. If something is wrong on our side, contact us and we will put it right rather than leave you out of pocket.',
       ],
     },

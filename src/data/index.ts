@@ -8,6 +8,7 @@ import type {
   EA,
   EAPlan,
   Billing,
+  Onboarding,
   Capital,
   Membership,
   Broker,
@@ -25,6 +26,7 @@ export const eas = easData.eas as unknown as EA[]
 
 export const eaPlans = pricingData.eaPlans as EAPlan[]
 export const billing = pricingData.billing as Billing
+export const onboarding = pricingData.onboarding as Onboarding
 export const capital = pricingData.capital as Capital
 export const membership = pricingData.membership as Membership
 export const membershipLadder = pricingData.membershipLadder as MembershipLadder

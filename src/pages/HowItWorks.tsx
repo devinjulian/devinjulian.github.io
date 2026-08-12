@@ -15,7 +15,7 @@ const STEPS = [
   {
     n: '02',
     title: 'Message us',
-    body: 'No checkout to fill in. Send a message, we answer personally and sort the details — including the account size that suits you.',
+    body: 'No checkout to fill in. Send a message, we confirm your USDT payment and the setup guide goes out straight away.',
   },
   {
     n: '03',
@@ -25,12 +25,12 @@ const STEPS = [
   {
     n: '04',
     title: 'Install once',
-    body: 'Each EA onto its chart and timeframe. Omnicor and Cenith are plug-and-play; Golden ships with two set files.',
+    body: 'Each EA onto its chart and timeframe. All three run on default settings — no configuring, no input files to tune.',
   },
   {
     n: '05',
     title: 'Close the laptop',
-    body: 'A VPS keeps them running while your machine is off. That is the last thing you have to do.',
+    body: 'A VPS keeps them running while your machine is off. Under 15 minutes from paying to trading.',
   },
 ]
 

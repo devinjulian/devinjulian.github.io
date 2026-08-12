@@ -8,7 +8,7 @@
       "tagline": "The entry rate — made possible by our partner brokers.",
       "features": [
         "All three EAs — Omnicor, Cenith & Golden",
-        "Five years of verified backtests behind them",
+        "One trading account, tied to your licence key",
         "Every update and new release included",
         "Cancel any month — no contract, no lock-in"
       ],
@@ -24,7 +24,7 @@
       "tagline": "The same three machines, on whatever broker you already trust.",
       "features": [
         "All three EAs — Omnicor, Cenith & Golden",
-        "Five years of verified backtests behind them",
+        "One trading account, tied to your licence key",
         "Every update and new release included",
         "Cancel any month — no contract, no lock-in"
       ],
@@ -35,8 +35,8 @@
   ],
   "billing": {
     "period": "month",
-    "note": "Billed monthly. Stop whenever you like — you are never locked into a term.",
-    "payment": "crypto, verified manually"
+    "note": "Billed monthly, paid in USDT. Stopping is simply not paying the next month — there is nothing to cancel.",
+    "payment": "USDT"
   },
   "capital": {
     "standard": "$10,000",
@@ -55,13 +55,6 @@
         "slots": 10,
         "slotsLeft": 2,
         "state": "open"
-      },
-      {
-        "price": "$4,999",
-        "priceAmount": 4999,
-        "slots": 10,
-        "slotsLeft": 10,
-        "state": "upcoming"
       },
       {
         "price": "$9,999",
@@ -113,5 +106,28 @@
       "No profit sharing — what your account makes is yours",
       "No managed accounts — you trade your own, always"
     ]
+  },
+  "onboarding": {
+    "headline": "Running in under 15 minutes",
+    "steps": [
+      {
+        "k": "You pay",
+        "v": "USDT. We confirm it and send your setup guide straight away."
+      },
+      {
+        "k": "You open MT5",
+        "v": "With a grid-friendly broker, then send us the account number."
+      },
+      {
+        "k": "We send the EA",
+        "v": "All three files plus your licence key, bound to that account."
+      },
+      {
+        "k": "You install",
+        "v": "Drop each EA on its chart. The guide covers the one server link you add in MetaTrader."
+      }
+    ],
+    "note": "Fifteen minutes end to end. Longer only if it is your first time installing an EA on a VPS — and we stay with you until it runs.",
+    "setup": "All three run on default settings. No input files to configure, unless you want Golden on its SL/TP strategy."
   }
 }

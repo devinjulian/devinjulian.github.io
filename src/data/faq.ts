@@ -27,8 +27,12 @@ export const faqGroups: FAQGroup[] = [
         a: 'MetaTrader 5 only. MT4 is no longer supported.',
       },
       {
-        q: 'Do I need set files?',
-        a: 'Omnicor and Cenith are plug-and-play. Golden ships with two set files, one per timeframe.',
+        q: 'Do I need to configure anything?',
+        a: 'No. All three run on default settings. Set files are only needed if you want Golden on its SL/TP strategy, and they come with the EA.',
+      },
+      {
+        q: 'How many trading accounts can I run?',
+        a: 'One. Your licence key is issued to a single account number. The Exclusive Membership is the only route with no account lock.',
       },
     ],
   },
@@ -40,8 +44,8 @@ export const faqGroups: FAQGroup[] = [
         a: '$32 a month with one of our partner brokers, or $53 a month on any broker you choose. Both run all three machines.',
       },
       {
-        q: 'Can I cancel?',
-        a: 'Any month. There is no contract and no minimum term.',
+        q: 'How do I stop?',
+        a: 'Simply do not pay for the following month. There is nothing to cancel, no contract and no minimum term.',
       },
       {
         q: 'Why is the Partner (IB) rate lower?',
@@ -53,11 +57,19 @@ export const faqGroups: FAQGroup[] = [
       },
       {
         q: 'What is the Exclusive Membership?',
-        a: 'A one-time alternative to monthly: full .mq5 source code, lifetime access, every future release. A fixed number of slots — when the last one goes, it is gone.',
+        a: 'A one-time alternative to monthly: full .mq5 source code, lifetime access, unlimited accounts and every future release. 35 seats exist in total — when the last one goes, the programme closes for good.',
       },
       {
         q: 'How do I pay?',
-        a: 'There is no on-site checkout. Message us on Telegram or by email and we arrange it directly.',
+        a: 'In USDT. There is no on-site checkout — message us on Telegram or by email and we send the wallet details in that conversation. We never publish them on this site.',
+      },
+      {
+        q: 'What happens after I pay?',
+        a: 'You get the setup guide, open your MT5 account and send us the account number. We send all three EAs plus your licence key. Under 15 minutes end to end.',
+      },
+      {
+        q: 'What if I get stuck installing?',
+        a: 'We stay with you until it runs. The guide covers everything including the one server link you add in MetaTrader — the only step people are unfamiliar with is a first VPS install.',
       },
     ],
   },
