@@ -4,6 +4,7 @@ import { PageHero } from '../components/PageHero'
 import { SectionLabel } from '../components/SectionLabel'
 import { RegimeReadout } from '../components/RegimeReadout'
 import { UsdExposure } from '../components/UsdExposure'
+import { OpenPosition } from '../components/OpenPosition'
 import { Button } from '../components/Button'
 import { ClaimButton } from '../components/ClaimButton'
 import { RiskDisclaimer } from '../components/RiskDisclaimer'
@@ -30,7 +31,7 @@ const LAYERS = [
   {
     n: '04',
     k: 'Risk',
-    v: 'Everything above collapses into one number, and that number scales the position.',
+    v: 'Everything above collapses into one number — the size going in, and the depth allowed once the basket is open.',
   },
   {
     n: '05',
@@ -92,6 +93,31 @@ export function AiAgent() {
                 </li>
               ))}
             </ol>
+          </Reveal>
+        </section>
+
+        {/* Position management. For a grid the entry decision is the easy half — the damage
+            is done by depth, and depth builds after you are already in. */}
+        <section className="border-t border-ink/10 py-16 sm:py-20">
+          <Reveal>
+            <SectionLabel>While it runs</SectionLabel>
+            <h2 className="mt-7 max-w-2xl font-display text-3xl leading-tight font-light text-ink sm:text-4xl">
+              The decision doesn't end at entry.{' '}
+              <em className="text-gold">That's where the damage starts.</em>
+            </h2>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
+              A grid gets hurt by depth, and depth builds after you're already in. So the
+              conditions that were safe at entry keep being checked while the basket is open.
+            </p>
+          </Reveal>
+          <Reveal delay={0.1} className="mt-9">
+            <OpenPosition />
+          </Reveal>
+          <Reveal delay={0.15}>
+            <p className="mt-6 border-l-2 border-gold/40 pl-4 text-sm leading-relaxed text-muted">
+              Beneath all three sits a hard equity floor. If the account reaches it, everything
+              closes — no averaging, no waiting for the move to come back.
+            </p>
           </Reveal>
         </section>
 
