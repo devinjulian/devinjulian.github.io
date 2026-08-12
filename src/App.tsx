@@ -11,6 +11,7 @@ const Products = lazy(() => import('./pages/Products').then((m) => ({ default: m
 const ProductDetail = lazy(() =>
   import('./pages/ProductDetail').then((m) => ({ default: m.ProductDetail })),
 )
+const Membership = lazy(() => import('./pages/Membership').then((m) => ({ default: m.Membership })))
 const About = lazy(() => import('./pages/About').then((m) => ({ default: m.About })))
 const HowItWorks = lazy(() => import('./pages/HowItWorks').then((m) => ({ default: m.HowItWorks })))
 const Faq = lazy(() => import('./pages/Faq').then((m) => ({ default: m.Faq })))
@@ -33,6 +34,7 @@ export function App() {
               <Route path="/" element={<Home />} />
               <Route path="/forex" element={<Products />} />
               <Route path="/forex/:id" element={<ProductDetail />} />
+              <Route path="/membership" element={<Membership />} />
               {/* The signal product and its public record were both retired 2026-08-12.
                   These routes still carry inbound links, so they land on the product page
                   rather than a 404 — pointed straight at /forex, never chained. */}

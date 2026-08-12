@@ -82,6 +82,41 @@
       "Every full source code available (.mq5)",
       "Lifetime access — no subscription, ever",
       "Every future release included, for life"
+    ],
+    "benefits": [
+      {
+        "k": "Full source code",
+        "v": "Every .mq5 file, yours to read, keep and modify."
+      },
+      {
+        "k": "Lifetime access",
+        "v": "No monthly fee, ever — including every release the lab ships after you join."
+      },
+      {
+        "k": "Unlimited accounts",
+        "v": "No account lock. Run the machines wherever you trade."
+      },
+      {
+        "k": "A direct line",
+        "v": "A private channel to Devin, not the public one."
+      },
+      {
+        "k": "Personal setup",
+        "v": "Parameters and set files tuned to your account size and your broker."
+      },
+      {
+        "k": "Early access",
+        "v": "New EAs reach you before they reach anyone else."
+      },
+      {
+        "k": "A vote",
+        "v": "Members choose which pair the lab builds next."
+      }
+    ],
+    "notIncluded": [
+      "No profit sharing — what your account makes is yours",
+      "No managed accounts — you trade your own, always",
+      "No resale or redistribution rights"
     ]
   }
 }

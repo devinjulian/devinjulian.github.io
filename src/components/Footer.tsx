@@ -35,6 +35,9 @@ export function Footer() {
             <Link to="/forex" className={itemClass}>
               The Machines
             </Link>
+            <Link to="/membership" className={itemClass}>
+              Membership
+            </Link>
             <Link to="/about" className={itemClass}>
               About
             </Link>

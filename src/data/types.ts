@@ -82,7 +82,9 @@ export interface Capital {
   brokerNote: string
 }
 
-/** The one-time alternative to subscribing: source code, owned outright. */
+/** The one-time alternative to subscribing: source code, owned outright.
+ *  `features` is the short list for the card on /forex; `benefits` and `notIncluded`
+ *  are the long form used on the dedicated /membership page. */
 export interface Membership {
   id: string
   name: string
@@ -90,6 +92,9 @@ export interface Membership {
   priceAmount: number
   tagline: string
   features: string[]
+  benefits: { k: string; v: string }[]
+  /** Stated plainly — at this price the buyer's real question is what this is *not*. */
+  notIncluded: string[]
 }
 
 /** One rung of the Exclusive Membership slot ladder (PRD §14.1). `slotsLeft` is
