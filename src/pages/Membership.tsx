@@ -38,30 +38,30 @@ export function Membership() {
         {/* The ladder leads — seeing the future prices is the whole mechanism. */}
         <Reveal>
           <div className="glass glass-gold rounded-3xl p-7 sm:p-9">
-            <div className="flex flex-wrap items-end justify-between gap-6">
-              <div>
-                <p className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
-                  Joining now
-                </p>
-                <p className="mt-3 font-display text-5xl font-light text-ink sm:text-6xl">
-                  {membership.price}
-                  <span className="ml-3 font-mono text-[0.7rem] tracking-[0.15em] text-muted uppercase">
-                    one-time
-                  </span>
-                </p>
-              </div>
+            {/* Label and scarcity badge share the top line, so the price below can stand
+                alone at full size instead of being baseline-matched against small text. */}
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <p className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
+                Joining now
+              </p>
               {open && (
-                <p className="font-mono text-sm tracking-[0.15em] text-gold uppercase">
-                  {open.slotsLeft} of {open.slots} seats left
+                <p className="inline-flex items-center rounded-full border border-gold/40 bg-gold/10 px-3 py-1.5 font-mono text-[0.7rem] tracking-[0.15em] text-gold uppercase">
+                  Only {open.slotsLeft} of {open.slots} seats left
                 </p>
               )}
             </div>
+            <p className="mt-4 font-display text-5xl font-light text-ink sm:text-6xl">
+              {membership.price}
+              <span className="ml-3 font-mono text-[0.7rem] tracking-[0.15em] text-muted uppercase">
+                one-time
+              </span>
+            </p>
 
             <ul className="mt-9 space-y-4">
               {membershipLadder.stages.map((s, i) => (
                 <li
                   key={s.price}
-                  className={`flex items-baseline justify-between gap-4 border-b border-ink/10 pb-4 last:border-0 ${
+                  className={`grid grid-cols-[4.5rem_1fr_auto] items-baseline gap-4 border-b border-ink/10 pb-4 last:border-0 ${
                     s.state === 'soldOut' ? 'opacity-45' : ''
                   }`}
                 >
@@ -75,7 +75,7 @@ export function Membership() {
                   >
                     {s.price}
                   </span>
-                  <span className="font-mono text-[0.65rem] tracking-[0.15em] text-muted uppercase">
+                  <span className="text-right font-mono text-[0.65rem] tracking-[0.15em] text-muted uppercase">
                     {s.state === 'open'
                       ? `${s.slotsLeft} of ${s.slots} left`
                       : s.state === 'soldOut'

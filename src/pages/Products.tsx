@@ -230,7 +230,7 @@ export function Products() {
                   {membershipLadder.stages.map((s, i) => (
                     <li
                       key={s.price}
-                      className={`flex items-baseline justify-between gap-4 border-b border-ink/10 pb-4 last:border-0 ${
+                      className={`grid grid-cols-[4.5rem_1fr_auto] items-baseline gap-4 border-b border-ink/10 pb-4 last:border-0 ${
                         s.state === 'soldOut' ? 'opacity-50' : ''
                       }`}
                     >

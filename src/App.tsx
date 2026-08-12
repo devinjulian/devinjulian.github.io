@@ -34,7 +34,8 @@ export function App() {
               <Route path="/" element={<Home />} />
               <Route path="/forex" element={<Products />} />
               <Route path="/forex/:id" element={<ProductDetail />} />
-              <Route path="/membership" element={<Membership />} />
+              <Route path="/exclusive" element={<Membership />} />
+              <Route path="/membership" element={<Navigate to="/exclusive" replace />} />
               {/* The signal product and its public record were both retired 2026-08-12.
                   These routes still carry inbound links, so they land on the product page
                   rather than a 404 — pointed straight at /forex, never chained. */}

@@ -97,10 +97,6 @@
         "v": "No account lock. Run the machines wherever you trade."
       },
       {
-        "k": "A direct line",
-        "v": "A private channel to Devin, not the public one."
-      },
-      {
         "k": "Personal setup",
         "v": "Parameters and set files tuned to your account size and your broker."
       },
@@ -115,8 +111,7 @@
     ],
     "notIncluded": [
       "No profit sharing — what your account makes is yours",
-      "No managed accounts — you trade your own, always",
-      "No resale or redistribution rights"
+      "No managed accounts — you trade your own, always"
     ]
   }
 }
