@@ -107,7 +107,8 @@ export function AiAgent() {
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
               A grid gets hurt by depth, and depth builds after you're already in. So the
-              conditions that were safe at entry keep being checked while the basket is open.
+              conditions that were safe at entry keep being checked while the basket is open —
+              and the basket is worked, not just watched.
             </p>
           </Reveal>
           <Reveal delay={0.1} className="mt-9">
