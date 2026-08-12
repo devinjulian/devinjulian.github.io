@@ -41,16 +41,16 @@ export function Home() {
             </Reveal>
             <Reveal mode="mount" delay={0.3} className="mt-10">
               <div className="flex flex-wrap items-center gap-4">
-                <Button to="/proof">See it work — free</Button>
-                <Button variant="ghost" to="/forex">
-                  The machines
+                <Button to="/forex">See the machines</Button>
+                <Button variant="ghost" to="/how-it-works">
+                  How it works
                 </Button>
               </div>
             </Reveal>
             {/* The only proof signal on this page, so it carries more weight than fine print. */}
             <Reveal mode="mount" delay={0.42} className="mt-8">
               <p className="font-mono text-xs tracking-wide text-muted">
-                Verified on Myfxbook · wins and losses both published · all three machines
+                Verified on Myfxbook · every return shown with its drawdown · all three machines
                 from $32 a month
               </p>
             </Reveal>
@@ -90,9 +90,8 @@ export function Home() {
             </h2>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted">
               Three <strong className="font-semibold text-ink">Forex machines</strong> on one
-              plan. An <strong className="font-semibold text-ink">AI Trading Agent</strong>{' '}
-              reading the calendar behind them, logging every session in public. Every release
-              after that is included.
+              plan, built and tested over five years. Every update and every new release the
+              lab ships is included while your plan runs.
             </p>
           </Reveal>
         </Section>

@@ -11,7 +11,6 @@ const Products = lazy(() => import('./pages/Products').then((m) => ({ default: m
 const ProductDetail = lazy(() =>
   import('./pages/ProductDetail').then((m) => ({ default: m.ProductDetail })),
 )
-const Proof = lazy(() => import('./pages/Proof').then((m) => ({ default: m.Proof })))
 const About = lazy(() => import('./pages/About').then((m) => ({ default: m.About })))
 const HowItWorks = lazy(() => import('./pages/HowItWorks').then((m) => ({ default: m.HowItWorks })))
 const Faq = lazy(() => import('./pages/Faq').then((m) => ({ default: m.Faq })))
@@ -34,11 +33,12 @@ export function App() {
               <Route path="/" element={<Home />} />
               <Route path="/forex" element={<Products />} />
               <Route path="/forex/:id" element={<ProductDetail />} />
-              <Route path="/proof" element={<Proof />} />
-              {/* The paid signal product was retired 2026-08-12; its public record lives on
-                  /proof. Both legacy routes keep their inbound links alive. */}
-              <Route path="/crypto-futures-signals" element={<Navigate to="/proof" replace />} />
-              <Route path="/ai-agent" element={<Navigate to="/proof" replace />} />
+              {/* The signal product and its public record were both retired 2026-08-12.
+                  These routes still carry inbound links, so they land on the product page
+                  rather than a 404 — pointed straight at /forex, never chained. */}
+              <Route path="/proof" element={<Navigate to="/forex" replace />} />
+              <Route path="/crypto-futures-signals" element={<Navigate to="/forex" replace />} />
+              <Route path="/ai-agent" element={<Navigate to="/forex" replace />} />
               {/* legacy → new (Founding Members retired 2026-06-11 — pricing lives on /forex) */}
               <Route path="/founding-members" element={<Navigate to="/forex" replace />} />
               <Route path="/pricing" element={<Navigate to="/forex" replace />} />

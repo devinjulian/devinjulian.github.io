@@ -101,8 +101,8 @@ export function HowItWorks() {
               <ClaimButton item={`${entry.name} — ${entry.price}/${billing.period}`}>
                 Start now
               </ClaimButton>
-              <Button variant="ghost" to="/proof">
-                Read the record first
+              <Button variant="ghost" href={links.myfxbook} external>
+                Verify on Myfxbook first
               </Button>
             </div>
           </div>
@@ -116,9 +116,7 @@ export function HowItWorks() {
             <Button variant="ghost" to="/faq">
               Read the FAQ
             </Button>
-            <Button variant="ghost" href={links.myfxbook} external>
-              Verify on Myfxbook
-            </Button>
+
           </div>
         </Reveal>
 

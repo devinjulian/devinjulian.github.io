@@ -79,15 +79,15 @@ export const faqGroups: FAQGroup[] = [
     ],
   },
   {
-    title: 'The AI Trading Agent',
+    title: 'The lab',
     items: [
       {
         q: 'What is the AI Trading Agent?',
-        a: 'Our research system. It reads the economic calendar, the releases and the market context a rule-based EA cannot see, and records what it concludes every session — publicly, wins and losses alike.',
+        a: 'Our in-house research system. It reads the economic calendar, the releases and the market context a rule-based EA cannot see. It is not sold separately and it is not something you install.',
       },
       {
-        q: 'Can I read its record?',
-        a: 'Yes, free and without signing up. Every session is on the Proof page, logged the day it happens.',
+        q: 'What are you building next?',
+        a: 'More pairs, and deeper research tooling behind the machines you already run. Everything the lab ships is included while your plan is active — you never pay again for a new release.',
       },
     ],
   },
