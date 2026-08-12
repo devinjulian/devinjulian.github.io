@@ -79,9 +79,16 @@ export function RegimeReadout() {
     <div className="glass glass-gold grid gap-8 rounded-3xl p-7 sm:p-9 lg:grid-cols-[1.15fr_1fr] lg:gap-12">
       {/* Axes */}
       <div>
-        <p className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
-          What it measures
-        </p>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <p className="font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
+            What it measures
+          </p>
+          {/* The figures below are illustrative — chosen to show how the axes combine, not
+              read from a live account. The tag stays until real readings replace them. */}
+          <span className="font-mono text-[0.6rem] tracking-[0.15em] text-muted/70 uppercase">
+            Example
+          </span>
+        </div>
         <ul className="mt-6 space-y-6">
           {AXES.map((a) => (
             <li key={a.k}>

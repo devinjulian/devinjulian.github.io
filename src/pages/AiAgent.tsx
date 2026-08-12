@@ -68,11 +68,6 @@ export function AiAgent() {
         <Reveal>
           <RegimeReadout />
         </Reveal>
-        <Reveal>
-          <p className="mt-4 font-mono text-[0.65rem] tracking-wide text-muted/80">
-            A worked example of how the three axes combine — not a live reading.
-          </p>
-        </Reveal>
 
         {/* The five layers */}
         <section className="border-t border-ink/10 py-16 sm:py-20">
