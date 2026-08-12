@@ -79,7 +79,7 @@ export function Modal({
         ref={dialogRef}
         data-lenis-prevent
         className={cn(
-          'relative max-h-[85dvh] w-full max-w-lg overflow-y-auto rounded-2xl border border-ink/10 bg-surface/95 p-7 shadow-2xl shadow-black/60',
+          'glass-solid relative max-h-[85dvh] w-full max-w-lg overflow-y-auto rounded-3xl p-7',
           className,
         )}
       >

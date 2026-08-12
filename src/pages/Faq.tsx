@@ -37,7 +37,7 @@ export function Faq() {
         <FaqList />
 
         <Reveal>
-          <div className="mt-14 rounded-2xl border border-gold/30 bg-surface/50 px-8 py-12 text-center">
+          <div className="glass glass-gold mt-14 rounded-3xl px-8 py-12 text-center">
             <h2 className="font-display text-2xl leading-tight font-light text-ink sm:text-3xl">
               Still have a question?
             </h2>

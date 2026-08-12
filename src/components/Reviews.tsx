@@ -79,7 +79,7 @@ export function Reviews() {
               <article
                 key={r.name}
                 data-card
-                className="flex shrink-0 basis-[85%] snap-start flex-col rounded-2xl border border-ink/10 bg-surface/50 p-7 select-none sm:basis-[420px]"
+                className="glass flex shrink-0 basis-[85%] snap-start flex-col rounded-3xl p-7 select-none sm:basis-[420px]"
               >
                 <span aria-hidden className="font-display text-5xl leading-none text-gold/40">
                   &ldquo;

@@ -82,7 +82,7 @@ export function ContactPanel({
 
       <div
         ref={dialogRef}
-        className="relative w-full max-w-lg border border-ink/10 bg-surface/95 p-7 shadow-2xl shadow-black/60 sm:rounded-2xl"
+        className="glass-solid relative w-full max-w-lg p-7 sm:rounded-3xl"
       >
         <button
           ref={closeRef}

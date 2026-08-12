@@ -128,7 +128,7 @@ export function Home() {
       <section className="pt-12 pb-8">
         <Container>
           <Reveal>
-            <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-surface/50 px-8 py-16 text-center sm:px-16">
+            <div className="glass glass-gold relative rounded-3xl px-8 py-16 text-center sm:px-16">
               <span
                 aria-hidden
                 className="absolute -top-px right-16 left-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent"

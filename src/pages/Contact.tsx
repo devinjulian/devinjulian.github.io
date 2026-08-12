@@ -23,7 +23,7 @@ export function Contact() {
       <Container size="narrow">
         <div className="grid gap-4 sm:grid-cols-2">
           <Reveal>
-            <div className="flex h-full flex-col rounded-2xl border border-ink/10 bg-surface/40 p-6">
+            <div className="glass flex h-full flex-col rounded-3xl p-6">
               <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
                 Telegram
               </p>
@@ -42,7 +42,7 @@ export function Contact() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="flex h-full flex-col rounded-2xl border border-ink/10 bg-surface/40 p-6">
+            <div className="glass flex h-full flex-col rounded-3xl p-6">
               <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
                 Email
               </p>
@@ -60,7 +60,7 @@ export function Contact() {
         </div>
 
         <Reveal>
-          <div className="mt-6 rounded-2xl border border-ink/10 bg-void/40 p-6">
+          <div className="glass mt-6 rounded-3xl p-6">
             <p className="font-mono text-[0.7rem] tracking-[0.2em] text-muted/80 uppercase">
               A message that says it all
             </p>
