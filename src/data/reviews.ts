@@ -112,8 +112,10 @@ export const reviews: Review[] = [
     name: 'Elijah',
     initials: 'E',
     tag: 'Telegram community',
+    // "Founding Member" → "Exclusive Member": the programme was renamed, not changed.
+    // Elijah was asked and agreed to the substitution (2026-08-12). Nothing else altered.
     quote:
-      "Hey Devin, save one Founding Member slot for me. Let me be a part of this project's development!",
+      "Hey Devin, save one Exclusive Member slot for me. Let me be a part of this project's development!",
   },
   {
     name: 'Daniel',
