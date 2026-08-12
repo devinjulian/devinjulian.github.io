@@ -124,9 +124,9 @@ export function AiAgent() {
           <Reveal delay={0.1}>
             <blockquote className="glass mt-9 rounded-3xl p-7 sm:p-9">
               <p className="font-mono text-sm leading-relaxed text-ink">
-                <span className="text-gold">Exposure reduced to 40%.</span> Dollar trend strong
-                across all three pairs, correlation at 0.81 — a drawdown here would arrive on
-                every book at once.
+                <span className="text-gold">Exposure reduced.</span> Dollar trend strong across
+                all three pairs and correlation tight — a drawdown here would arrive on every
+                book at once.
               </p>
             </blockquote>
           </Reveal>
