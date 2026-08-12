@@ -52,8 +52,8 @@
       {
         "price": "$2,499",
         "priceAmount": 2499,
-        "slots": 4,
-        "slotsLeft": 4,
+        "slots": 10,
+        "slotsLeft": 2,
         "state": "open"
       },
       {
