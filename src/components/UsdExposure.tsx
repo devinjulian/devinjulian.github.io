@@ -41,6 +41,13 @@ export function UsdExposure() {
             the same moment. The Agent sees all three books together and caps what they add up
             to — not what each one does alone.
           </p>
+          <p className="mt-4 max-w-prose rounded-2xl px-4 py-3 text-sm leading-relaxed text-ink shadow-[inset_0_0_0_1px_rgb(255_255_255/0.1)]">
+            <span className="font-mono text-[0.7rem] tracking-[0.15em] text-gold uppercase">
+              In practice —{' '}
+            </span>
+            if the EURUSD basket is already deep, a same-direction entry on GBPUSD is refused.
+            One dollar trade at a time, not three.
+          </p>
         </div>
       </div>
     </div>

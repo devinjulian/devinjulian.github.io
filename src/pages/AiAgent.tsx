@@ -40,6 +40,23 @@ const LAYERS = [
   },
 ]
 
+/** Hard limits. Nothing above them — not a signal, not a regime read, not an open basket
+ *  — can talk its way past these. */
+const OVERRIDES = [
+  {
+    k: 'Equity floor',
+    v: 'A hard line under the account. Reach it and everything closes — no averaging, no waiting for the move to come back.',
+  },
+  {
+    k: 'Weekend flat',
+    v: 'Exposure is cut before Friday close. A grid held through a Monday gap is how accounts disappear over a quiet weekend.',
+  },
+  {
+    k: 'Equity-curve pause',
+    v: 'The system watches its own results. When its recent performance degrades it stops trading — before you have to notice and stop it yourself.',
+  },
+]
+
 export function AiAgent() {
   const entry = eaPlans[0]
 
@@ -114,11 +131,22 @@ export function AiAgent() {
           <Reveal delay={0.1} className="mt-9">
             <OpenPosition />
           </Reveal>
+          {/* System-level stops. These sit beneath every other decision — no regime read,
+              no signal and no open basket overrides them. */}
           <Reveal delay={0.15}>
-            <p className="mt-6 border-l-2 border-gold/40 pl-4 text-sm leading-relaxed text-muted">
-              Beneath all three sits a hard equity floor. If the account reaches it, everything
-              closes — no averaging, no waiting for the move to come back.
+            <p className="mt-12 font-mono text-[0.7rem] tracking-[0.2em] text-gold uppercase">
+              Three stops that override everything
             </p>
+            <div className="mt-5 grid gap-4 lg:grid-cols-3">
+              {OVERRIDES.map((o) => (
+                <div key={o.k} className="glass rounded-3xl p-6">
+                  <p className="font-mono text-[0.7rem] tracking-[0.2em] text-ink uppercase">
+                    {o.k}
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">{o.v}</p>
+                </div>
+              ))}
+            </div>
           </Reveal>
         </section>
 
